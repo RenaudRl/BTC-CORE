@@ -1,0 +1,8 @@
+api-version: "1.21"
+name: ASPaperPlugin
+version: "54510a81a48d3d8bd8ea1a84a5da1a71036cfd55"
+main: com.infernalsuite.asp.plugin.SWPlugin
+bootstrapper: com.infernalsuite.asp.plugin.SlimePluginBootstrap
+description: "ASP plugin for Paper, providing utilities for the ASP platform"
+authors:
+  - InfernalSuite

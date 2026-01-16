@@ -1,0 +1,119 @@
+{
+    "registries": {
+        "minecraft:game_event": {
+            "api_class": "org.bukkit.GameEvent",
+            "class": "org.bukkit.GameEvent",
+            "type": "org.bukkit.GameEvent"
+        },
+        "minecraft:sound_event": {
+            "api_class": "org.bukkit.Sound",
+            "class": "org.bukkit.Sound",
+            "type": "org.bukkit.Sound"
+        },
+        "minecraft:fluid": {
+            "api_class": "org.bukkit.Fluid",
+            "class": "org.bukkit.Fluid",
+            "type": "org.bukkit.Fluid"
+        },
+        "minecraft:mob_effect": {
+            "api_class": "org.bukkit.potion.PotionEffectType",
+            "class": "org.bukkit.potion.PotionEffectType",
+            "type": "org.bukkit.potion.PotionEffectType"
+        },
+        "minecraft:block": {
+            "api_class": "org.bukkit.Material",
+            "class": "org.bukkit.Material",
+            "type": "org.bukkit.Material"
+        },
+        "minecraft:enchantment": {
+            "api_class": "org.bukkit.enchantments.Enchantment",
+            "class": "org.bukkit.enchantments.Enchantment",
+            "type": "org.bukkit.enchantments.Enchantment"
+        },
+        "minecraft:entity_type": {
+            "api_class": "org.bukkit.entity.EntityType",
+            "class": "org.bukkit.entity.EntityType",
+            "type": "org.bukkit.entity.EntityType"
+        },
+        "minecraft:item": {
+            "api_class": "org.bukkit.Material",
+            "class": "org.bukkit.Material",
+            "type": "org.bukkit.Material"
+        },
+        "minecraft:potion": {
+            "api_class": "org.bukkit.potion.PotionType",
+            "class": "org.bukkit.potion.PotionType",
+            "type": "org.bukkit.potion.PotionType"
+        },
+        "minecraft:particle_type": {
+            "api_class": "org.bukkit.Particle",
+            "class": "org.bukkit.Particle",
+            "type": "org.bukkit.Particle"
+        },
+        "minecraft:block_entity_type": {
+            "api_class": "org.bukkit.block.BlockState",
+            "class": "org.bukkit.block.BlockState",
+            "type": "org.bukkit.block.BlockState"
+        },
+        "minecraft:painting_variant": {
+            "api_class": "org.bukkit.Art",
+            "class": "org.bukkit.Art",
+            "type": "org.bukkit.Art"
+        },
+        "minecraft:attribute": {
+            "api_class": "org.bukkit.attribute.Attribute",
+            "class": "org.bukkit.attribute.Attribute",
+            "type": "org.bukkit.attribute.Attribute"
+        },
+        "minecraft:statistic": {
+            "api_class": "org.bukkit.Statistic",
+            "class": "org.bukkit.Statistic",
+            "type": "org.bukkit.Statistic"
+        },
+        "minecraft:villager_type": {
+            "api_class": "org.bukkit.entity.Villager$Type",
+            "class": "org.bukkit.entity.Villager$Type",
+            "type": "org.bukkit.entity.Villager$Type"
+        },
+        "minecraft:villager_profession": {
+            "api_class": "org.bukkit.entity.Villager$Profession",
+            "class": "org.bukkit.entity.Villager$Profession",
+            "type": "org.bukkit.entity.Villager$Profession"
+        },
+        "minecraft:biome": {
+            "api_class": "org.bukkit.block.Biome",
+            "class": "org.bukkit.block.Biome",
+            "type": "org.bukkit.block.Biome"
+        },
+        "minecraft:cat_variant": {
+            "api_class": "org.bukkit.entity.Cat$Type",
+            "class": "org.bukkit.entity.Cat$Type",
+            "type": "org.bukkit.entity.Cat$Type"
+        },
+        "minecraft:frog_variant": {
+            "api_class": "org.bukkit.entity.Frog$Variant",
+            "class": "org.bukkit.entity.Frog$Variant",
+            "type": "org.bukkit.entity.Frog$Variant"
+        },
+        "minecraft:map_decoration_type": {
+            "api_class": "org.bukkit.map.MapCursor$Type",
+            "class": "org.bukkit.map.MapCursor$Type",
+            "type": "org.bukkit.map.MapCursor$Type"
+        },
+        "minecraft:trim_material": {
+            "api_class": "org.bukkit.inventory.meta.trim.TrimMaterial",
+            "class": "org.bukkit.inventory.meta.trim.TrimMaterial",
+            "type": "org.bukkit.inventory.meta.trim.TrimMaterial"
+        },
+        "minecraft:trim_pattern": {
+            "api_class": "org.bukkit.inventory.meta.trim.TrimPattern",
+            "class": "org.bukkit.inventory.meta.trim.TrimPattern",
+            "type": "org.bukkit.inventory.meta.trim.TrimPattern"
+        },
+        "minecraft:damage_type": {
+            "api_class": "org.bukkit.damage.DamageType",
+            "class": "org.bukkit.damage.DamageType",
+            "type": "org.bukkit.damage.DamageType"
+        }
+    }
+}

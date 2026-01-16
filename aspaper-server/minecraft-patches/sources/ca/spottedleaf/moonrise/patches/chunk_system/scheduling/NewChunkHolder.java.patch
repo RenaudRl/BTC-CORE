@@ -1,0 +1,42 @@
+--- a/ca/spottedleaf/moonrise/patches/chunk_system/scheduling/NewChunkHolder.java
++++ b/ca/spottedleaf/moonrise/patches/chunk_system/scheduling/NewChunkHolder.java
+@@ -887,6 +_,12 @@
+             }
+ 
+             if (chunk instanceof LevelChunk levelChunk) {
++                //ASP start - unloadStage1 sets the entitySlices to null, so we can't get them otherwise unfortunately.
++                //This needs to be above world.unload since world.unload removes block entities
++                if(world instanceof com.infernalsuite.asp.level.SlimeLevelInstance instance) {
++                    instance.unload(levelChunk, entityChunk, poiChunk);
++                }
++                //ASP end
+                 this.world.unload(levelChunk);
+             }
+ 
+@@ -896,8 +_,11 @@
+         // unload entity data
+         if (entityChunk != null) {
+             final Completable<CompoundTag>[] entityWrite = new Completable[1];
+-            this.saveEntities(entityChunk, true, entityWrite);
+-
++            //ASP start - prevent saving
++            if(!(world instanceof com.infernalsuite.asp.level.SlimeLevelInstance)) {
++                this.saveEntities(entityChunk, true, entityWrite);
++            }
++            //ASP end - prevent saving
+             if (entityChunk.unload()) {
+                 final ReentrantAreaLock.Node schedulingLock = this.scheduler.schedulingLockArea.lock(this.chunkX, this.chunkZ);
+                 try {
+@@ -1682,6 +_,12 @@
+         boolean canSaveChunk = !forceNoSaveChunk && (chunk != null && ((shutdown || chunk instanceof LevelChunk) && chunk.isUnsaved()));
+         boolean canSavePOI = !forceNoSaveChunk && (poi != null && poi.isDirty());
+         boolean canSaveEntities = entities != null;
++
++        //ASP start - prevent saving
++        if(world instanceof com.infernalsuite.asp.level.SlimeLevelInstance) {
++            canSaveEntities = false;
++        }
++        //ASP end - prevent saving
+ 
+         if (canSaveChunk) {
+             canSaveChunk = this.saveChunk(chunk, false, null);

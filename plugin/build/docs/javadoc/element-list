@@ -1,0 +1,10 @@
+com.infernalsuite.asp.plugin
+com.infernalsuite.asp.plugin.commands
+com.infernalsuite.asp.plugin.commands.exception
+com.infernalsuite.asp.plugin.commands.parser
+com.infernalsuite.asp.plugin.commands.parser.suggestion
+com.infernalsuite.asp.plugin.commands.sub
+com.infernalsuite.asp.plugin.config
+com.infernalsuite.asp.plugin.generator
+com.infernalsuite.asp.plugin.loader
+com.infernalsuite.asp.plugin.util
