@@ -277,6 +277,21 @@ public abstract class Mob extends LivingEntity implements EquipmentUser, Leashab
             if (reason == EntityTargetEvent.TargetReason.UNKNOWN) {
                 this.level().getCraftServer().getLogger().log(java.util.logging.Level.WARNING, "Unknown target reason, please report on the issue tracker", new Exception());
             }
+
+            // BTC-CORE start - EntityTargetPlayerEvent
+            if (target instanceof net.minecraft.world.entity.player.Player nmsPlayer) {
+                com.infernalsuite.asp.event.entity.EntityTargetPlayerEvent playerEvent = new com.infernalsuite.asp.event.entity.EntityTargetPlayerEvent(
+                    this.getBukkitEntity(),
+                    (org.bukkit.entity.Player) nmsPlayer.getBukkitEntity(),
+                    mapToBTCCoreTargetReason(reason)
+                );
+                this.level().getCraftServer().getPluginManager().callEvent(playerEvent);
+                if (playerEvent.isCancelled()) {
+                    return false;
+                }
+            }
+            // BTC-CORE end
+
             org.bukkit.craftbukkit.entity.CraftLivingEntity ctarget = null;
             if (target != null) {
                 ctarget = (org.bukkit.craftbukkit.entity.CraftLivingEntity) target.getBukkitEntity();
@@ -805,37 +820,47 @@ public abstract class Mob extends LivingEntity implements EquipmentUser, Leashab
         // Paper end - Allow nerfed mobs to jump and float
         ProfilerFiller profilerFiller = Profiler.get();
         profilerFiller.push("sensing");
+        if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionSensors)
         this.sensing.tick();
         profilerFiller.pop();
         int i = this.tickCount + this.getId();
         if (i % 2 != 0 && this.tickCount > 1) {
             profilerFiller.push("targetSelector");
+            if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
             this.targetSelector.tickRunningGoals(false);
             profilerFiller.pop();
             profilerFiller.push("goalSelector");
+            if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
             this.goalSelector.tickRunningGoals(false);
             profilerFiller.pop();
         } else {
             profilerFiller.push("targetSelector");
+            if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
             this.targetSelector.tick();
             profilerFiller.pop();
             profilerFiller.push("goalSelector");
+            if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
             this.goalSelector.tick();
             profilerFiller.pop();
         }
 
         profilerFiller.push("navigation");
+        if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
         this.navigation.tick();
         profilerFiller.pop();
         profilerFiller.push("mob tick");
+        if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionBrain)
         this.customServerAiStep((ServerLevel)this.level());
         profilerFiller.pop();
         profilerFiller.push("controls");
         profilerFiller.push("move");
+        if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
         this.moveControl.tick();
         profilerFiller.popPush("look");
+        if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
         this.lookControl.tick();
         profilerFiller.popPush("jump");
+        if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
         this.jumpControl.tick();
         profilerFiller.pop();
         profilerFiller.pop();
@@ -1672,4 +1697,17 @@ public abstract class Mob extends LivingEntity implements EquipmentUser, Leashab
     public float chargeSpeedModifier() {
         return 1.0F;
     }
+
+    // BTC-CORE start
+    private com.infernalsuite.asp.event.entity.EntityTargetPlayerEvent.TargetReason mapToBTCCoreTargetReason(org.bukkit.event.entity.EntityTargetEvent.TargetReason reason) {
+        if (reason == null) return com.infernalsuite.asp.event.entity.EntityTargetPlayerEvent.TargetReason.CUSTOM;
+        return switch (reason) {
+            case CLOSEST_PLAYER -> com.infernalsuite.asp.event.entity.EntityTargetPlayerEvent.TargetReason.CLOSEST_PLAYER;
+            case TARGET_ATTACKED_ENTITY, TARGET_ATTACKED_NEARBY_ENTITY, TARGET_ATTACKED_OWNER, OWNER_ATTACKED_TARGET -> com.infernalsuite.asp.event.entity.EntityTargetPlayerEvent.TargetReason.ATTACKED_BY;
+            case COLLISION -> com.infernalsuite.asp.event.entity.EntityTargetPlayerEvent.TargetReason.COLLISION;
+            case RANDOM_TARGET -> com.infernalsuite.asp.event.entity.EntityTargetPlayerEvent.TargetReason.RANDOM;
+            default -> com.infernalsuite.asp.event.entity.EntityTargetPlayerEvent.TargetReason.CUSTOM;
+        };
+    }
+    // BTC-CORE end
 }

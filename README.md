@@ -138,6 +138,7 @@ worlds:
 ### 🌍 SlimeWorld Enhancements
 - **Clone Unloaded Worlds**: Copy SlimeWorlds directly from storage without loading them first.
 - **Cross-World Entity Transfer**: Pets and mounts follow players between worlds.
+- **SlimeWorld Asset Loader**: API for loading assets/configs directly from SWA sources (bypassing filesystem).
 - **SlimeWorld Game Rules Config**: YAML-based game rule configuration per world/pattern.
 
 ### ⚡ Advanced Performance
@@ -150,6 +151,8 @@ worlds:
 - **NBT Compression Cache**: Caches compressed NBT for frequently accessed items.
 - **Chunk Prefetch**: Pre-loads destination chunks before teleport.
 - **Redstone Throttle**: Limits redstone updates per chunk to prevent lag.
+- **BetterHUD Culling**: Distance-based filtering for high-frequency text display packets.
+- **Vanilla Tick Suppression**: Toggles to disable vanilla AI/Brains/Sensors for custom entity handling.
 
 ### ✨ Quality of Life
 - **Maintenance Mode**: Built-in maintenance mode with bypass permissions.
@@ -370,14 +373,9 @@ BTC-CORE is primarily tuned via `btccore.yml`.
 Requires **Java 21** and a strong understanding of Gradle.
 
 ```bash
-# Apply BTC and upstream patches
-./gradlew applyAllPatches
 
 # Compile standard build
 ./gradlew build
-
-# Update/Save patches
-./gradlew rebuildPatches
 
 # Generate reobfuscated Paperclip JAR (recommended for production)
 ./gradlew createMojmapPaperclipJar

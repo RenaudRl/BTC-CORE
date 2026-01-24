@@ -315,7 +315,20 @@ public abstract class ServerCommonPacketListenerImpl implements ServerCommonPack
         // CraftBukkit start
         if (packet == null || this.processedDisconnect) { // Spigot
             return;
-        } else if (packet instanceof net.minecraft.network.protocol.game.ClientboundSetDefaultSpawnPositionPacket defaultSpawnPositionPacket && this instanceof ServerGamePacketListenerImpl serverGamePacketListener) {
+        }
+
+        // ASP Start - BetterHUD Culling
+        if (com.infernalsuite.asp.config.BTCCoreConfig.betterHudCullingEnabled && packet instanceof net.minecraft.network.protocol.game.ClientboundSetEntityDataPacket dataPacket) {
+            if (this instanceof ServerGamePacketListenerImpl gameListener && this.server.isSameThread()) {
+                 net.minecraft.world.entity.Entity entity = gameListener.player.level().getEntity(dataPacket.id());
+                 if (entity instanceof net.minecraft.world.entity.Display && !com.infernalsuite.asp.performance.PerformanceManager.shouldSendBetterHud(gameListener.player.getBukkitEntity(), entity.getBukkitEntity().getLocation())) {
+                     return;
+                 }
+            }
+        }
+        // ASP End
+
+        else if (packet instanceof net.minecraft.network.protocol.game.ClientboundSetDefaultSpawnPositionPacket defaultSpawnPositionPacket && this instanceof ServerGamePacketListenerImpl serverGamePacketListener) {
             serverGamePacketListener.player.compassTarget = org.bukkit.craftbukkit.util.CraftLocation.toBukkit(defaultSpawnPositionPacket.respawnData().pos(), serverGamePacketListener.getPlayer().level());
         }
         // CraftBukkit end

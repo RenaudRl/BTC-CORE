@@ -127,6 +127,26 @@ public final class BTCCoreConfig {
     public static boolean disableFallDamage = false; // Simplified for now
     public static java.util.Map<String, Double> blastResistanceOverrides = new java.util.HashMap<>();
 
+
+
+    // Minecarts
+    public static boolean controllableMinecarts = false;
+    public static double controllableMinecartStepHeight = 1.0;
+    public static double controllableMinecartHopBoost = 0.5;
+
+    // Elytra
+    public static int elytraDamagePerSecond = 1;
+    public static int elytraDamagePerBoost = 5;
+    public static boolean elytraIgnoreUnbreaking = false;
+
+    // Mobs/Spawners
+    public static boolean rideableMobs = false;
+    public static boolean silkTouchSpawners = false;
+
+    // Inventory
+    public static int barrelRows = 3;
+    public static int enderChestRows = 3;
+
     // === CANVAS SETTINGS ===
     // Networking
     public static boolean filterClientboundSetEntityMotionPacket = false;
@@ -150,6 +170,9 @@ public final class BTCCoreConfig {
     public static int particleCullingDistance = 64;
     public static boolean soundCullingEnabled = true;
     public static int soundCullingDistance = 48;
+    
+    public static boolean betterHudCullingEnabled = true;
+    public static int betterHudCullingDistance = 48;
 
     // Scoreboard Optimization
     public static boolean scoreboardOptimization = true;
@@ -181,6 +204,10 @@ public final class BTCCoreConfig {
     // Redstone Throttle
     public static boolean redstoneThrottleEnabled = true;
     public static int redstoneThrottleMaxPerChunk = 100;
+    
+    public static boolean vanillaTickSuppressionAi = false;
+    public static boolean vanillaTickSuppressionBrain = false;
+    public static boolean vanillaTickSuppressionSensors = false;
 
     // Async Block Updates
     public static boolean asyncBlockUpdatesEnabled = true;
@@ -460,7 +487,25 @@ public final class BTCCoreConfig {
                 blastResistanceOverrides.put(key, section.getDouble(key));
             }
         }
-        }
+
+        // Minecarts
+        controllableMinecarts = getBoolean("gameplay.minecart.controllable.enabled", false);
+        controllableMinecartStepHeight = getDouble("gameplay.minecart.controllable.step-height", 1.0);
+        controllableMinecartHopBoost = getDouble("gameplay.minecart.controllable.hop-boost", 0.5);
+
+        // Elytra
+        elytraDamagePerSecond = getInt("gameplay.elytra.damage-per-second", 1);
+        elytraDamagePerBoost = getInt("gameplay.elytra.damage-per-boost", 5);
+        elytraIgnoreUnbreaking = getBoolean("gameplay.elytra.ignore-unbreaking", false);
+
+        // Mobs/Spawners
+        rideableMobs = getBoolean("gameplay.rideable-mobs.enabled", false);
+        silkTouchSpawners = getBoolean("gameplay.silk-touch-spawners", false);
+
+        // Inventory
+        barrelRows = getInt("inventory.barrel-rows", 3);
+        enderChestRows = getInt("inventory.ender-chest-rows", 3);
+    }
 
 
     private static void initCanvasSettings() {
@@ -490,6 +535,10 @@ public final class BTCCoreConfig {
         // Sound Culling
         soundCullingEnabled = getBoolean("performance.sound-culling.enabled", true);
         soundCullingDistance = getInt("performance.sound-culling.distance", 48);
+
+        // BetterHUD Culling
+        betterHudCullingEnabled = getBoolean("performance.better-hud-culling.enabled", true);
+        betterHudCullingDistance = getInt("performance.better-hud-culling.distance", 48);
 
         // Scoreboard Optimization
         scoreboardOptimization = getBoolean("performance.scoreboard-optimization", true);
@@ -521,6 +570,15 @@ public final class BTCCoreConfig {
         // Redstone Throttle
         redstoneThrottleEnabled = getBoolean("performance.redstone-throttle.enabled", true);
         redstoneThrottleMaxPerChunk = getInt("performance.redstone-throttle.max-per-chunk", 100);
+
+        // Redstone Throttle
+        redstoneThrottleEnabled = getBoolean("performance.redstone-throttle.enabled", true);
+        redstoneThrottleMaxPerChunk = getInt("performance.redstone-throttle.max-per-chunk", 100);
+
+        // Vanilla Tick Suppression
+        vanillaTickSuppressionAi = getBoolean("performance.vanilla-tick-suppression.ai", false);
+        vanillaTickSuppressionBrain = getBoolean("performance.vanilla-tick-suppression.brain", false);
+        vanillaTickSuppressionSensors = getBoolean("performance.vanilla-tick-suppression.sensors", false);
 
         // Async Block Updates
         asyncBlockUpdatesEnabled = getBoolean("performance.async-block-updates", true);

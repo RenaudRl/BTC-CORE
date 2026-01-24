@@ -958,6 +958,17 @@ public class ChunkMap extends SimpleRegionStorage implements ChunkHolder.PlayerP
             }
 
             // Paper - rewrite chunk system
+            // ASP start - PlayerEnterRegionEvent (Folia region awareness)
+            int shift = io.papermc.paper.threadedregions.TickRegions.getRegionChunkShift();
+            int oldRegionX = lastSectionPos.x() >> shift;
+            int oldRegionZ = lastSectionPos.z() >> shift;
+            int newRegionX = sectionPos.x() >> shift;
+            int newRegionZ = sectionPos.z() >> shift;
+
+            if (oldRegionX != newRegionX || oldRegionZ != newRegionZ) {
+                new com.infernalsuite.asp.event.player.PlayerEnterRegionEvent(player.getBukkitEntity(), oldRegionX, oldRegionZ, newRegionX, newRegionZ).callEvent();
+            }
+            // ASP end
         }
         ca.spottedleaf.moonrise.common.PlatformHooks.get().updateMaps(this.level, player); // Paper - rewrite chunk system
     }

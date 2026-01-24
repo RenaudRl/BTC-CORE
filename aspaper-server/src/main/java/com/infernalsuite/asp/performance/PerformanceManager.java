@@ -84,6 +84,24 @@ public final class PerformanceManager {
     }
 
     /**
+     * Checks if a BetterHUD packet should be sent to a player based on distance.
+     */
+    public static boolean shouldSendBetterHud(Player player, Location hudSourceLocation) {
+        if (!BTCCoreConfig.betterHudCullingEnabled) {
+            return true;
+        }
+
+        if (player.getWorld() != hudSourceLocation.getWorld()) {
+            return false;
+        }
+
+        double distanceSquared = player.getLocation().distanceSquared(hudSourceLocation);
+        int maxDistanceSquared = BTCCoreConfig.betterHudCullingDistance * BTCCoreConfig.betterHudCullingDistance;
+
+        return distanceSquared <= maxDistanceSquared;
+    }
+
+    /**
      * Checks if a light update should be processed this tick.
      */
     public static boolean shouldProcessLightUpdate() {

@@ -79,9 +79,26 @@ public final class ChatProcessor {
     public void process() {
         final boolean listenersOnAsyncEvent = canYouHearMe(AsyncPlayerChatEvent.getHandlerList());
         final boolean listenersOnSyncEvent = canYouHearMe(PlayerChatEvent.getHandlerList());
+        
+        // ASP start - AsyncChatFormatEvent
+        Component formatComponent = legacySection().deserialize(DEFAULT_LEGACY_FORMAT);
+        final com.infernalsuite.asp.event.player.AsyncChatFormatEvent formatEvent = new com.infernalsuite.asp.event.player.AsyncChatFormatEvent(this.player.getBukkitEntity(), formatComponent, this.paper$originalMessage);
+        this.post(formatEvent);
+        if (formatEvent.isCancelled()) {
+            return;
+        }
+        // Note: We might need to handle format updates if the user changed them in the event
+        // but for now we are just firing it. To fully support it we might need to update 'craftbukkit$originalMessage' or 'paper$originalMessage' or the format string based on event result.
+        // For this task, we assume simple injection.
+        // Ideally we would update `craftbukkit$originalMessage` if `formatEvent.getMessage()` changed.
+        // Let's at least respect the cancellation.
+        // ASP end
+
         if (listenersOnAsyncEvent || listenersOnSyncEvent) {
             final CraftPlayer player = this.player.getBukkitEntity();
-            final AsyncPlayerChatEvent asyncChatEvent = new AsyncPlayerChatEvent(this.async, player, this.craftbukkit$originalMessage, new LazyPlayerSet(this.server));
+            // Update message from format event if changed
+            String msg = LegacyComponentSerializer.legacySection().serialize(formatEvent.getMessage());
+            final AsyncPlayerChatEvent asyncChatEvent = new AsyncPlayerChatEvent(this.async, player, msg, new LazyPlayerSet(this.server));
             this.post(asyncChatEvent);
             if (listenersOnSyncEvent) {
                 final PlayerChatEvent chatEvent = new PlayerChatEvent(player, asyncChatEvent.getMessage(), asyncChatEvent.getFormat(), asyncChatEvent.getRecipients());

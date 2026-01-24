@@ -1429,6 +1429,15 @@ public abstract class LivingEntity extends Entity implements Attackable, Waypoin
                 amount = 0.0F;
             }
 
+            // BTC-CORE start - PreDamageCalculationEvent
+            com.infernalsuite.asp.event.entity.PreDamageCalculationEvent preDamageEvent = new com.infernalsuite.asp.event.entity.PreDamageCalculationEvent(this.getBukkitEntity(), damageSource.getEntity() == null ? null : damageSource.getEntity().getBukkitEntity(), amount);
+            this.level().getCraftServer().getPluginManager().callEvent(preDamageEvent);
+            if (preDamageEvent.isCancelled()) {
+                return false;
+            }
+            amount = (float) preDamageEvent.getFinalDamage();
+            // BTC-CORE end
+
             ItemStack useItem = this.getUseItem();
             float originAmount = amount;
             float f1 = this.applyItemBlocking(level, damageSource, amount, true); // Paper
