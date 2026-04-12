@@ -155,6 +155,7 @@ public final class NaturalSpawner {
     }
 
     public static void spawnForChunk(ServerLevel level, LevelChunk chunk, NaturalSpawner.SpawnState spawnState, List<MobCategory> categories) {
+        if (!com.infernalsuite.asp.config.BTCCoreConfig.rpgVanillaSpawnsEnabled) return;
         ProfilerFiller profilerFiller = Profiler.get();
         profilerFiller.push("spawner");
 

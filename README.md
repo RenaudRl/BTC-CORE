@@ -320,6 +320,33 @@ BTC-CORE is primarily tuned via `btccore.yml`.
 | `redstone-throttle.enabled` | `true` | Limits redstone updates per chunk. |
 | `redstone-throttle.max-per-chunk` | `100` | Max redstone updates per chunk. |
 
+### 🧙 Typewriter RPG Extensions & Optimizations
+| Key | Default | Description |
+|-----|---------|-------------|
+| `rpg.world-events.enabled` | `true` | Enables vanilla world events (Raids, Dragon Fights). |
+| `rpg.weather-ticks.enabled` | `true` | Enables global vanilla weather cycle. |
+| `rpg.spawns.vanilla-spawns-enabled` | `true` | Controls natural spawns, spawners, phantoms, and traders. |
+| `rpg.ai.optimized-goal-selectors` | `false` | Throttles vanilla Goal Selectors according to distance (MythicMobs/BTCMob bypass). |
+| `rpg.redstone.static-graph-enabled` | `false` | Fully neutralizes Vanilla redstone BlockUpdates in favor of a Static Directed Weighted Graph. |
+| `rpg.redstone.static-graph-worlds` | `["redstone_plots"]` | List of worlds where the static redstone algorithm operates. |
+
+### ⚔️ Native Anticheat Engine (Asynchronous)
+BTC-CORE integrates a 100% native asynchronous anticheat capability directly in the NMS Packet Handling pipeline (`ServerGamePacketListenerImpl`). 
+*Inspired by the network predictability math of **LightningGrim AC**, this native engine runs purely in the JVM's ForkJoin pool to detect Reach & Velocity hacks natively with 0.0 MSPT overhead on the Main Thread.*
+These settings are governed by the `anticheat.yml` configuration file.
+| Key | Default | Description |
+|-----|---------|-------------|
+| `engine.async-packet-validation.enabled` | `true` | Enables the async verification thread pool for incoming combat/movement packets. |
+| `engine.async-packet-validation.threads` | `2` | Number of dedicated threads for the validation engine. |
+| `checks.reach.enabled` | `true` | Enables native asynchronous Reach verification. |
+| `checks.reach.strict-hitbox-math` | `true` | Validates exactly on the bounding box limits natively. |
+| `checks.velocity.enabled` | `true` | Enables native asynchronous Speed/Velocity checking. |
+
+### 🎨 Visual Core APIs (Asynchronous)
+Dedicated to massive Display Entity handling (*BetterModel*, *TextDisplayDialogue*) and Virtual GUIs (*AdvancedMenu*), `BTCCoreVisualAPI` bypasses native Bukkit Thread locks for instantiating purely UI-focused networks.
+- `BTCCoreVisualAPI.sendAsyncVirtualInventory` : Generates an un-tracked container update entirely off the Main Thread.
+- `BTCCoreVisualAPI.spawnAsyncDisplayEntity` : Casts a Display Entity exclusively network-side with 0 MSPT logic overhead.
+
 ### 🛡️ Security (FreedomChat)
 | Key | Default | Description |
 |-----|---------|-------------|
@@ -374,7 +401,11 @@ Requires **Java 21** and a strong understanding of Gradle.
 
 ```bash
 
-# Compile standard build
+# 🚨 IMPORTANT: Development Rules 
+# If you manually modify /aspaper-server/src, YOU MUST rebuild and serialize patches before applying or you will lose your work!
+# To commit NMS changes in the git tree, run standard git commands inside /aspaper-server/ or run the appropriate Paperweight command.
+
+# Compile standard build completely natively (Recommended for immediate tests)
 ./gradlew build
 
 # Generate reobfuscated Paperclip JAR (recommended for production)
@@ -383,10 +414,15 @@ Requires **Java 21** and a strong understanding of Gradle.
 
 ---
 
-## 🤝 Credits & Ecosystem
+## 🧩 Credits & Ecosystem
 BTC-CORE is a "Frankenstein" fork, stitching together the most advanced components from the entire Minecraft server ecosystem. We owe our existence to the innovation of these projects:
 
-### 🏛️ Foundation
+### ⚙️ Core Modules (Inspirations)
+- **[MCHPRS / RedPillar]**: Inspiration for the `Static Directed Weighted Graph` underlying our Custom Redstone system. Wait-less block updates.
+- **[Pufferfish]**: Inspiration for the `Dynamic Activation of Brains (DAB)` throttling algorithm governing the Mob AI performance.
+- **[LightningGrim]**: Core combat maths translated natively into JVM Asynchronous thread pools for the Native Anticheat.
+
+### 🏗️ Foundation
 - **[Advanced Slime Paper](https://github.com/InfernalSuite/AdvancedSlimePaper)**: The backbone of our world management, providing the Slime Region Format (SRF) and instantaneous world instancing.
 - **[Folia](https://github.com/PaperMC/Folia)**: The revolutionary multi-threading architecture that allows BTC-CORE to scale beyond a single CPU core.
 - **[Paper](https://github.com/PaperMC/Paper)**: The standard for high-performance Minecraft servers, upon which all our patches rely.

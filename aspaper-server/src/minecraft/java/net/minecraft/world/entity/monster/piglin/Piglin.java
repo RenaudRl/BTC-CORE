@@ -312,6 +312,8 @@ public class Piglin extends AbstractPiglin implements CrossbowAttackMob, Invento
 
     @Override
     protected void customServerAiStep(ServerLevel level) {
+        this.behaviorTick++;
+        if (this.behaviorTick % this.activatedPriority != 0) return;
         ProfilerFiller profilerFiller = Profiler.get();
         profilerFiller.push("piglinBrain");
         this.getBrain().tick(level, this);

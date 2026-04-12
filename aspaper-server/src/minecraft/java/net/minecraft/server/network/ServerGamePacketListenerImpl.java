@@ -1424,6 +1424,12 @@ public class ServerGamePacketListenerImpl
             this.disconnect(Component.translatable("multiplayer.disconnect.invalid_player_movement"), org.bukkit.event.player.PlayerKickEvent.Cause.INVALID_PLAYER_MOVEMENT); // Paper - kick event cause
         } else {
             ServerLevel serverLevel = this.player.level();
+
+            // BTC-CORE start - Async Velocity Validation
+            if (packet.hasPosition()) {
+                com.infernalsuite.asp.security.AsyncPacketValidator.validateVelocity(this.player, this.player.getX(), this.player.getY(), this.player.getZ(), packet.getX(this.player.getX()), packet.getY(this.player.getY()), packet.getZ(this.player.getZ()));
+            }
+            // BTC-CORE end
             if (!this.player.wonGame && !this.player.isImmobile()) { // CraftBukkit
                 if (this.tickCount == 0) {
                     this.resetPosition();
@@ -2785,6 +2791,12 @@ public class ServerGamePacketListenerImpl
         if (this.hasClientLoaded()) {
             final ServerLevel serverLevel = this.player.level();
             final Entity target = packet.getTarget(serverLevel);
+
+            // BTC-CORE start - Async Reach Validation
+            if (target != null) {
+                com.infernalsuite.asp.security.AsyncPacketValidator.validateReach(this.player, target, this.player.getX(), this.player.getY(), this.player.getZ());
+            }
+            // BTC-CORE end
             // Spigot start
             if (target == this.player && !this.player.isSpectator()) {
                 this.disconnect(Component.literal("Cannot interact with self!"), org.bukkit.event.player.PlayerKickEvent.Cause.SELF_INTERACTION); // Paper - kick event cause

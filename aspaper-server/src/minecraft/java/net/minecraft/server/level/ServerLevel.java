@@ -799,7 +799,9 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
             profilerFiller.push("world border");
             this.getWorldBorder().tick();
             profilerFiller.popPush("weather");
-            this.advanceWeatherCycle();
+            if (com.infernalsuite.asp.config.BTCCoreConfig.rpgWeatherTicksEnabled) {
+                this.advanceWeatherCycle();
+            }
             profilerFiller.pop();
         }
 
@@ -846,7 +848,9 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
 
         profilerFiller.popPush("raid");
         if (runsNormally) {
-            this.raids.tick(this);
+            if (com.infernalsuite.asp.config.BTCCoreConfig.rpgWorldEventsEnabled) {
+                this.raids.tick(this);
+            }
         }
 
         profilerFiller.popPush("chunkSource");
@@ -869,7 +873,7 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
 
         if (this.emptyTime < 300) {
             profilerFiller.push("entities");
-            if (this.dragonFight != null && runsNormally) {
+            if (this.dragonFight != null && runsNormally && com.infernalsuite.asp.config.BTCCoreConfig.rpgWorldEventsEnabled) {
                 profilerFiller.push("dragonFight");
                 this.dragonFight.tick();
                 profilerFiller.pop();
@@ -879,6 +883,7 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
             this.entityTickList
                 .forEach(
                     entity -> {
+                        entity.activatedPriorityReset = false; // Pufferfish - DAB
                         if (!entity.isRemoved()) {
                             if (!tickRateManager.isEntityFrozen(entity)) {
                                 profilerFiller.push("checkDespawn");
@@ -953,6 +958,7 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
     }
 
     public void tickCustomSpawners(boolean spawnEnemies) {
+        if (!com.infernalsuite.asp.config.BTCCoreConfig.rpgVanillaSpawnsEnabled) return;
         for (CustomSpawner customSpawner : this.customSpawners) {
             customSpawner.tick(this, spawnEnemies);
         }

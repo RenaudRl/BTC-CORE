@@ -130,6 +130,7 @@ public abstract class Mob extends LivingEntity implements EquipmentUser, Leashab
     public int ambientSoundTime;
     protected int xpReward;
     protected LookControl lookControl;
+    private int _pufferfish_inactiveTickDisableCounter = 0; // Pufferfish - DAB
     protected MoveControl moveControl;
     protected JumpControl jumpControl;
     private final BodyRotationControl bodyRotationControl;
@@ -221,10 +222,11 @@ public abstract class Mob extends LivingEntity implements EquipmentUser, Leashab
     @Override
     public void inactiveTick() {
         super.inactiveTick();
-        if (this.goalSelector.inactiveTick()) {
+        boolean isThrottled = com.infernalsuite.asp.config.BTCCoreConfig.inactiveGoalSelectorThrottle && this._pufferfish_inactiveTickDisableCounter++ % 20 != 0; // Pufferfish - DAB
+        if (this.goalSelector.inactiveTick(this.activatedPriority) && !isThrottled) {
             this.goalSelector.tick();
         }
-        if (this.targetSelector.inactiveTick()) {
+        if (this.targetSelector.inactiveTick(this.activatedPriority)) {
             this.targetSelector.tick();
         }
     }
@@ -818,31 +820,23 @@ public abstract class Mob extends LivingEntity implements EquipmentUser, Leashab
             return;
         }
         // Paper end - Allow nerfed mobs to jump and float
+        this.behaviorTick++;
+        if (com.infernalsuite.asp.config.BTCCoreConfig.rpgOptimizedGoalSelectors && this.behaviorTick % this.activatedPriority != 0) return;
+
         ProfilerFiller profilerFiller = Profiler.get();
         profilerFiller.push("sensing");
         if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionSensors)
         this.sensing.tick();
         profilerFiller.pop();
-        int i = this.tickCount + this.getId();
-        if (i % 2 != 0 && this.tickCount > 1) {
-            profilerFiller.push("targetSelector");
-            if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
-            this.targetSelector.tickRunningGoals(false);
-            profilerFiller.pop();
-            profilerFiller.push("goalSelector");
-            if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
-            this.goalSelector.tickRunningGoals(false);
-            profilerFiller.pop();
-        } else {
-            profilerFiller.push("targetSelector");
-            if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
-            this.targetSelector.tick();
-            profilerFiller.pop();
-            profilerFiller.push("goalSelector");
-            if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
-            this.goalSelector.tick();
-            profilerFiller.pop();
-        }
+        
+        profilerFiller.push("targetSelector");
+        if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
+        this.targetSelector.tick();
+        profilerFiller.pop();
+        profilerFiller.push("goalSelector");
+        if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)
+        this.goalSelector.tick();
+        profilerFiller.pop();
 
         profilerFiller.push("navigation");
         if (!com.infernalsuite.asp.config.BTCCoreConfig.vanillaTickSuppressionAi)

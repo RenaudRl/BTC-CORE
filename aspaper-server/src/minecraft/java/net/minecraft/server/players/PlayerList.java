@@ -187,7 +187,7 @@ public abstract class PlayerList {
                 !flag,
                 flag2,
                 player.createCommonSpawnInfo(serverLevel),
-                this.server.enforceSecureProfile()
+                this.server.enforceSecureProfile() || (com.infernalsuite.asp.config.BTCCoreConfig.freedomChatEnabled && com.infernalsuite.asp.config.BTCCoreConfig.freedomChatEnforceSecureChat)
             )
         );
         player.getBukkitEntity().sendSupportedChannels(); // CraftBukkit

@@ -567,6 +567,13 @@ public class WitherBoss extends Monster implements RangedAttackMob {
         return this.entityData.get(DATA_TARGETS.get(head));
     }
 
+    // Pufferfish start - DAB
+    @Override
+    public boolean shouldCheckForSuffocation() {
+        return true;
+    }
+    // Pufferfish end
+
     public void setAlternativeTarget(int targetOffset, int newId) {
         this.entityData.set(DATA_TARGETS.get(targetOffset), newId);
     }

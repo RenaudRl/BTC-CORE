@@ -290,6 +290,8 @@ public class Villager extends AbstractVillager implements ReputationEventHandler
 
     @Override
     protected void customServerAiStep(ServerLevel level) {
+        this.behaviorTick++;
+        if (this.behaviorTick % this.activatedPriority != 0) return;
         // Paper start - EAR 2
         this.customServerAiStep(level, false);
     }

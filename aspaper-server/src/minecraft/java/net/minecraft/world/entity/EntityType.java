@@ -1220,6 +1220,7 @@ public class EntityType<T extends Entity> implements FeatureElement, EntityTypeT
     private final boolean canSpawnFarFromPlayer;
     private final int clientTrackingRange;
     private final int updateInterval;
+    public boolean dabEnabled = false; // Pufferfish
     private final String descriptionId;
     private @Nullable Component description;
     private final Optional<ResourceKey<LootTable>> lootTable;
@@ -1263,7 +1264,8 @@ public class EntityType<T extends Entity> implements FeatureElement, EntityTypeT
         String descriptionId,
         Optional<ResourceKey<LootTable>> lootTable,
         FeatureFlagSet requiredFeatures,
-        boolean allowedInPeaceful
+        boolean allowedInPeaceful,
+        boolean dabEnabled
     ) {
         this.factory = factory;
         this.category = category;
@@ -1276,6 +1278,7 @@ public class EntityType<T extends Entity> implements FeatureElement, EntityTypeT
         this.spawnDimensionsScale = spawnDimensionsScale;
         this.clientTrackingRange = clientTrackingRange;
         this.updateInterval = updateInterval;
+        this.dabEnabled = dabEnabled;
         this.descriptionId = descriptionId;
         this.lootTable = lootTable;
         this.requiredFeatures = requiredFeatures;
@@ -1752,11 +1755,13 @@ public class EntityType<T extends Entity> implements FeatureElement, EntityTypeT
         );
         private final DependantName<EntityType<?>, String> descriptionId = key -> Util.makeDescriptionId("entity", key.identifier());
         private boolean allowedInPeaceful = true;
+        private boolean dabEnabled = false; // Pufferfish
 
         private Builder(EntityType.EntityFactory<T> factory, MobCategory category) {
             this.factory = factory;
             this.category = category;
             this.canSpawnFarFromPlayer = category == MobCategory.CREATURE || category == MobCategory.MISC;
+            this.dabEnabled = category != MobCategory.MISC; // Pufferfish - DAB
         }
 
         public static <T extends Entity> EntityType.Builder<T> of(EntityType.EntityFactory<T> factory, MobCategory category) {
@@ -1870,6 +1875,11 @@ public class EntityType<T extends Entity> implements FeatureElement, EntityTypeT
             return this;
         }
 
+        public EntityType.Builder<T> dabEnabled() {
+            this.dabEnabled = true;
+            return this;
+        }
+
         public EntityType<T> build(ResourceKey<EntityType<?>> entityType) {
             if (this.serialize) {
                 Util.fetchChoiceType(References.ENTITY_TREE, entityType.identifier().toString());
@@ -1890,7 +1900,8 @@ public class EntityType<T extends Entity> implements FeatureElement, EntityTypeT
                 this.descriptionId.get(entityType),
                 this.lootTable.get(entityType),
                 this.requiredFeatures,
-                this.allowedInPeaceful
+                this.allowedInPeaceful,
+                this.dabEnabled // Pufferfish
             );
         }
     }

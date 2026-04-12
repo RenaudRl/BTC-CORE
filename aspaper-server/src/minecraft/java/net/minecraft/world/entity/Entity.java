@@ -367,6 +367,9 @@ public abstract class Entity implements SyncedDataHolder, DebugValueSource, Name
     public boolean fixedPose = false; // Paper - Expand Pose API
     private final int despawnTime; // Paper - entity despawn time limit
     public int totalEntityAge; // Paper - age-like counter for all entities
+    public boolean activatedPriorityReset = false; // Pufferfish - DAB
+    public int activatedPriority = 1; // Pufferfish - DAB
+    public int behaviorTick = 0; // Pufferfish - DAB
     public final io.papermc.paper.entity.activation.ActivationType activationType = io.papermc.paper.entity.activation.ActivationType.activationTypeFor(this); // Paper - EAR 2/tracking ranges
     // Paper start - EAR 2
     public final boolean defaultActivationState;

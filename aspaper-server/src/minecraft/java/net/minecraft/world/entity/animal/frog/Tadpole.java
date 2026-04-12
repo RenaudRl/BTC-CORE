@@ -99,6 +99,8 @@ public class Tadpole extends AbstractFish {
 
     @Override
     protected void customServerAiStep(ServerLevel level) {
+        this.behaviorTick++;
+        if (this.behaviorTick % this.activatedPriority != 0) return;
         ProfilerFiller profilerFiller = Profiler.get();
         profilerFiller.push("tadpoleBrain");
         this.getBrain().tick(level, this);

@@ -69,7 +69,7 @@ public final class BTCCoreConfig {
 
     // === ENTITY OPTIMIZATIONS (Pufferfish Port) ===
     // Dynamic Entity Activation of Brain (DEAR)
-    public static boolean dearEnabled = true;
+    public static boolean dearEnabled = false;
     public static int dearStartDistance = 12;
     public static int dearStartDistanceSquared = 12 * 12;
     public static int dearMaxTickFreq = 20;
@@ -98,6 +98,12 @@ public final class BTCCoreConfig {
 
     // Packet Limiter & Spam Limiter
     public static int spamLimiterIncomingPacketThreshold = 300;
+
+    // === RPG OPTIMIZATIONS (Typewriter) ===
+    public static boolean rpgOptimizedGoalSelectors = false;
+    public static boolean rpgRedstoneStaticGraphEnabled = false;
+    public static java.util.List<String> rpgRedstoneStaticGraphWorlds = java.util.Collections.singletonList("redstone_plots");
+    
     public static double packetLimiterAllPacketsMaxRate = 500.0;
     public static double packetLimiterAllPacketsInterval = 7.0;
     public static String packetLimiterKickMessage = "<red>Exceeded packet rate";
@@ -211,6 +217,22 @@ public final class BTCCoreConfig {
 
     // Async Block Updates
     public static boolean asyncBlockUpdatesEnabled = true;
+
+    // === RPG / TYPEWRITER DEDICATED OPTIMIZATIONS ===
+    // Spawns & Events
+    public static boolean rpgVanillaSpawnsEnabled = false;
+    public static boolean rpgWorldEventsEnabled = false;
+    public static boolean rpgWeatherTicksEnabled = false;
+
+    // Goal Selectors
+    public static boolean rpgOptimizedGoalSelectors = true;
+
+    // Static Graph Redstone
+    public static boolean rpgRedstoneStaticGraphEnabled = true;
+    public static java.util.List<String> rpgRedstoneWhitelistedWorlds = new java.util.ArrayList<>();
+
+    // Native Anticheat (Grim)
+    public static boolean rpgAnticheatEnabled = true;
 
     // === SECURITY ===
     // Combat Log Prevention
@@ -328,6 +350,9 @@ public final class BTCCoreConfig {
         // === BTC-CORE PHASE 3+ FEATURES ===
         initPhase3Features();
 
+        // === RPG OPTIMIZATIONS ===
+        initRpgOptimizations();
+
         save();
         applyToPaper();
     }
@@ -434,7 +459,7 @@ public final class BTCCoreConfig {
 
     private static void initEntityOptimizations() {
         // Dynamic Entity Activation of Brain (DEAR)
-        dearEnabled = getBoolean("entity-optimization.dear.enabled", true);
+        dearEnabled = getBoolean("entity-optimization.dear.enabled", false);
         dearStartDistance = getInt("entity-optimization.dear.start-distance", 12);
         dearStartDistanceSquared = dearStartDistance * dearStartDistance;
         dearMaxTickFreq = getInt("entity-optimization.dear.max-tick-freq", 20);
@@ -625,5 +650,32 @@ public final class BTCCoreConfig {
         playerDataBackupIntervalTicks = getInt("qol.player-data-backup.interval-ticks", 6000);
 
         Bukkit.getLogger().info("[BTC-CORE] Phase 3+ Features initialized");
+    }
+
+    private static void initRpgOptimizations() {
+        // Spawns & Events
+        rpgVanillaSpawnsEnabled = getBoolean("rpg-optimization.vanilla-spawns.enabled", false);
+        rpgWorldEventsEnabled = getBoolean("rpg-optimization.world-events.enabled", false);
+        rpgWeatherTicksEnabled = getBoolean("rpg-optimization.weather-ticks.enabled", false);
+
+        // Goal Selectors
+        rpgOptimizedGoalSelectors = getBoolean("rpg-optimization.optimized-goal-selectors.enabled", true);
+
+        // Native Anticheat
+        rpgAnticheatEnabled = getBoolean("rpg-optimization.anticheat.enabled", true);
+
+        // Redstone Static Graph
+        rpgRedstoneStaticGraphEnabled = getBoolean("rpg-optimization.redstone-static-graph.enabled", true);
+        
+        String redstoneWhitelistPath = "rpg-optimization.redstone-static-graph.whitelisted-worlds";
+        if (config.contains(redstoneWhitelistPath)) {
+            rpgRedstoneWhitelistedWorlds = config.getStringList(redstoneWhitelistPath);
+        } else {
+            java.util.List<String> defaultWorlds = java.util.Arrays.asList("world_island");
+            config.set(redstoneWhitelistPath, defaultWorlds);
+            rpgRedstoneWhitelistedWorlds = defaultWorlds;
+        }
+
+        Bukkit.getLogger().info("[BTC-CORE] RPG Optimizations initialized");
     }
 }

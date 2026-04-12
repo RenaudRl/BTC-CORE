@@ -274,6 +274,13 @@ public class RedStoneWireBlock extends Block {
      * Note: Added 'source' argument so as to help determine direction of information flow
      */
     private void updateSurroundingRedstone(Level worldIn, BlockPos pos, BlockState state, @Nullable Orientation orientation, boolean blockAdded) {
+        if (com.infernalsuite.asp.config.BTCCoreConfig.rpgRedstoneStaticGraphEnabled && com.infernalsuite.asp.config.BTCCoreConfig.rpgRedstoneStaticGraphWorlds.contains(worldIn.getWorld().getName())) {
+            // RPG Static Redstone Graph interception
+            // Skip vanilla block updates completely for redstone wires on these worlds.
+            // A separate system will handle graph evaluation.
+            return;
+        }
+        
         if (worldIn.paperConfig().misc.redstoneImplementation == io.papermc.paper.configuration.WorldConfiguration.Misc.RedstoneImplementation.EIGENCRAFT) {
             // since 24w33a the source pos is no longer given, but instead an Orientation parameter
             // when this is not null, it can be used to find the source pos, which the turbo uses

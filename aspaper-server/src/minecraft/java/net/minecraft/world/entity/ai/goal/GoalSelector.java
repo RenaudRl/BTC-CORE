@@ -36,9 +36,9 @@ public class GoalSelector {
     }
 
     // Paper start - EAR 2
-    public boolean inactiveTick() {
+    public boolean inactiveTick(int tickRate) {
         this.curRate++;
-        return this.curRate % 3 == 0; // TODO newGoalRate was already unused in 1.20.4, check if this is correct
+        return this.curRate % (3 * tickRate) == 0; // Pufferfish - DAB
     }
 
     public boolean hasTasks() {

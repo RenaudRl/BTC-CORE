@@ -164,7 +164,7 @@ public final class ActivationRange {
                     continue;
                 }
 
-                ActivationRange.activateEntity(entity);
+                ActivationRange.activateEntity(entity, player);
             }
         }
     }
@@ -174,14 +174,28 @@ public final class ActivationRange {
      *
      * @param entity
      */
-    private static void activateEntity(final Entity entity) {
-        if (MinecraftServer.currentTick > entity.activatedTick) {
+    private static void activateEntity(final Entity entity, final Player player) {
+        if (net.minecraft.server.MinecraftServer.currentTick > entity.activatedTick) {
             if (entity.defaultActivationState) {
-                entity.activatedTick = MinecraftServer.currentTick;
+                entity.activatedTick = net.minecraft.server.MinecraftServer.currentTick;
                 return;
             }
+            if (com.infernalsuite.asp.config.BTCCoreConfig.dearEnabled && entity.getType().dabEnabled) {
+                if (!entity.activatedPriorityReset) {
+                    entity.activatedPriorityReset = true;
+                    entity.activatedPriority = com.infernalsuite.asp.config.BTCCoreConfig.dearMaxTickFreq;
+                }
+                net.minecraft.world.phys.Vec3 playerVec = player.position();
+                net.minecraft.world.phys.Vec3 entityVec = entity.position();
+                double diffX = playerVec.x - entityVec.x, diffY = playerVec.y - entityVec.y, diffZ = playerVec.z - entityVec.z;
+                int squaredDistance = (int) (diffX * diffX + diffY * diffY + diffZ * diffZ);
+                entity.activatedPriority = squaredDistance > com.infernalsuite.asp.config.BTCCoreConfig.dearStartDistanceSquared ?
+                        Math.min(com.infernalsuite.asp.config.BTCCoreConfig.dearMaxTickFreq, (squaredDistance / com.infernalsuite.asp.config.BTCCoreConfig.dearActivationDistMod)) : 1;
+            } else {
+                entity.activatedPriority = 1;
+            }
             if (entity.activationType.boundingBox.intersects(entity.getBoundingBox())) {
-                entity.activatedTick = MinecraftServer.currentTick;
+                entity.activatedTick = net.minecraft.server.MinecraftServer.currentTick;
             }
         }
     }

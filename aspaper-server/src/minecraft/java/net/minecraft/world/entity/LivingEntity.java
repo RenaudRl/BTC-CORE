@@ -440,7 +440,7 @@ public abstract class LivingEntity extends Entity implements Attackable, Waypoin
         profilerFiller.push("livingEntityBaseTick");
         if (this.isAlive() && this.level() instanceof ServerLevel serverLevel1) {
             boolean flag = this instanceof Player;
-            if (this.isInWall()) {
+            if (shouldCheckForSuffocation() && this.isInWall()) { // Pufferfish - DAB
                 this.hurtServer(serverLevel1, this.damageSources().inWall(), 1.0F);
             } else if (flag && !serverLevel1.getWorldBorder().isWithinBounds(this.getBoundingBox())) {
                 double d = serverLevel1.getWorldBorder().getDistanceToBorder(this) + serverLevel1.getWorldBorder().getSafeZone();
@@ -3760,6 +3760,19 @@ public abstract class LivingEntity extends Entity implements Attackable, Waypoin
         this.xxa *= 0.98F;
         this.zza *= 0.98F;
     }
+
+    // Pufferfish start - optimize suffocation
+    public boolean couldPossiblyBeHurt(float amount) {
+        if ((float) this.invulnerableTime > (float) this.invulnerableDuration / 2.0F && amount <= this.lastHurt) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean shouldCheckForSuffocation() {
+        return !com.infernalsuite.asp.config.BTCCoreConfig.suffocationOptimization || (tickCount % 10 == 0 && couldPossiblyBeHurt(1.0F));
+    }
+    // Pufferfish end
 
     public boolean isSensitiveToWater() {
         return false;

@@ -1726,7 +1726,7 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
             Optional.of(players),
             Optional.of(ServerStatus.Version.current()),
             Optional.ofNullable(this.statusIcon),
-            this.enforceSecureProfile()
+            this.enforceSecureProfile() || (com.infernalsuite.asp.config.BTCCoreConfig.freedomChatEnabled && com.infernalsuite.asp.config.BTCCoreConfig.freedomChatEnforceSecureChat)
         );
     }
 

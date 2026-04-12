@@ -259,6 +259,9 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface 
         // BTC-CORE start
         com.infernalsuite.asp.config.BTCCoreConfig.init((java.io.File) this.options.valueOf("btccore-settings"));
         com.infernalsuite.asp.config.SlimeWorldConfig.getInstance(); // Initialize SlimeWorld gamerule config
+        com.infernalsuite.asp.config.AnticheatConfig.init(new java.io.File("anticheat.yml"));
+        com.infernalsuite.asp.security.AsyncPacketValidator.init();
+        com.infernalsuite.asp.visual.BTCCoreVisualAPIImpl.init(); // Native Visual Engine Hook
         // BTC-CORE end
         io.papermc.paper.util.ObfHelper.INSTANCE.getClass(); // Paper - load mappings for stacktrace deobf and etc.
         // Paper start - initialize global and world-defaults configuration

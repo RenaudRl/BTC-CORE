@@ -189,6 +189,8 @@ public class Goat extends Animal {
 
     @Override
     protected void customServerAiStep(ServerLevel level) {
+        this.behaviorTick++;
+        if (this.behaviorTick % this.activatedPriority != 0) return;
         ProfilerFiller profilerFiller = Profiler.get();
         profilerFiller.push("goatBrain");
         this.getBrain().tick(level, this);
