@@ -1647,9 +1647,24 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
         this.moonrise$getEntityLookup().addNewEntity(player); // Paper - rewrite chunk system
     }
 
+    // BTC-CORE start - Entity Cascading Limit
+    private static final ThreadLocal<Integer> CASCADING_SPAWN_DEPTH = ThreadLocal.withInitial(() -> 0);
+    // BTC-CORE end
+
     // CraftBukkit start
     private boolean addEntity(Entity entity, org.bukkit.event.entity.CreatureSpawnEvent.@Nullable SpawnReason spawnReason) {
         org.spigotmc.AsyncCatcher.catchOp("entity add"); // Spigot
+        
+        // BTC-CORE start - Entity Cascading Limit
+        int depth = CASCADING_SPAWN_DEPTH.get();
+        if (depth > com.infernalsuite.asp.config.BTCCoreConfig.cascadingEntitySpawnLimit) {
+            MinecraftServer.LOGGER.warn("Entity cascading limit reached! Prevented {} from spawning at {} to avoid a server crash.", entity.getType(), entity.position());
+            return false;
+        }
+        CASCADING_SPAWN_DEPTH.set(depth + 1);
+        try {
+        // BTC-CORE end
+        
         entity.generation = false; // Paper - Don't fire sync event during generation; Reset flag if it was added during a ServerLevel generation process
         // Paper start - extra debug info
         if (entity.valid) {
@@ -1677,6 +1692,11 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
 
             return this.moonrise$getEntityLookup().addNewEntity(entity); // Paper - rewrite chunk system
         }
+        // BTC-CORE start - Entity Cascading Limit
+        } finally {
+            CASCADING_SPAWN_DEPTH.set(depth);
+        }
+        // BTC-CORE end
     }
 
     public boolean tryAddFreshEntityWithPassengers(Entity entity) {

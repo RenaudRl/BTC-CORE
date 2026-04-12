@@ -132,6 +132,15 @@ public class HopperBlockEntity extends RandomizableContainerBlockEntity implemen
         blockEntity.cooldownTime--;
         blockEntity.tickedGameTime = level.getGameTime();
         if (!blockEntity.isOnCooldown()) {
+            // BTC-CORE start - SparklyPaper Adjusted Hopper Throttling
+            if (com.infernalsuite.asp.config.BTCCoreConfig.hopperThrottlingEnabled) {
+                if (level.getNearestPlayer((double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, 64.0D, false) == null) {
+                    blockEntity.setCooldown(com.infernalsuite.asp.config.BTCCoreConfig.hopperThrottlingTicks);
+                    return;
+                }
+            }
+            // BTC-CORE end
+
             blockEntity.setCooldown(0);
             // Spigot start
             boolean result = tryMoveItems(level, pos, state, blockEntity, () -> {

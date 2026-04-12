@@ -271,6 +271,8 @@ BTC-CORE is primarily tuned via `btccore.yml`.
 | `async-entity-tracker` | `true` | Offloads entity tracking to async threads (Leaf). |
 | `async-pathfinding` | `true` | Enables multi-threaded mob pathfinding (Leaf). |
 | `async-mob-spawning` | `true` | Spawns mobs asynchronously (Pufferfish). |
+| `cascadingEntitySpawnLimit` | `10` | Hard limit on recursive entity spawns to prevent infinite loops (Phase 5). |
+| `rpgCollisionCap` | `2` | Hard-cap on entities pushed per tick, mitigating O(N^2) lag in highly dense areas. |
 
 ### 🎯 Dynamic Entity Activation (DEAR/DAB)
 | Key | Default | Description |
@@ -390,6 +392,7 @@ Dedicated to massive Display Entity handling (*BetterModel*, *TextDisplayDialogu
 | Key | Default | Description |
 |-----|---------|-------------|
 | `packet-limiter.all-packets.max-rate` | `500.0` | Global packet rate limit. |
+| `nettyBurstLimiter` | `200` | Limits burst packet floods at the native Netty pipeline level (Phase 5). |
 | `native-transport` | `auto` | Transport type: `auto`, `epoll`, `io_uring`. |
 
 

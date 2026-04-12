@@ -56,6 +56,11 @@ public abstract class PathNavigation {
     private boolean isStuck;
     private float requiredPathLength = 16.0F;
 
+    // BTC-CORE start - Async Pathfinding
+    protected java.util.concurrent.Future<Path> futurePath;
+    protected int pendingReachRange;
+    // BTC-CORE end
+
     public PathNavigation(Mob mob, Level level) {
         this.mob = mob;
         this.level = level;
@@ -186,6 +191,22 @@ public abstract class PathNavigation {
             BlockPos blockPos = offsetUpward ? this.mob.blockPosition().above() : this.mob.blockPosition();
             int i = (int)(followRange + regionOffset);
             PathNavigationRegion pathNavigationRegion = new PathNavigationRegion(this.level, blockPos.offset(-i, -i, -i), blockPos.offset(i, i, i));
+            
+            // BTC-CORE start - Async Pathfinding Execution
+            if (com.infernalsuite.asp.config.BTCCoreConfig.asyncPathfindingEnabled && this.level instanceof ServerLevel) {
+                if (this.futurePath != null) {
+                    this.futurePath.cancel(false);
+                }
+                this.pendingReachRange = reachRange;
+                Set<BlockPos> finalTargets = targets;
+                this.futurePath = java.util.concurrent.ForkJoinPool.commonPool().submit(() -> {
+                    return this.pathFinder.findPath(pathNavigationRegion, this.mob, finalTargets, followRange, reachRange, this.maxVisitedNodesMultiplier);
+                });
+                profilerFiller.pop();
+                return null;
+            }
+            // BTC-CORE end
+
             Path path = this.pathFinder.findPath(pathNavigationRegion, this.mob, targets, followRange, reachRange, this.maxVisitedNodesMultiplier);
             profilerFiller.pop();
             if (path != null && path.getTarget() != null) {
@@ -262,6 +283,27 @@ public abstract class PathNavigation {
     }
 
     public void tick() {
+        // BTC-CORE start - Async Pathfinding Wait
+        if (this.futurePath != null) {
+            if (this.futurePath.isDone()) {
+                try {
+                    Path computedPath = this.futurePath.get();
+                    this.futurePath = null;
+                    if (computedPath != null && computedPath.getTarget() != null) {
+                        this.targetPos = computedPath.getTarget();
+                        this.reachRange = this.pendingReachRange;
+                        this.resetStuckTimeout();
+                        this.moveTo(computedPath, this.speedModifier);
+                    }
+                } catch (Exception e) {
+                    this.futurePath = null;
+                }
+            } else {
+                return; // Wait for calculation
+            }
+        }
+        // BTC-CORE end
+
         this.tick++;
         if (this.hasDelayedRecomputation) {
             this.recomputePath();

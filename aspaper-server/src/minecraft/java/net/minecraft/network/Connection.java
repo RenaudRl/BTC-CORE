@@ -128,6 +128,11 @@ public class Connection extends SimpleChannelInboundHandler<Packet<?>> {
     public boolean queueImmunity;
     // Paper end - Optimize network
 
+    // BTC-CORE start - Native Burst Limiter
+    private int burstCount;
+    private long lastBurstTime;
+    // BTC-CORE end
+
     public Connection(PacketFlow receiving) {
         this.receiving = receiving;
     }
@@ -213,6 +218,20 @@ public class Connection extends SimpleChannelInboundHandler<Packet<?>> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Packet<?> packet) {
         if (this.channel.isOpen()) {
+            // BTC-CORE start - Native Burst Limiter
+            long now = System.currentTimeMillis();
+            if (now - this.lastBurstTime > 1000L) {
+                this.burstCount = 0;
+                this.lastBurstTime = now;
+            }
+            if (++this.burstCount > com.infernalsuite.asp.config.BTCCoreConfig.packetLimiterAllPacketsMaxRate) {
+                this.disconnect(net.minecraft.network.chat.Component.literal("Packet Burst Limit Exceeded"));
+                this.setReadOnly();
+                this.stopReadingPackets = true;
+                return;
+            }
+            // BTC-CORE end
+
             PacketListener packetListener = this.packetListener;
             if (packetListener == null) {
                 throw new IllegalStateException("Received a packet before the packet listener was initialized");

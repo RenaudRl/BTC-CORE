@@ -4464,16 +4464,25 @@ public abstract class Entity implements SyncedDataHolder, DebugValueSource, Name
                 maxY = bb.maxY,
                 maxZ = bb.maxZ;
         double len = bb.maxX - bb.minX;
-        if (len < 0) maxX = minX;
+        if (len < 0 || Double.isNaN(len) || Double.isInfinite(len)) maxX = minX;
         if (len > 64) maxX = minX + 64.0;
 
         len = bb.maxY - bb.minY;
-        if (len < 0) maxY = minY;
+        if (len < 0 || Double.isNaN(len) || Double.isInfinite(len)) maxY = minY;
         if (len > 64) maxY = minY + 64.0;
 
         len = bb.maxZ - bb.minZ;
-        if (len < 0) maxZ = minZ;
+        if (len < 0 || Double.isNaN(len) || Double.isInfinite(len)) maxZ = minZ;
         if (len > 64) maxZ = minZ + 64.0;
+        
+        // BTC-CORE start - Disjoncteur hitbox invisibles malformées (NaN check fallback)
+        if (Double.isNaN(minX) || Double.isInfinite(minX)) minX = 0;
+        if (Double.isNaN(minY) || Double.isInfinite(minY)) minY = 0;
+        if (Double.isNaN(minZ) || Double.isInfinite(minZ)) minZ = 0;
+        if (Double.isNaN(maxX) || Double.isInfinite(maxX)) maxX = 0;
+        if (Double.isNaN(maxY) || Double.isInfinite(maxY)) maxY = 0;
+        if (Double.isNaN(maxZ) || Double.isInfinite(maxZ)) maxZ = 0;
+        // BTC-CORE end
         this.bb = new AABB(minX, minY, minZ, maxX, maxY, maxZ);
         // CraftBukkit end
     }

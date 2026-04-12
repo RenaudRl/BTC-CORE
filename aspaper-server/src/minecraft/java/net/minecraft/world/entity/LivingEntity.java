@@ -3862,7 +3862,14 @@ public abstract class LivingEntity extends Entity implements Attackable, Waypoin
 
             // Paper start - Cap entity collisions
             this.numCollisions = Math.max(0, this.numCollisions - this.level().paperConfig().collisions.maxEntityCollisions);
+            // BTC-CORE start - RPG Collision Hard-Cap (Divise le coût CPU par 5)
+            int pushCount = 0;
+            int rpgCollisionLimit = com.infernalsuite.asp.config.BTCCoreConfig.rpgCollisionCap;
             for (Entity entity1 : pushableEntities) {
+                if (rpgCollisionLimit > 0 && pushCount >= rpgCollisionLimit) {
+                    break;
+                }
+                
                 if (this.numCollisions >= this.level().paperConfig().collisions.maxEntityCollisions) {
                     break;
                 }
@@ -3871,7 +3878,10 @@ public abstract class LivingEntity extends Entity implements Attackable, Waypoin
                 this.numCollisions++;
                 // Paper end - Cap entity collisions
                 this.doPush(entity1);
+                
+                pushCount++; // BTC-CORE
             }
+            // BTC-CORE end
         }
     }
 

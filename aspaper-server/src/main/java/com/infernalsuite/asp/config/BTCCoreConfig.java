@@ -101,12 +101,14 @@ public final class BTCCoreConfig {
 
     // === RPG OPTIMIZATIONS (Typewriter) ===
     public static boolean rpgOptimizedGoalSelectors = false;
+    public static int rpgCollisionCap = 2;
     public static boolean rpgRedstoneStaticGraphEnabled = false;
     public static java.util.List<String> rpgRedstoneStaticGraphWorlds = java.util.Collections.singletonList("redstone_plots");
     
     public static double packetLimiterAllPacketsMaxRate = 500.0;
     public static double packetLimiterAllPacketsInterval = 7.0;
     public static String packetLimiterKickMessage = "<red>Exceeded packet rate";
+    public static int cascadingEntitySpawnLimit = 50;
 
     // Monitoring
     public static String sentryDsn = "";
@@ -334,6 +336,7 @@ public final class BTCCoreConfig {
         packetLimiterAllPacketsMaxRate = getDouble("packet-limiter.all-packets.max-rate", packetLimiterAllPacketsMaxRate);
         packetLimiterAllPacketsInterval = getDouble("packet-limiter.all-packets.interval", packetLimiterAllPacketsInterval);
         packetLimiterKickMessage = getString("packet-limiter.kick-message", packetLimiterKickMessage);
+        cascadingEntitySpawnLimit = getInt("cascading-entity-spawn-limit", cascadingEntitySpawnLimit);
         
         // Monitoring
         sentryDsn = getString("monitoring.sentry-dsn", sentryDsn);
@@ -660,6 +663,7 @@ public final class BTCCoreConfig {
 
         // Goal Selectors
         rpgOptimizedGoalSelectors = getBoolean("rpg-optimization.optimized-goal-selectors.enabled", true);
+        rpgCollisionCap = getInt("rpg-optimization.collision-hard-cap", 2);
 
         // Native Anticheat
         rpgAnticheatEnabled = getBoolean("rpg-optimization.anticheat.enabled", true);

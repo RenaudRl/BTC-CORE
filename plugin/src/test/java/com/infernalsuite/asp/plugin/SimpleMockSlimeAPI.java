@@ -62,4 +62,9 @@ public class SimpleMockSlimeAPI implements AdvancedSlimePaperAPI {
     public SlimeSerializationAdapter getSerializer() {
         return null;
     }
+
+    @Override
+    public SlimeWorld cloneUnloadedWorld(String cloneWorldName, String worldName, SlimeLoader loader, SlimePropertyMap propertyMap) throws UnknownWorldException, IOException, WorldAlreadyExistsException {
+        return null;
+    }
 }

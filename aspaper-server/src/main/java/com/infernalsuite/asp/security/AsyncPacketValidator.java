@@ -92,7 +92,7 @@ public class AsyncPacketValidator {
         }
         if (actionLevel >= 2) {
             // Kick must be synced to main thread in Folia
-            player.getServer().execute(() -> {
+            player.server.execute(() -> {
                 player.connection.disconnect(net.minecraft.network.chat.Component.literal("Unfair Advantage: " + type));
             });
         }
