@@ -55,36 +55,75 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Package</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><a href="#io.papermc.paper.block">io.papermc.paper.block</a></div>
+<div class="col-first even-row-color"><a href="#com.infernalsuite.asp.event.inventory">com.infernalsuite.asp.event.inventory</a></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><a href="#org.bukkit">org.bukkit</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><a href="#io.papermc.paper.block">io.papermc.paper.block</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><a href="#org.bukkit">org.bukkit</a></div>
+<div class="col-last even-row-color">
 <div class="block">The root package of the Bukkit API, contains generalized API classes.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.bukkit.block">org.bukkit.block</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="#org.bukkit.block">org.bukkit.block</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Classes used to manipulate the voxels in a <a href="../../World.html" title="interface in org.bukkit"><code>world</code></a>,
  including special states.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.bukkit.entity">org.bukkit.entity</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="#org.bukkit.entity">org.bukkit.entity</a></div>
+<div class="col-last even-row-color">
 <div class="block">Interfaces for non-voxel objects that can exist in a <a href="../../World.html" title="interface in org.bukkit"><code>world</code></a>, including all players, monsters, projectiles, etc.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.bukkit.event.inventory">org.bukkit.event.inventory</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="#org.bukkit.event.inventory">org.bukkit.event.inventory</a></div>
+<div class="col-last odd-row-color">
 <div class="block"><a href="../../event/Event.html" title="class in org.bukkit.event"><code>Events</code></a> relating to <a href="../Inventory.html" title="interface in org.bukkit.inventory"><code>inventory</code></a> manipulation.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.bukkit.inventory">org.bukkit.inventory</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="#org.bukkit.inventory">org.bukkit.inventory</a></div>
+<div class="col-last even-row-color">
 <div class="block">Classes involved in manipulating player inventories and item interactions.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.bukkit.loot">org.bukkit.loot</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="#org.bukkit.loot">org.bukkit.loot</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Classes relevant to loot table manipulation and generation.</div>
 </div>
 </div>
 <section class="class-uses">
 <ul class="block-list">
+<li>
+<section class="detail" id="com.infernalsuite.asp.event.inventory">
+<h2>Uses of <a href="../Inventory.html" title="interface in org.bukkit.inventory">Inventory</a> in <a href="../../../../com/infernalsuite/asp/event/inventory/package-summary.html">com.infernalsuite.asp.event.inventory</a></h2>
+<div class="caption"><span>Methods in <a href="../../../../com/infernalsuite/asp/event/inventory/package-summary.html">com.infernalsuite.asp.event.inventory</a> that return <a href="../Inventory.html" title="interface in org.bukkit.inventory">Inventory</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Inventory.html" title="interface in org.bukkit.inventory">Inventory</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">InventoryPreMoveItemEvent.</span><code><a href="../../../../com/infernalsuite/asp/event/inventory/InventoryPreMoveItemEvent.html#getDestination()" class="member-name-link">getDestination</a>()</code></div>
+<div class="col-last even-row-color">
+<div class="block">Gets the Inventory that the ItemStack is being put into</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Inventory.html" title="interface in org.bukkit.inventory">Inventory</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">InventoryPreMoveItemEvent.</span><code><a href="../../../../com/infernalsuite/asp/event/inventory/InventoryPreMoveItemEvent.html#getInitiator()" class="member-name-link">getInitiator</a>()</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Gets the Inventory that initiated the transfer.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Inventory.html" title="interface in org.bukkit.inventory">Inventory</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">InventoryPreMoveItemEvent.</span><code><a href="../../../../com/infernalsuite/asp/event/inventory/InventoryPreMoveItemEvent.html#getSource()" class="member-name-link">getSource</a>()</code></div>
+<div class="col-last even-row-color">
+<div class="block">Gets the Inventory that the ItemStack is being taken from</div>
+</div>
+</div>
+<div class="caption"><span>Constructors in <a href="../../../../com/infernalsuite/asp/event/inventory/package-summary.html">com.infernalsuite.asp.event.inventory</a> with parameters of type <a href="../Inventory.html" title="interface in org.bukkit.inventory">Inventory</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier</div>
+<div class="table-header col-second">Constructor</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../com/infernalsuite/asp/event/inventory/InventoryPreMoveItemEvent.html#%3Cinit%3E(org.bukkit.inventory.Inventory,org.bukkit.inventory.Inventory,boolean)" class="member-name-link">InventoryPreMoveItemEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Inventory.html" title="interface in org.bukkit.inventory">Inventory</a>&nbsp;sourceInventory,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Inventory.html" title="interface in org.bukkit.inventory">Inventory</a>&nbsp;destinationInventory,
+ boolean&nbsp;didSourceInitiate)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="io.papermc.paper.block">
 <h2>Uses of <a href="../Inventory.html" title="interface in org.bukkit.inventory">Inventory</a> in <a href="../../../../io/papermc/paper/block/package-summary.html">io.papermc.paper.block</a></h2>

@@ -20,6 +20,14 @@ com.destroystokyo.paper.network
 com.destroystokyo.paper.profile
 com.destroystokyo.paper.util
 com.destroystokyo.paper.utils
+com.infernalsuite.asp.api
+com.infernalsuite.asp.event.canvas
+com.infernalsuite.asp.event.command
+com.infernalsuite.asp.event.entity
+com.infernalsuite.asp.event.inventory
+com.infernalsuite.asp.event.player
+com.infernalsuite.asp.event.world
+com.infernalsuite.asp.region
 io.papermc.paper
 io.papermc.paper.advancement
 io.papermc.paper.annotation

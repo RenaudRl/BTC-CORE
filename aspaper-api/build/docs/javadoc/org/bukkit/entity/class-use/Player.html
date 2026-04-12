@@ -71,6 +71,14 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><a href="#com.destroystokyo.paper.loottable">com.destroystokyo.paper.loottable</a></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><a href="#com.infernalsuite.asp.api">com.infernalsuite.asp.api</a></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><a href="#com.infernalsuite.asp.event.canvas">com.infernalsuite.asp.event.canvas</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><a href="#com.infernalsuite.asp.event.entity">com.infernalsuite.asp.event.entity</a></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><a href="#com.infernalsuite.asp.event.player">com.infernalsuite.asp.event.player</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><a href="#io.papermc.paper.chat">io.papermc.paper.chat</a></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><a href="#io.papermc.paper.connection">io.papermc.paper.connection</a></div>
@@ -524,6 +532,136 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="../../../../com/destroystokyo/paper/loottable/LootableInventoryReplenishEvent.html#%3Cinit%3E(org.bukkit.entity.Player,com.destroystokyo.paper.loottable.LootableInventory)" class="member-name-link">LootableInventoryReplenishEvent</a><wbr>(<a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="../../../../com/destroystokyo/paper/loottable/LootableInventory.html" title="interface in com.destroystokyo.paper.loottable">LootableInventory</a>&nbsp;inventory)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="com.infernalsuite.asp.api">
+<h2>Uses of <a href="../Player.html" title="interface in org.bukkit.entity">Player</a> in <a href="../../../../com/infernalsuite/asp/api/package-summary.html">com.infernalsuite.asp.api</a></h2>
+<div class="caption"><span>Methods in <a href="../../../../com/infernalsuite/asp/api/package-summary.html">com.infernalsuite.asp.api</a> with parameters of type <a href="../Player.html" title="interface in org.bukkit.entity">Player</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>abstract void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">BTCCoreVisualAPI.</span><code><a href="../../../../com/infernalsuite/asp/api/BTCCoreVisualAPI.html#destroyAsyncDisplayEntity(org.bukkit.entity.Player,int...)" class="member-name-link">destroyAsyncDisplayEntity</a><wbr>(<a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;target,
+ int...&nbsp;entityIds)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Sends a raw packet manually to destroy the visual entity gracefully.</div>
+</div>
+<div class="col-first odd-row-color"><code>abstract void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">BTCCoreVisualAPI.</span><code><a href="../../../../com/infernalsuite/asp/api/BTCCoreVisualAPI.html#sendAsyncVirtualInventory(org.bukkit.entity.Player,int,int,org.bukkit.inventory.ItemStack%5B%5D)" class="member-name-link">sendAsyncVirtualInventory</a><wbr>(<a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;target,
+ int&nbsp;containerId,
+ int&nbsp;stateId,
+ <a href="../../inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>[]&nbsp;contents)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Forges and dispatches a full inventory display to the client asynchronously.</div>
+</div>
+<div class="col-first even-row-color"><code>abstract void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">BTCCoreVisualAPI.</span><code><a href="../../../../com/infernalsuite/asp/api/BTCCoreVisualAPI.html#spawnAsyncDisplayEntity(org.bukkit.entity.Player,int,java.util.UUID,org.bukkit.Location,java.lang.String,org.bukkit.util.Transformation)" class="member-name-link">spawnAsyncDisplayEntity</a><wbr>(<a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;target,
+ int&nbsp;entityId,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uniqueId,
+ <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;location,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;displayType,
+ <a href="../../util/Transformation.html" title="class in org.bukkit.util">Transformation</a>&nbsp;scale)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Forges and dispatches a fake DisplayEntity purely as network packets.</div>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="com.infernalsuite.asp.event.canvas">
+<h2>Uses of <a href="../Player.html" title="interface in org.bukkit.entity">Player</a> in <a href="../../../../com/infernalsuite/asp/event/canvas/package-summary.html">com.infernalsuite.asp.event.canvas</a></h2>
+<div class="caption"><span>Constructors in <a href="../../../../com/infernalsuite/asp/event/canvas/package-summary.html">com.infernalsuite.asp.event.canvas</a> with parameters of type <a href="../Player.html" title="interface in org.bukkit.entity">Player</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier</div>
+<div class="table-header col-second">Constructor</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../com/infernalsuite/asp/event/canvas/PlayerSaveEvent.html#%3Cinit%3E(org.bukkit.entity.Player,boolean)" class="member-name-link">PlayerSaveEvent</a><wbr>(<a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ boolean&nbsp;isQuit)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="com.infernalsuite.asp.event.entity">
+<h2>Uses of <a href="../Player.html" title="interface in org.bukkit.entity">Player</a> in <a href="../../../../com/infernalsuite/asp/event/entity/package-summary.html">com.infernalsuite.asp.event.entity</a></h2>
+<div class="caption"><span>Methods in <a href="../../../../com/infernalsuite/asp/event/entity/package-summary.html">com.infernalsuite.asp.event.entity</a> that return <a href="../Player.html" title="interface in org.bukkit.entity">Player</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EntityTargetPlayerEvent.</span><code><a href="../../../../com/infernalsuite/asp/event/entity/EntityTargetPlayerEvent.html#getTarget()" class="member-name-link">getTarget</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+<div class="caption"><span>Constructors in <a href="../../../../com/infernalsuite/asp/event/entity/package-summary.html">com.infernalsuite.asp.event.entity</a> with parameters of type <a href="../Player.html" title="interface in org.bukkit.entity">Player</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier</div>
+<div class="table-header col-second">Constructor</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../com/infernalsuite/asp/event/entity/EntityTargetPlayerEvent.html#%3Cinit%3E(org.bukkit.entity.Entity,org.bukkit.entity.Player,com.infernalsuite.asp.event.entity.EntityTargetPlayerEvent.TargetReason)" class="member-name-link">EntityTargetPlayerEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;target,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../../../com/infernalsuite/asp/event/entity/EntityTargetPlayerEvent.TargetReason.html" title="enum class in com.infernalsuite.asp.event.entity">EntityTargetPlayerEvent.TargetReason</a>&nbsp;reason)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="com.infernalsuite.asp.event.player">
+<h2>Uses of <a href="../Player.html" title="interface in org.bukkit.entity">Player</a> in <a href="../../../../com/infernalsuite/asp/event/player/package-summary.html">com.infernalsuite.asp.event.player</a></h2>
+<div class="caption"><span>Methods in <a href="../../../../com/infernalsuite/asp/event/player/package-summary.html">com.infernalsuite.asp.event.player</a> that return <a href="../Player.html" title="interface in org.bukkit.entity">Player</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AsyncChatFormatEvent.</span><code><a href="../../../../com/infernalsuite/asp/event/player/AsyncChatFormatEvent.html#getPlayer()" class="member-name-link">getPlayer</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">PlayerEnterRegionEvent.</span><code><a href="../../../../com/infernalsuite/asp/event/player/PlayerEnterRegionEvent.html#getPlayer()" class="member-name-link">getPlayer</a>()</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+</div>
+<div class="caption"><span>Constructors in <a href="../../../../com/infernalsuite/asp/event/player/package-summary.html">com.infernalsuite.asp.event.player</a> with parameters of type <a href="../Player.html" title="interface in org.bukkit.entity">Player</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier</div>
+<div class="table-header col-second">Constructor</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../com/infernalsuite/asp/event/player/AsyncChatFormatEvent.html#%3Cinit%3E(org.bukkit.entity.Player,net.kyori.adventure.text.Component,net.kyori.adventure.text.Component)" class="member-name-link">AsyncChatFormatEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://jd.advntr.dev/api/4.25.0/net/kyori/adventure/text/Component.html" title="class or interface in net.kyori.adventure.text" class="external-link">Component</a>&nbsp;format,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://jd.advntr.dev/api/4.25.0/net/kyori/adventure/text/Component.html" title="class or interface in net.kyori.adventure.text" class="external-link">Component</a>&nbsp;message)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../../../com/infernalsuite/asp/event/player/PlayerAFKEvent.html#%3Cinit%3E(org.bukkit.entity.Player,boolean,boolean,boolean)" class="member-name-link">PlayerAFKEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ boolean&nbsp;setAfk,
+ boolean&nbsp;shouldKick,
+ boolean&nbsp;broadcast)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../com/infernalsuite/asp/event/player/PlayerEnterRegionEvent.html#%3Cinit%3E(org.bukkit.entity.Player,int,int,int,int)" class="member-name-link">PlayerEnterRegionEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ int&nbsp;fromRegionX,
+ int&nbsp;fromRegionZ,
+ int&nbsp;toRegionX,
+ int&nbsp;toRegionZ)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../../../com/infernalsuite/asp/event/player/PlayerMoveControllableVehicleEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.Vehicle,org.bukkit.Location,org.bukkit.Location)" class="member-name-link">PlayerMoveControllableVehicleEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a>&nbsp;vehicle,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;from,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../com/infernalsuite/asp/event/player/PlayerPreMoveEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location,boolean,boolean,boolean)" class="member-name-link">PlayerPreMoveEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;from,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to,
+ boolean&nbsp;onGround,
+ boolean&nbsp;horizontalCollision,
+ boolean&nbsp;resetFallDistance)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -2556,254 +2694,246 @@ loadScripts(document, 'script');</script>
 <div class="block"><span class="deprecated-label">Deprecated.</span></div>
 &nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerMoveControlVehicleEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.Vehicle,float,float,boolean,org.bukkit.util.Vector)" class="member-name-link">PlayerMoveControlVehicleEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a>&nbsp;vehicle,
- float&nbsp;forward,
- float&nbsp;sideway,
- boolean&nbsp;jump,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../util/Vector.html" title="class in org.bukkit.util">Vector</a>&nbsp;velocity)</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerMoveEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location)" class="member-name-link">PlayerMoveEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;from,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerMoveEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location)" class="member-name-link">PlayerMoveEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerPickupArrowEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.Item,org.bukkit.entity.AbstractArrow)" class="member-name-link">PlayerPickupArrowEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Item.html" title="interface in org.bukkit.entity">Item</a>&nbsp;item,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../AbstractArrow.html" title="interface in org.bukkit.entity">AbstractArrow</a>&nbsp;arrow)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerPickupItemEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.Item,int)" class="member-name-link">PlayerPickupItemEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Item.html" title="interface in org.bukkit.entity">Item</a>&nbsp;item,
+ int&nbsp;remaining)</code></div>
+<div class="col-last odd-row-color">
+<div class="block"><span class="deprecated-label">Deprecated.</span></div>
+&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerPortalEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location)" class="member-name-link">PlayerPortalEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;from,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerPickupArrowEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.Item,org.bukkit.entity.AbstractArrow)" class="member-name-link">PlayerPickupArrowEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Item.html" title="interface in org.bukkit.entity">Item</a>&nbsp;item,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../AbstractArrow.html" title="interface in org.bukkit.entity">AbstractArrow</a>&nbsp;arrow)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerPickupItemEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.Item,int)" class="member-name-link">PlayerPickupItemEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Item.html" title="interface in org.bukkit.entity">Item</a>&nbsp;item,
- int&nbsp;remaining)</code></div>
-<div class="col-last even-row-color">
-<div class="block"><span class="deprecated-label">Deprecated.</span></div>
-&nbsp;</div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerPortalEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location)" class="member-name-link">PlayerPortalEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;from,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerPortalEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause)" class="member-name-link">PlayerPortalEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerPortalEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause)" class="member-name-link">PlayerPortalEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;from,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../event/player/PlayerTeleportEvent.TeleportCause.html" title="enum class in org.bukkit.event.player">PlayerTeleportEvent.TeleportCause</a>&nbsp;cause)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerPortalEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause,int,boolean,int)" class="member-name-link">PlayerPortalEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerPortalEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause,int,boolean,int)" class="member-name-link">PlayerPortalEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;from,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../event/player/PlayerTeleportEvent.TeleportCause.html" title="enum class in org.bukkit.event.player">PlayerTeleportEvent.TeleportCause</a>&nbsp;cause,
  int&nbsp;searchRadius,
  boolean&nbsp;canCreatePortal,
  int&nbsp;creationRadius)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerQuitEvent.html#%3Cinit%3E(org.bukkit.entity.Player,java.lang.String)" class="member-name-link">PlayerQuitEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;quitMessage)</code></div>
-<div class="col-last even-row-color">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-</div>
+<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerQuitEvent.html#%3Cinit%3E(org.bukkit.entity.Player,java.lang.String,org.bukkit.event.player.PlayerQuitEvent.QuitReason)" class="member-name-link">PlayerQuitEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;quitMessage,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../event/player/PlayerQuitEvent.QuitReason.html" title="enum class in org.bukkit.event.player">PlayerQuitEvent.QuitReason</a>&nbsp;quitReason)</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerQuitEvent.html#%3Cinit%3E(org.bukkit.entity.Player,java.lang.String)" class="member-name-link">PlayerQuitEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;quitMessage)</code></div>
 <div class="col-last odd-row-color">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 </div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerQuitEvent.html#%3Cinit%3E(org.bukkit.entity.Player,net.kyori.adventure.text.Component)" class="member-name-link">PlayerQuitEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="https://jd.advntr.dev/api/4.25.0/net/kyori/adventure/text/Component.html" title="class or interface in net.kyori.adventure.text" class="external-link">Component</a>&nbsp;quitMessage)</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerQuitEvent.html#%3Cinit%3E(org.bukkit.entity.Player,java.lang.String,org.bukkit.event.player.PlayerQuitEvent.QuitReason)" class="member-name-link">PlayerQuitEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;quitMessage,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../event/player/PlayerQuitEvent.QuitReason.html" title="enum class in org.bukkit.event.player">PlayerQuitEvent.QuitReason</a>&nbsp;quitReason)</code></div>
 <div class="col-last even-row-color">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 </div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerQuitEvent.html#%3Cinit%3E(org.bukkit.entity.Player,net.kyori.adventure.text.Component,org.bukkit.event.player.PlayerQuitEvent.QuitReason)" class="member-name-link">PlayerQuitEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerQuitEvent.html#%3Cinit%3E(org.bukkit.entity.Player,net.kyori.adventure.text.Component)" class="member-name-link">PlayerQuitEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="https://jd.advntr.dev/api/4.25.0/net/kyori/adventure/text/Component.html" title="class or interface in net.kyori.adventure.text" class="external-link">Component</a>&nbsp;quitMessage)</code></div>
+<div class="col-last odd-row-color">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
+</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerQuitEvent.html#%3Cinit%3E(org.bukkit.entity.Player,net.kyori.adventure.text.Component,org.bukkit.event.player.PlayerQuitEvent.QuitReason)" class="member-name-link">PlayerQuitEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="https://jd.advntr.dev/api/4.25.0/net/kyori/adventure/text/Component.html" title="class or interface in net.kyori.adventure.text" class="external-link">Component</a>&nbsp;quitMessage,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../event/player/PlayerQuitEvent.QuitReason.html" title="enum class in org.bukkit.event.player">PlayerQuitEvent.QuitReason</a>&nbsp;quitReason)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerRecipeBookClickEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.Recipe,boolean)" class="member-name-link">PlayerRecipeBookClickEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerRecipeBookClickEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.Recipe,boolean)" class="member-name-link">PlayerRecipeBookClickEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../inventory/Recipe.html" title="interface in org.bukkit.inventory">Recipe</a>&nbsp;recipe,
  boolean&nbsp;shiftClick)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 &nbsp;</div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerRecipeBookSettingsChangeEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.event.player.PlayerRecipeBookSettingsChangeEvent.RecipeBookType,boolean,boolean)" class="member-name-link">PlayerRecipeBookSettingsChangeEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerRecipeBookSettingsChangeEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.event.player.PlayerRecipeBookSettingsChangeEvent.RecipeBookType,boolean,boolean)" class="member-name-link">PlayerRecipeBookSettingsChangeEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../event/player/PlayerRecipeBookSettingsChangeEvent.RecipeBookType.html" title="enum class in org.bukkit.event.player">PlayerRecipeBookSettingsChangeEvent.RecipeBookType</a>&nbsp;recipeBookType,
  boolean&nbsp;open,
  boolean&nbsp;filtering)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerRecipeDiscoverEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.NamespacedKey,boolean)" class="member-name-link">PlayerRecipeDiscoverEvent</a><wbr>(<a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerRecipeDiscoverEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.NamespacedKey,boolean)" class="member-name-link">PlayerRecipeDiscoverEvent</a><wbr>(<a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="../../NamespacedKey.html" title="class in org.bukkit">NamespacedKey</a>&nbsp;recipe,
  boolean&nbsp;showNotification)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerRegisterChannelEvent.html#%3Cinit%3E(org.bukkit.entity.Player,java.lang.String)" class="member-name-link">PlayerRegisterChannelEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;channel)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerResourcePackStatusEvent.html#%3Cinit%3E(org.bukkit.entity.Player,java.util.UUID,org.bukkit.event.player.PlayerResourcePackStatusEvent.Status)" class="member-name-link">PlayerResourcePackStatusEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;id,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../event/player/PlayerResourcePackStatusEvent.Status.html" title="enum class in org.bukkit.event.player">PlayerResourcePackStatusEvent.Status</a>&nbsp;resourcePackStatus)</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerRegisterChannelEvent.html#%3Cinit%3E(org.bukkit.entity.Player,java.lang.String)" class="member-name-link">PlayerRegisterChannelEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;channel)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerRespawnEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,boolean)" class="member-name-link">PlayerRespawnEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;respawnPlayer,
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerResourcePackStatusEvent.html#%3Cinit%3E(org.bukkit.entity.Player,java.util.UUID,org.bukkit.event.player.PlayerResourcePackStatusEvent.Status)" class="member-name-link">PlayerResourcePackStatusEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;id,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../event/player/PlayerResourcePackStatusEvent.Status.html" title="enum class in org.bukkit.event.player">PlayerResourcePackStatusEvent.Status</a>&nbsp;resourcePackStatus)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerRespawnEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,boolean)" class="member-name-link">PlayerRespawnEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;respawnPlayer,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;respawnLocation,
  boolean&nbsp;isBedSpawn)</code></div>
-<div class="col-last odd-row-color">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerRespawnEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,boolean,boolean)" class="member-name-link">PlayerRespawnEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;respawnPlayer,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;respawnLocation,
- boolean&nbsp;isBedSpawn,
- boolean&nbsp;isAnchorSpawn)</code></div>
 <div class="col-last even-row-color">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 </div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerRespawnEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,boolean,boolean,boolean,org.bukkit.event.player.PlayerRespawnEvent.RespawnReason)" class="member-name-link">PlayerRespawnEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;respawnPlayer,
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerRespawnEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,boolean,boolean)" class="member-name-link">PlayerRespawnEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;respawnPlayer,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;respawnLocation,
+ boolean&nbsp;isBedSpawn,
+ boolean&nbsp;isAnchorSpawn)</code></div>
+<div class="col-last odd-row-color">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
+</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerRespawnEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,boolean,boolean,boolean,org.bukkit.event.player.PlayerRespawnEvent.RespawnReason)" class="member-name-link">PlayerRespawnEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;respawnPlayer,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;respawnLocation,
  boolean&nbsp;isBedSpawn,
  boolean&nbsp;isAnchorSpawn,
  boolean&nbsp;missingRespawnBlock,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../event/player/PlayerRespawnEvent.RespawnReason.html" title="enum class in org.bukkit.event.player">PlayerRespawnEvent.RespawnReason</a>&nbsp;respawnReason)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerRiptideEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.ItemStack)" class="member-name-link">PlayerRiptideEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerRiptideEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.ItemStack)" class="member-name-link">PlayerRiptideEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;item)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 </div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerRiptideEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.ItemStack,org.bukkit.util.Vector)" class="member-name-link">PlayerRiptideEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerRiptideEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.ItemStack,org.bukkit.util.Vector)" class="member-name-link">PlayerRiptideEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;item,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../util/Vector.html" title="class in org.bukkit.util">Vector</a>&nbsp;velocity)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerShearEntityEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.Entity)" class="member-name-link">PlayerShearEntityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerShearEntityEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.Entity)" class="member-name-link">PlayerShearEntityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 </div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerShearEntityEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.Entity,org.bukkit.inventory.ItemStack,org.bukkit.inventory.EquipmentSlot,java.util.List)" class="member-name-link">PlayerShearEntityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerShearEntityEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.Entity,org.bukkit.inventory.ItemStack,org.bukkit.inventory.EquipmentSlot,java.util.List)" class="member-name-link">PlayerShearEntityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;item,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../inventory/EquipmentSlot.html" title="enum class in org.bukkit.inventory">EquipmentSlot</a>&nbsp;hand,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&gt;&nbsp;drops)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerShowEntityEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.Entity)" class="member-name-link">PlayerShowEntityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerSignOpenEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.block.Sign,org.bukkit.block.sign.Side,org.bukkit.event.player.PlayerSignOpenEvent.Cause)" class="member-name-link">PlayerSignOpenEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerShowEntityEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.Entity)" class="member-name-link">PlayerShowEntityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerSignOpenEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.block.Sign,org.bukkit.block.sign.Side,org.bukkit.event.player.PlayerSignOpenEvent.Cause)" class="member-name-link">PlayerSignOpenEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../block/Sign.html" title="interface in org.bukkit.block">Sign</a>&nbsp;sign,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../block/sign/Side.html" title="enum class in org.bukkit.block.sign">Side</a>&nbsp;side,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../event/player/PlayerSignOpenEvent.Cause.html" title="enum class in org.bukkit.event.player">PlayerSignOpenEvent.Cause</a>&nbsp;cause)</code></div>
-<div class="col-last odd-row-color">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerSpawnChangeEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,boolean,org.bukkit.event.player.PlayerSpawnChangeEvent.Cause)" class="member-name-link">PlayerSpawnChangeEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;newSpawn,
- boolean&nbsp;forced,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../event/player/PlayerSpawnChangeEvent.Cause.html" title="enum class in org.bukkit.event.player">PlayerSpawnChangeEvent.Cause</a>&nbsp;cause)</code></div>
 <div class="col-last even-row-color">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 &nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerStatisticIncrementEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Statistic,int,int)" class="member-name-link">PlayerStatisticIncrementEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerSpawnChangeEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,boolean,org.bukkit.event.player.PlayerSpawnChangeEvent.Cause)" class="member-name-link">PlayerSpawnChangeEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;newSpawn,
+ boolean&nbsp;forced,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../event/player/PlayerSpawnChangeEvent.Cause.html" title="enum class in org.bukkit.event.player">PlayerSpawnChangeEvent.Cause</a>&nbsp;cause)</code></div>
+<div class="col-last odd-row-color">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
+&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerStatisticIncrementEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Statistic,int,int)" class="member-name-link">PlayerStatisticIncrementEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Statistic.html" title="enum class in org.bukkit">Statistic</a>&nbsp;statistic,
  int&nbsp;initialValue,
  int&nbsp;newValue)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerStatisticIncrementEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Statistic,int,int,org.bukkit.Material)" class="member-name-link">PlayerStatisticIncrementEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerStatisticIncrementEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Statistic,int,int,org.bukkit.Material)" class="member-name-link">PlayerStatisticIncrementEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Statistic.html" title="enum class in org.bukkit">Statistic</a>&nbsp;statistic,
  int&nbsp;initialValue,
  int&nbsp;newValue,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Material.html" title="enum class in org.bukkit">Material</a>&nbsp;material)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerStatisticIncrementEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Statistic,int,int,org.bukkit.entity.EntityType)" class="member-name-link">PlayerStatisticIncrementEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerStatisticIncrementEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Statistic,int,int,org.bukkit.entity.EntityType)" class="member-name-link">PlayerStatisticIncrementEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Statistic.html" title="enum class in org.bukkit">Statistic</a>&nbsp;statistic,
  int&nbsp;initialValue,
  int&nbsp;newValue,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../EntityType.html" title="enum class in org.bukkit.entity">EntityType</a>&nbsp;entityType)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerSwapHandItemsEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.ItemStack,org.bukkit.inventory.ItemStack)" class="member-name-link">PlayerSwapHandItemsEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerSwapHandItemsEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.ItemStack,org.bukkit.inventory.ItemStack)" class="member-name-link">PlayerSwapHandItemsEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;mainHandItem,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;offHandItem)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerTakeLecternBookEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.block.Lectern)" class="member-name-link">PlayerTakeLecternBookEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../block/Lectern.html" title="interface in org.bukkit.block">Lectern</a>&nbsp;lectern)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerTeleportEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location)" class="member-name-link">PlayerTeleportEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;from,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to)</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerTakeLecternBookEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.block.Lectern)" class="member-name-link">PlayerTakeLecternBookEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../block/Lectern.html" title="interface in org.bukkit.block">Lectern</a>&nbsp;lectern)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerTeleportEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause)" class="member-name-link">PlayerTeleportEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerTeleportEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location)" class="member-name-link">PlayerTeleportEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;from,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerTeleportEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause)" class="member-name-link">PlayerTeleportEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;from,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../event/player/PlayerTeleportEvent.TeleportCause.html" title="enum class in org.bukkit.event.player">PlayerTeleportEvent.TeleportCause</a>&nbsp;cause)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerTeleportEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause,java.util.Set)" class="member-name-link">PlayerTeleportEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerTeleportEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause,java.util.Set)" class="member-name-link">PlayerTeleportEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;from,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../event/player/PlayerTeleportEvent.TeleportCause.html" title="enum class in org.bukkit.event.player">PlayerTeleportEvent.TeleportCause</a>&nbsp;cause,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../io/papermc/paper/entity/TeleportFlag.Relative.html" title="enum class in io.papermc.paper.entity">TeleportFlag.Relative</a>&gt;&nbsp;teleportFlags)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerToggleFlightEvent.html#%3Cinit%3E(org.bukkit.entity.Player,boolean)" class="member-name-link">PlayerToggleFlightEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerToggleFlightEvent.html#%3Cinit%3E(org.bukkit.entity.Player,boolean)" class="member-name-link">PlayerToggleFlightEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  boolean&nbsp;isFlying)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerToggleSneakEvent.html#%3Cinit%3E(org.bukkit.entity.Player,boolean)" class="member-name-link">PlayerToggleSneakEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- boolean&nbsp;isSneaking)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerToggleSprintEvent.html#%3Cinit%3E(org.bukkit.entity.Player,boolean)" class="member-name-link">PlayerToggleSprintEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- boolean&nbsp;isSprinting)</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerToggleSneakEvent.html#%3Cinit%3E(org.bukkit.entity.Player,boolean)" class="member-name-link">PlayerToggleSneakEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ boolean&nbsp;isSneaking)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerUnleashEntityEvent.html#%3Cinit%3E(org.bukkit.entity.Entity,org.bukkit.entity.Player)" class="member-name-link">PlayerUnleashEntityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player)</code></div>
-<div class="col-last even-row-color">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-</div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerToggleSprintEvent.html#%3Cinit%3E(org.bukkit.entity.Player,boolean)" class="member-name-link">PlayerToggleSprintEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ boolean&nbsp;isSprinting)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerUnleashEntityEvent.html#%3Cinit%3E(org.bukkit.entity.Entity,org.bukkit.entity.Player,org.bukkit.inventory.EquipmentSlot)" class="member-name-link">PlayerUnleashEntityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../inventory/EquipmentSlot.html" title="enum class in org.bukkit.inventory">EquipmentSlot</a>&nbsp;hand)</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerUnleashEntityEvent.html#%3Cinit%3E(org.bukkit.entity.Entity,org.bukkit.entity.Player)" class="member-name-link">PlayerUnleashEntityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 </div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerUnleashEntityEvent.html#%3Cinit%3E(org.bukkit.entity.Entity,org.bukkit.entity.Player,org.bukkit.inventory.EquipmentSlot,boolean)" class="member-name-link">PlayerUnleashEntityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity,
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerUnleashEntityEvent.html#%3Cinit%3E(org.bukkit.entity.Entity,org.bukkit.entity.Player,org.bukkit.inventory.EquipmentSlot)" class="member-name-link">PlayerUnleashEntityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../inventory/EquipmentSlot.html" title="enum class in org.bukkit.inventory">EquipmentSlot</a>&nbsp;hand)</code></div>
+<div class="col-last even-row-color">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
+</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerUnleashEntityEvent.html#%3Cinit%3E(org.bukkit.entity.Entity,org.bukkit.entity.Player,org.bukkit.inventory.EquipmentSlot,boolean)" class="member-name-link">PlayerUnleashEntityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../inventory/EquipmentSlot.html" title="enum class in org.bukkit.inventory">EquipmentSlot</a>&nbsp;hand,
  boolean&nbsp;dropLeash)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerUnregisterChannelEvent.html#%3Cinit%3E(org.bukkit.entity.Player,java.lang.String)" class="member-name-link">PlayerUnregisterChannelEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;channel)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../event/player/PlayerVelocityEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.util.Vector)" class="member-name-link">PlayerVelocityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../util/Vector.html" title="class in org.bukkit.util">Vector</a>&nbsp;velocity)</code></div>
+<div class="col-second even-row-color"><code><a href="../../event/player/PlayerUnregisterChannelEvent.html#%3Cinit%3E(org.bukkit.entity.Player,java.lang.String)" class="member-name-link">PlayerUnregisterChannelEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;channel)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../event/player/PlayerVelocityEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.util.Vector)" class="member-name-link">PlayerVelocityEvent</a><wbr>(<a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://www.javadocs.dev/org.jetbrains/annotations/26.0.2/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../util/Vector.html" title="class in org.bukkit.util">Vector</a>&nbsp;velocity)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Constructor parameters in <a href="../../event/player/package-summary.html">org.bukkit.event.player</a> with type arguments of type <a href="../Player.html" title="interface in org.bukkit.entity">Player</a></span></div>
 <div class="summary-table three-column-summary">

@@ -421,9 +421,9 @@ Requires **Java 21** and a strong understanding of Gradle.
 BTC-CORE is a "Frankenstein" fork, stitching together the most advanced components from the entire Minecraft server ecosystem. We owe our existence to the innovation of these projects:
 
 ### ⚙️ Core Modules (Inspirations)
-- **[MCHPRS / RedPillar]**: Inspiration for the `Static Directed Weighted Graph` underlying our Custom Redstone system. Wait-less block updates.
+- **[MCHPRS / RedPillar](https://github.com/MCHPR/MCHPRS)**: Inspiration for the `Static Directed Weighted Graph` underlying our Custom Redstone system. Wait-less block updates.
 - **[Pufferfish]**: Inspiration for the `Dynamic Activation of Brains (DAB)` throttling algorithm governing the Mob AI performance.
-- **[LightningGrim]**: Core combat maths translated natively into JVM Asynchronous thread pools for the Native Anticheat.
+- **[LightningGrim](https://github.com/Axionize/LightningGrim)**: Core combat maths translated natively into JVM Asynchronous thread pools for the Native Anticheat.
 
 ### 🏗️ Foundation
 - **[Advanced Slime Paper](https://github.com/InfernalSuite/AdvancedSlimePaper)**: The backbone of our world management, providing the Slime Region Format (SRF) and instantaneous world instancing.

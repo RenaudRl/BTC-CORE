@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.955s</div>
+<div class="counter">3.534s</div>
 <p>duration</p>
 </div>
 </td>
@@ -67,9 +67,6 @@
 <a href="#">Tests</a>
 </li>
 <li>
-<a href="#">Standard output</a>
-</li>
-<li>
 <a href="#">Standard error</a>
 </li>
 </ul>
@@ -79,24 +76,21 @@
 <a name="testWarpPerformance()"></a>
 <h3 class="failures">testWarpPerformance()</h3>
 <span class="code">
-<pre id="test-message-testWarpPerformance()">java.lang.ExceptionInInitializerError
-	at org.bukkit.GameRule.&lt;clinit&gt;(GameRule.java:31)
-	at org.mockbukkit.mockbukkit.world.WorldMock.&lt;init&gt;(WorldMock.java:434)
-	at org.mockbukkit.mockbukkit.world.WorldMock.&lt;init&gt;(WorldMock.java:386)
-	at org.mockbukkit.mockbukkit.world.WorldMock.&lt;init&gt;(WorldMock.java:495)
-	at org.mockbukkit.mockbukkit.world.WorldMock.&lt;init&gt;(WorldMock.java:506)
-	at org.mockbukkit.mockbukkit.world.WorldMock.&lt;init&gt;(WorldMock.java:514)
-	at org.mockbukkit.mockbukkit.ServerMock.addSimpleWorld(ServerMock.java:470)
-	at com.infernalsuite.asp.plugin.WarpPerformanceTest.testWarpPerformance(WarpPerformanceTest.java:52)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: java.util.NoSuchElementException: No value for minecraft:advance_time in com.infernalsuite.asp.plugin.mocks.SimpleGameRuleRegistry@5ae15
-	at org.bukkit.Registry.getOrThrow(Registry.java:424)
-	at org.bukkit.Registry.getOrThrow(Registry.java:538)
-	at org.bukkit.GameRules.getRule(GameRules.java:136)
-	at org.bukkit.GameRules.&lt;clinit&gt;(GameRules.java:14)
-	... 11 more
+<pre id="test-message-testWarpPerformance()">org.mockbukkit.mockbukkit.exception.InternalDataLoadException: org.mockbukkit.mockbukkit.tags.internal.InternalTagMisconfigurationException: Invalid namespace key minecraft:chain
+	at app//org.mockbukkit.mockbukkit.tags.internal.InternalTag.loadInternalTags(InternalTag.java:68)
+	at app//org.mockbukkit.mockbukkit.ServerMock.&lt;init&gt;(ServerMock.java:226)
+	at app//org.mockbukkit.mockbukkit.MockBukkit.mock(MockBukkit.java:69)
+	at app//com.infernalsuite.asp.plugin.WarpPerformanceTest.setUp(WarpPerformanceTest.java:36)
+	at java.base@21.0.7/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.7/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.7/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.mockbukkit.mockbukkit.tags.internal.InternalTagMisconfigurationException: Invalid namespace key minecraft:chain
+	at app//org.mockbukkit.mockbukkit.tags.internal.InternalTagParser.parseMaterial(InternalTagParser.java:83)
+	at app//org.mockbukkit.mockbukkit.tags.internal.InternalTagParser.parseJsonArray(InternalTagParser.java:66)
+	at app//org.mockbukkit.mockbukkit.tags.internal.InternalTagParser.parse(InternalTagParser.java:48)
+	at app//org.mockbukkit.mockbukkit.tags.internal.InternalTagParser.insertInternalTagValues(InternalTagParser.java:40)
+	at app//org.mockbukkit.mockbukkit.tags.internal.InternalTag.loadInternalTags(InternalTag.java:64)
+	... 6 more
 </pre>
 <button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="test-message-testWarpPerformance()">Copy</button>
 </span>
@@ -114,128 +108,16 @@ Caused by: java.util.NoSuchElementException: No value for minecraft:advance_time
 </thead>
 <tr>
 <td class="failures">testWarpPerformance()</td>
-<td class="failures">1.955s</td>
+<td class="failures">3.534s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
 </div>
 <div class="tab">
-<h2>Standard output</h2>
-<span class="code">
-<pre id="class-stdout">Failed to create GameRule. Available constructors:
-public org.bukkit.GameRule()
-</pre>
-<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
-</span>
-</div>
-<div class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre id="class-stderr">janv. 13, 2026 7:16:36 AM com.infernalsuite.asp.plugin.WarpPerformanceTest setUp
+<pre id="class-stderr">avr. 12, 2026 5:57:06 AM com.infernalsuite.asp.plugin.WarpPerformanceTest setUp
 INFO: SlimeWorld class found on classpath!
-SLF4J(W): No SLF4J providers were found.
-SLF4J(W): Defaulting to no-operation (NOP) logger implementation
-SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
-java.lang.NoSuchMethodException: org.bukkit.GameRule.&lt;init&gt;(java.lang.String,java.lang.Class)
-	at java.base/java.lang.Class.getConstructor0(Class.java:3761)
-	at java.base/java.lang.Class.getDeclaredConstructor(Class.java:2930)
-	at com.infernalsuite.asp.plugin.mocks.SimpleGameRuleRegistry.get(SimpleGameRuleRegistry.java:33)
-	at com.infernalsuite.asp.plugin.mocks.SimpleGameRuleRegistry.get(SimpleGameRuleRegistry.java:15)
-	at org.bukkit.Registry.get(Registry.java:396)
-	at org.bukkit.Registry.getOrThrow(Registry.java:422)
-	at org.bukkit.Registry.getOrThrow(Registry.java:538)
-	at org.bukkit.GameRules.getRule(GameRules.java:136)
-	at org.bukkit.GameRules.&lt;clinit&gt;(GameRules.java:14)
-	at org.bukkit.GameRule.&lt;clinit&gt;(GameRule.java:31)
-	at org.mockbukkit.mockbukkit.world.WorldMock.&lt;init&gt;(WorldMock.java:434)
-	at org.mockbukkit.mockbukkit.world.WorldMock.&lt;init&gt;(WorldMock.java:386)
-	at org.mockbukkit.mockbukkit.world.WorldMock.&lt;init&gt;(WorldMock.java:495)
-	at org.mockbukkit.mockbukkit.world.WorldMock.&lt;init&gt;(WorldMock.java:506)
-	at org.mockbukkit.mockbukkit.world.WorldMock.&lt;init&gt;(WorldMock.java:514)
-	at org.mockbukkit.mockbukkit.ServerMock.addSimpleWorld(ServerMock.java:470)
-	at com.infernalsuite.asp.plugin.WarpPerformanceTest.testWarpPerformance(WarpPerformanceTest.java:52)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
-	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:135)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:110)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:104)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:64)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
-	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:194)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </pre>
 <button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stderr">Copy</button>
 </span>
@@ -248,7 +130,7 @@ java.lang.NoSuchMethodException: org.bukkit.GameRule.&lt;init&gt;(java.lang.Stri
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.2.0</a> at 13 janv. 2026, 07:16:38</p>
+<a href="https://www.gradle.org">Gradle 9.2.0</a> at 12 avr. 2026, 05:57:10</p>
 </div>
 </div>
 </body>

@@ -226,11 +226,9 @@ public final class BTCCoreConfig {
     public static boolean rpgWorldEventsEnabled = false;
     public static boolean rpgWeatherTicksEnabled = false;
 
-    // Goal Selectors
-    public static boolean rpgOptimizedGoalSelectors = true;
-
-    // Static Graph Redstone
-    public static boolean rpgRedstoneStaticGraphEnabled = true;
+    // Goal Selectors (Moved to top)
+    
+    // Static Graph Redstone (Moved to top)
     public static java.util.List<String> rpgRedstoneWhitelistedWorlds = new java.util.ArrayList<>();
 
     // Native Anticheat (Grim)

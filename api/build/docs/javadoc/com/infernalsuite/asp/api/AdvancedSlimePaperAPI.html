@@ -122,72 +122,80 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorld</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createEmptyWorld(java.lang.String,boolean,com.infernalsuite.asp.api.world.properties.SlimePropertyMap,com.infernalsuite.asp.api.loaders.SlimeLoader)" class="member-name-link">createEmptyWorld</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;worldName,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#cloneUnloadedWorld(java.lang.String,java.lang.String,com.infernalsuite.asp.api.loaders.SlimeLoader,com.infernalsuite.asp.api.world.properties.SlimePropertyMap)" class="member-name-link">cloneUnloadedWorld</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sourceWorldName,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;targetWorldName,
+ <a href="loaders/SlimeLoader.html" title="interface in com.infernalsuite.asp.api.loaders">SlimeLoader</a>&nbsp;loader,
+ @Nullable <a href="world/properties/SlimePropertyMap.html" title="class in com.infernalsuite.asp.api.world.properties">SlimePropertyMap</a>&nbsp;propertyMap)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">BTC-CORE: Clones a SlimeWorld that is NOT currently loaded.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorld</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createEmptyWorld(java.lang.String,boolean,com.infernalsuite.asp.api.world.properties.SlimePropertyMap,com.infernalsuite.asp.api.loaders.SlimeLoader)" class="member-name-link">createEmptyWorld</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;worldName,
  boolean&nbsp;readOnly,
  <a href="world/properties/SlimePropertyMap.html" title="class in com.infernalsuite.asp.api.world.properties">SlimePropertyMap</a>&nbsp;propertyMap,
  @Nullable <a href="loaders/SlimeLoader.html" title="interface in com.infernalsuite.asp.api.loaders">SlimeLoader</a>&nbsp;loader)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates an empty world.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="world/SlimeWorldInstance.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorldInstance</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLoadedWorld(java.lang.String)" class="member-name-link">getLoadedWorld</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;worldName)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="world/SlimeWorldInstance.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorldInstance</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLoadedWorld(java.lang.String)" class="member-name-link">getLoadedWorld</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;worldName)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets a world which has already been loaded by ASWM.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="world/SlimeWorldInstance.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorldInstance</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLoadedWorlds()" class="member-name-link">getLoadedWorlds</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="world/SlimeWorldInstance.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorldInstance</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLoadedWorlds()" class="member-name-link">getLoadedWorlds</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets a list of worlds which have been loaded by ASWM.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="loaders/SlimeSerializationAdapter.html" title="interface in com.infernalsuite.asp.api.loaders">SlimeSerializationAdapter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSerializer()" class="member-name-link">getSerializer</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="loaders/SlimeSerializationAdapter.html" title="interface in com.infernalsuite.asp.api.loaders">SlimeSerializationAdapter</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSerializer()" class="member-name-link">getSerializer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the <a href="loaders/SlimeSerializationAdapter.html" title="interface in com.infernalsuite.asp.api.loaders"><code>SlimeSerializationAdapter</code></a> used to serialize and deserialize SlimeWorlds.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="AdvancedSlimePaperAPI.html" title="interface in com.infernalsuite.asp.api">AdvancedSlimePaperAPI</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#instance()" class="member-name-link">instance</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="AdvancedSlimePaperAPI.html" title="interface in com.infernalsuite.asp.api">AdvancedSlimePaperAPI</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#instance()" class="member-name-link">instance</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Gets the instance of the AdvancedSlimePaper API.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="world/SlimeWorldInstance.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorldInstance</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#loadWorld(com.infernalsuite.asp.api.world.SlimeWorld,boolean)" class="member-name-link">loadWorld</a><wbr>(<a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorld</a>&nbsp;world,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="world/SlimeWorldInstance.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorldInstance</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#loadWorld(com.infernalsuite.asp.api.world.SlimeWorld,boolean)" class="member-name-link">loadWorld</a><wbr>(<a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorld</a>&nbsp;world,
  boolean&nbsp;callWorldLoadEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Generates a Minecraft World from a <a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world"><code>SlimeWorld</code></a> and
  adds it to the server's world list.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#migrateWorld(java.lang.String,com.infernalsuite.asp.api.loaders.SlimeLoader,com.infernalsuite.asp.api.loaders.SlimeLoader)" class="member-name-link">migrateWorld</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;worldName,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#migrateWorld(java.lang.String,com.infernalsuite.asp.api.loaders.SlimeLoader,com.infernalsuite.asp.api.loaders.SlimeLoader)" class="member-name-link">migrateWorld</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;worldName,
  <a href="loaders/SlimeLoader.html" title="interface in com.infernalsuite.asp.api.loaders">SlimeLoader</a>&nbsp;currentLoader,
  <a href="loaders/SlimeLoader.html" title="interface in com.infernalsuite.asp.api.loaders">SlimeLoader</a>&nbsp;newLoader)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Migrates a <a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world"><code>SlimeWorld</code></a> to another datasource.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorld</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#readVanillaWorld(java.io.File,java.lang.String,com.infernalsuite.asp.api.loaders.SlimeLoader)" class="member-name-link">readVanillaWorld</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;worldDir,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorld</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#readVanillaWorld(java.io.File,java.lang.String,com.infernalsuite.asp.api.loaders.SlimeLoader)" class="member-name-link">readVanillaWorld</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;worldDir,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;worldName,
  @Nullable <a href="loaders/SlimeLoader.html" title="interface in com.infernalsuite.asp.api.loaders">SlimeLoader</a>&nbsp;loader)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Reads a vanilla world and converts it to SRF.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorld</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#readWorld(com.infernalsuite.asp.api.loaders.SlimeLoader,java.lang.String,boolean,com.infernalsuite.asp.api.world.properties.SlimePropertyMap)" class="member-name-link">readWorld</a><wbr>(<a href="loaders/SlimeLoader.html" title="interface in com.infernalsuite.asp.api.loaders">SlimeLoader</a>&nbsp;loader,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorld</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#readWorld(com.infernalsuite.asp.api.loaders.SlimeLoader,java.lang.String,boolean,com.infernalsuite.asp.api.world.properties.SlimePropertyMap)" class="member-name-link">readWorld</a><wbr>(<a href="loaders/SlimeLoader.html" title="interface in com.infernalsuite.asp.api.loaders">SlimeLoader</a>&nbsp;loader,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;worldName,
  boolean&nbsp;readOnly,
  <a href="world/properties/SlimePropertyMap.html" title="class in com.infernalsuite.asp.api.world.properties">SlimePropertyMap</a>&nbsp;propertyMap)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Reads a world using a specified <a href="loaders/SlimeLoader.html" title="interface in com.infernalsuite.asp.api.loaders"><code>SlimeLoader</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#saveWorld(com.infernalsuite.asp.api.world.SlimeWorld)" class="member-name-link">saveWorld</a><wbr>(<a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorld</a>&nbsp;world)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#saveWorld(com.infernalsuite.asp.api.world.SlimeWorld)" class="member-name-link">saveWorld</a><wbr>(<a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorld</a>&nbsp;world)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Saves a <a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world"><code>SlimeWorld</code></a> into the <a href="loaders/SlimeLoader.html" title="interface in com.infernalsuite.asp.api.loaders"><code>SlimeLoader</code></a> obtained from <a href="world/SlimeWorld.html#getLoader()"><code>SlimeWorld.getLoader()</code></a>
  <br>
  It is suggested to use this instead of <code>World.save()</code>, as this method will block the current thread until the world is saved</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#worldLoaded(com.infernalsuite.asp.api.world.SlimeWorld)" class="member-name-link">worldLoaded</a><wbr>(<a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorld</a>&nbsp;world)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#worldLoaded(com.infernalsuite.asp.api.world.SlimeWorld)" class="member-name-link">worldLoaded</a><wbr>(<a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorld</a>&nbsp;world)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Checks if a <a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world"><code>SlimeWorld</code></a> is loaded on the server.</div>
 </div>
 </div>
@@ -395,6 +403,39 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>A adapter for serializing and deserializing SlimeWorlds</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="cloneUnloadedWorld(java.lang.String,java.lang.String,com.infernalsuite.asp.api.loaders.SlimeLoader,com.infernalsuite.asp.api.world.properties.SlimePropertyMap)">
+<h3>cloneUnloadedWorld</h3>
+<div class="member-signature"><span class="return-type"><a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world">SlimeWorld</a></span>&nbsp;<span class="element-name">cloneUnloadedWorld</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sourceWorldName,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;targetWorldName,
+ <a href="loaders/SlimeLoader.html" title="interface in com.infernalsuite.asp.api.loaders">SlimeLoader</a>&nbsp;loader,
+ @Nullable
+ @Nullable <a href="world/properties/SlimePropertyMap.html" title="class in com.infernalsuite.asp.api.world.properties">SlimePropertyMap</a>&nbsp;propertyMap)</span>
+                       throws <span class="exceptions"><a href="exceptions/UnknownWorldException.html" title="class in com.infernalsuite.asp.api.exceptions">UnknownWorldException</a>,
+<a href="exceptions/WorldAlreadyExistsException.html" title="class in com.infernalsuite.asp.api.exceptions">WorldAlreadyExistsException</a>,
+<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="exceptions/CorruptedWorldException.html" title="class in com.infernalsuite.asp.api.exceptions">CorruptedWorldException</a>,
+<a href="exceptions/NewerFormatException.html" title="class in com.infernalsuite.asp.api.exceptions">NewerFormatException</a></span></div>
+<div class="block">BTC-CORE: Clones a SlimeWorld that is NOT currently loaded.
+ This allows copying world data directly from the loader without needing to load it first.
+ Useful for creating player islands from template worlds.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sourceWorldName</code> - The name of the world to clone (must exist in the loader).</dd>
+<dd><code>targetWorldName</code> - The name of the new cloned world.</dd>
+<dd><code>loader</code> - The <a href="loaders/SlimeLoader.html" title="interface in com.infernalsuite.asp.api.loaders"><code>SlimeLoader</code></a> where the source world is stored.</dd>
+<dd><code>propertyMap</code> - A <a href="world/properties/SlimePropertyMap.html" title="class in com.infernalsuite.asp.api.world.properties"><code>SlimePropertyMap</code></a> for the new world, or null to copy from source.</dd>
+<dt>Returns:</dt>
+<dd>A <a href="world/SlimeWorld.html" title="interface in com.infernalsuite.asp.api.world"><code>SlimeWorld</code></a> representing the cloned world (not loaded).</dd>
+<dt>Throws:</dt>
+<dd><code><a href="exceptions/UnknownWorldException.html" title="class in com.infernalsuite.asp.api.exceptions">UnknownWorldException</a></code> - if the source world cannot be found.</dd>
+<dd><code><a href="exceptions/WorldAlreadyExistsException.html" title="class in com.infernalsuite.asp.api.exceptions">WorldAlreadyExistsException</a></code> - if the target world already exists.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the world cannot be read or saved.</dd>
+<dd><code><a href="exceptions/CorruptedWorldException.html" title="class in com.infernalsuite.asp.api.exceptions">CorruptedWorldException</a></code> - if the source world data is corrupted.</dd>
+<dd><code><a href="exceptions/NewerFormatException.html" title="class in com.infernalsuite.asp.api.exceptions">NewerFormatException</a></code> - if the world uses a newer version of the SRF.</dd>
 </dl>
 </section>
 </li>
