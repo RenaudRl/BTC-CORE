@@ -1733,6 +1733,8 @@ public class ServerGamePacketListenerImpl
                                     this.lastGoodX = this.player.getX();
                                     this.lastGoodY = this.player.getY();
                                     this.lastGoodZ = this.player.getZ();
+                                    // BTC-CORE Native Sentinel - Cache Ghost state
+                                    com.infernalsuite.asp.security.PlayerSimulationCache.updateCache(this.player.getUUID(), this.player.getX(), this.player.getY(), this.player.getZ(), this.player.getBoundingBox());
                                 } else {
                                     this.internalTeleport(x, y, z, f, f1); // CraftBukkit - SPIGOT-1807: Don't call teleport event, when the client thinks the player is falling, because the chunks are not loaded on the client yet.
                                     this.player.doCheckFallDamage(this.player.getX() - x, this.player.getY() - y, this.player.getZ() - z, packet.isOnGround());

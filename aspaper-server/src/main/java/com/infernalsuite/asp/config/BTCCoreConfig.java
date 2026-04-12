@@ -231,10 +231,12 @@ public final class BTCCoreConfig {
     // Static Graph Redstone (Moved to top)
     public static java.util.List<String> rpgRedstoneWhitelistedWorlds = new java.util.ArrayList<>();
 
-    // Native Anticheat (Grim)
-    public static boolean rpgAnticheatEnabled = true;
-
-    // === SECURITY ===
+    // Native Anticheat (Sentinel)
+    public static boolean sentinelEnabled = true;
+    public static double sentinelMaxReachDistance = 3.01;
+    public static double sentinelMaxSpeedBuffer = 1.0;
+    public static boolean sentinelMysqlLogging = false;
+    public static boolean sentinelAutoNotifyAdmins = true;
     // Combat Log Prevention
     public static boolean combatLogEnabled = true;
     public static int combatLogTagDuration = 10;
@@ -348,8 +350,8 @@ public final class BTCCoreConfig {
         // === CANVAS FEATURES ===
         initCanvasSettings();
 
-        // === BTC-CORE PHASE 3+ FEATURES ===
-        initPhase3Features();
+        // === BTC-CORE FEATURES ===
+        initOptimizationFeatures();
 
         // === RPG OPTIMIZATIONS ===
         initRpgOptimizations();
@@ -548,7 +550,7 @@ public final class BTCCoreConfig {
         useEuclideanDistanceSquared = getBoolean("canvas.chunks.use-euclidean-distance-squared", true);
     }
 
-    private static void initPhase3Features() {
+    private static void initOptimizationFeatures() {
         // === Performance Optimizations ===
         // Collision Throttle
         collisionThrottleEnabled = getBoolean("performance.collision-throttle.enabled", true);
@@ -650,7 +652,7 @@ public final class BTCCoreConfig {
         playerDataBackupEnabled = getBoolean("qol.player-data-backup.enabled", true);
         playerDataBackupIntervalTicks = getInt("qol.player-data-backup.interval-ticks", 6000);
 
-        Bukkit.getLogger().info("[BTC-CORE] Phase 3+ Features initialized");
+        Bukkit.getLogger().info("[BTC-CORE] Optimization Features initialized");
     }
 
     private static void initRpgOptimizations() {
@@ -663,10 +665,16 @@ public final class BTCCoreConfig {
         rpgOptimizedGoalSelectors = getBoolean("rpg-optimization.optimized-goal-selectors.enabled", true);
         rpgCollisionCap = getInt("rpg-optimization.collision-hard-cap", 2);
 
-        // Native Anticheat
-        rpgAnticheatEnabled = getBoolean("rpg-optimization.anticheat.enabled", true);
-
-        // Redstone Static Graph
+        // Native Anticheat (Sentinel)
+        sentinelEnabled = getBoolean("rpg-optimization.sentinel.enabled", true);
+        sentinelMaxReachDistance = getDouble("rpg-optimization.sentinel.max-reach-distance", 3.01);
+        sentinelMaxSpeedBuffer = getDouble("rpg-optimization.sentinel.max-speed-buffer", 1.0);
+        sentinelMysqlLogging = getBoolean("rpg-optimization.sentinel.mysql-logging.enabled", false);
+        sentinelAutoNotifyAdmins = getBoolean("rpg-optimization.sentinel.auto-notify-admins", true);
+        
+        if (sentinelEnabled) {
+            org.bukkit.Bukkit.getCommandMap().register("sentinel", "btc-core", new com.infernalsuite.asp.security.SentinelCommand());
+        }
         rpgRedstoneStaticGraphEnabled = getBoolean("rpg-optimization.redstone-static-graph.enabled", true);
         
         String redstoneWhitelistPath = "rpg-optimization.redstone-static-graph.whitelisted-worlds";

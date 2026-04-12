@@ -6,6 +6,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -53,7 +54,7 @@ public class AsyncPacketValidator {
                 }
 
                 if (distance > (maxReach * maxReach) + 0.5) { // Small buffer for latency
-                    handleViolation(player, "Reach", "Distance: " + Math.sqrt(distance) + " > " + maxReach, AnticheatConfig.reachViolationAction);
+                    handleViolation(player, "Reach", "Distance: " + Math.sqrt(distance) + " > " + maxReach, AnticheatConfig.reachViolationAction, player.getX(), player.getY(), player.getZ());
                 }
             } catch (Exception e) {
                 Bukkit.getLogger().log(Level.WARNING, "[BTC-CORE] Error in Async Reach Validation", e);
@@ -78,7 +79,7 @@ public class AsyncPacketValidator {
                     // Small heuristic to ignore heavy drops
                     if (deltaY < -3.0) return; 
 
-                    handleViolation(player, "Velocity/Speed", String.format("Delta XZ: %.2f, %.2f | Y: %.2f", deltaX, deltaZ, deltaY), AnticheatConfig.velocityViolationAction);
+                    handleViolation(player, "Velocity/Speed", String.format("Delta XZ: %.2f, %.2f | Y: %.2f", deltaX, deltaZ, deltaY), AnticheatConfig.velocityViolationAction, fromX, fromY, fromZ);
                 }
             } catch (Exception e) {
                 Bukkit.getLogger().log(Level.WARNING, "[BTC-CORE] Error in Async Velocity Validation", e);
@@ -86,14 +87,30 @@ public class AsyncPacketValidator {
         });
     }
 
-    private static void handleViolation(ServerPlayer player, String type, String details, int actionLevel) {
+    private static void handleViolation(ServerPlayer player, String type, String details, int actionLevel, double fallbackX, double fallbackY, double fallbackZ) {
+        if (!com.infernalsuite.asp.config.BTCCoreConfig.sentinelEnabled) return;
+
         if (actionLevel >= 1) {
-            Bukkit.getLogger().warning("[Anticheat] " + player.getScoreboardName() + " failed " + type + " check! " + details);
+            String log = ChatColor.DARK_RED + "[Sentinel] " + ChatColor.GOLD + player.getScoreboardName() + ChatColor.RED + " failed " + type + " check! " + ChatColor.GRAY + details;
+            
+            // Console warning
+            Bukkit.getLogger().warning(ChatColor.stripColor(log));
+            
+            // Staff alerts
+            for (org.bukkit.entity.Player online : Bukkit.getOnlinePlayers()) {
+                if (SentinelCommand.shouldReceiveAlerts(online)) {
+                    online.sendMessage(log);
+                }
+            }
+
+            if (com.infernalsuite.asp.config.BTCCoreConfig.sentinelMysqlLogging) {
+                NativeAnticheatDB.reportViolation(player.getUUID().toString(), player.getScoreboardName(), type, details);
+            }
         }
         if (actionLevel >= 2) {
-            // Kick must be synced to main thread in Folia
+            // Setback synchronisé sur le thread principal de Folia
             player.level().getServer().execute(() -> {
-                player.connection.disconnect(net.minecraft.network.chat.Component.literal("Unfair Advantage: " + type));
+                player.connection.teleport(fallbackX, fallbackY, fallbackZ, player.getYRot(), player.getXRot());
             });
         }
     }
