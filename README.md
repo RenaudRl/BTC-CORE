@@ -332,17 +332,32 @@ BTC-CORE is primarily tuned via `btccore.yml`.
 | `rpg.redstone.static-graph-enabled` | `false` | Fully neutralizes Vanilla redstone BlockUpdates in favor of a Static Directed Weighted Graph. |
 | `rpg.redstone.static-graph-worlds` | `["redstone_plots"]` | List of worlds where the static redstone algorithm operates. |
 
-### ⚔️ Native Anticheat Engine (Asynchronous)
-BTC-CORE integrates a 100% native asynchronous anticheat capability directly in the NMS Packet Handling pipeline (`ServerGamePacketListenerImpl`). 
-*Inspired by the network predictability math of **LightningGrim AC**, this native engine runs purely in the JVM's ForkJoin pool to detect Reach & Velocity hacks natively with 0.0 MSPT overhead on the Main Thread.*
-These settings are governed by the `anticheat.yml` configuration file.
+### ⚔️ Native Sentinel Anticheat Engine (Asynchronous)
+BTC-CORE integrates a 100% native asynchronous anticheat capability directly in the NMS Packet Handling pipeline (`ServerGamePacketListenerImpl`), eliminating the need for `PacketEvents` and external AC hooks.
+*Inspired by the network predictability math of **LightningGrim AC**, this native engine stores a `PlayerSimulationCache` (Ghost state latency compensator) to detect Reach, Raytrace LOS, and Velocity natively with 0.0 MSPT overhead on the Main Thread.*
+
+**Phase 3 Features:**
+- **Latency Compensation**: Uses historical ghost states from `PlayerSimulationCache` to validate hits based on the attacker's actual view.
+- **Ray-AABB Intersection**: Mathematical Line-of-Sight validation against historical hitboxes.
+- **Synchronous Attack Filter**: Implements a "Violation Buffer" that synchronously blocks illegal attack packets before they reach the game world.
+
+These settings are governed by `btccore.yml` under the `rpg-optimization.sentinel` section.
+
 | Key | Default | Description |
 |-----|---------|-------------|
-| `engine.async-packet-validation.enabled` | `true` | Enables the async verification thread pool for incoming combat/movement packets. |
-| `engine.async-packet-validation.threads` | `2` | Number of dedicated threads for the validation engine. |
-| `checks.reach.enabled` | `true` | Enables native asynchronous Reach verification. |
-| `checks.reach.strict-hitbox-math` | `true` | Validates exactly on the bounding box limits natively. |
-| `checks.velocity.enabled` | `true` | Enables native asynchronous Speed/Velocity checking. |
+| `enabled` | `true` | Enables the Sentinel native detection engine and async verification system. |
+| `max-reach-distance` | `3.01` | Mathematical maximum distance permitted for a valid combat interaction. |
+| `reach-violation-buffer-limit` | `5` | Hits allowed over the limit before synchronous attack blocking triggers. |
+| `reach-raytrace-enabled` | `true` | Enables Line-of-Sight validation against historical bounding boxes. |
+| `reach-raytrace-leniency` | `0.05` | Margin of error for ray-box intersection math. |
+| `max-speed-buffer` | `1.0` | Threshold over vanilla max speed allowed to compensate for sudden lag bursts. |
+| `mysql-logging.enabled` | `false` | Asynchronously logs all violation traces into an external SQL pool. |
+| `auto-notify-admins` | `true` | Broadcast warnings to players with `sentinel.admin`. |
+
+**In-Game Admin Tools:**
+Staff can manage real-time alerts or check historical database traces directly from the chat:
+- `/sentinel notify` - Toggles the real-time alerting system for the executor natively.
+- `/sentinel check <player>` - Fetches the last 10 violation metadata records straight from MySQL async pool.
 
 ### 🎨 Visual Core APIs (Asynchronous)
 Dedicated to massive Display Entity handling (*BetterModel*, *TextDisplayDialogue*) and Virtual GUIs (*AdvancedMenu*), `BTCCoreVisualAPI` bypasses native Bukkit Thread locks for instantiating purely UI-focused networks.

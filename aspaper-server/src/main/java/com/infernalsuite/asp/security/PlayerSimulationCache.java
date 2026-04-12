@@ -48,6 +48,7 @@ public class PlayerSimulationCache {
 
     public static void clear(UUID uuid) {
         simulations.remove(uuid);
+        AsyncPacketValidator.clearPlayer(uuid);
     }
 
     public static GhostState getInterpolatedState(UUID target, long targetTimeMs) {

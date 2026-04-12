@@ -20,6 +20,7 @@ import java.util.logging.Level;
 public class AsyncPacketValidator {
 
     private static ExecutorService validatorPool;
+    private static final java.util.concurrent.ConcurrentHashMap<java.util.UUID, Double> violationBuffers = new java.util.concurrent.ConcurrentHashMap<>();
 
     public static void init() {
         if (AnticheatConfig.asyncPacketValidationEnabled && validatorPool == null) {
@@ -32,12 +33,21 @@ public class AsyncPacketValidator {
         }
     }
 
-    public static void validateReach(ServerPlayer player, Entity target, double originX, double originY, double originZ) {
+    public static boolean hasReachViolationBuffer(java.util.UUID uuid) {
+        Double buffer = violationBuffers.get(uuid);
+        return buffer != null && buffer >= AnticheatConfig.reachViolationBufferLimit;
+    }
+
+    public static void validateReach(ServerPlayer player, Entity target, double originX, double originY, double originZ, int latency) {
         if (!AnticheatConfig.asyncPacketValidationEnabled || validatorPool == null) return;
         if (!AnticheatConfig.reachCheckEnabled || player.getBukkitEntity().hasPermission("btccore.anticheat.bypass")) return; // By-pass for OP
 
-        // Snapshot target AABB concurrently (Safe as long as we only read)
-        AABB targetBox = target.getBoundingBox();
+        long targetTimeMs = System.currentTimeMillis() - latency;
+        PlayerSimulationCache.GhostState ghostState = PlayerSimulationCache.getInterpolatedState(target.getUUID(), targetTimeMs);
+
+        // Snapshot target AABB concurrently (Fall back to current if cache missing)
+        final AABB targetBox = (ghostState != null) ? ghostState.boundingBox : target.getBoundingBox();
+        final java.util.UUID playerUUID = player.getUUID();
 
         validatorPool.submit(() -> {
             try {
@@ -48,18 +58,42 @@ public class AsyncPacketValidator {
                 
                 double distance = 0.0;
                 if (AnticheatConfig.reachStrictHitboxMath) {
-                    distance = Math.max(0.0, targetBox.distanceToSqr(eyePos)); // Approx closest point
+                    // Calculate closest point on AABB to eye position
+                    double closestX = Math.clamp(eyePos.x, targetBox.minX, targetBox.maxX);
+                    double closestY = Math.clamp(eyePos.y, targetBox.minY, targetBox.maxY);
+                    double closestZ = Math.clamp(eyePos.z, targetBox.minZ, targetBox.maxZ);
+                    distance = eyePos.distanceToSqr(closestX, closestY, closestZ);
                 } else {
-                    distance = eyePos.distanceToSqr(target.position());
+                    distance = eyePos.distanceToSqr(targetBox.getCenter());
                 }
 
-                if (distance > (maxReach * maxReach) + 0.5) { // Small buffer for latency
-                    handleViolation(player, "Reach", "Distance: " + Math.sqrt(distance) + " > " + maxReach, AnticheatConfig.reachViolationAction, player.getX(), player.getY(), player.getZ());
+                if (distance > (maxReach * maxReach) + 0.1) { // 0.1 bonus buffer for raytrace inaccuracy
+                    double vScore = violationBuffers.getOrDefault(playerUUID, 0.0) + 1.0;
+                    violationBuffers.put(playerUUID, vScore);
+
+                    handleViolation(player, "Reach", "Distance: " + String.format("%.2f", Math.sqrt(distance)) + " > " + maxReach + " (Buffer: " + vScore + ")", AnticheatConfig.reachViolationAction, player.getX(), player.getY(), player.getZ());
+                } else if (AnticheatConfig.reachRaytraceEnabled) {
+                    // Raytrace Line-of-Sight (Against the ghost AABB)
+                    Vec3 end = eyePos.add(player.getLookAngle().scale(maxReach + 1.0));
+                    if (targetBox.clip(eyePos, end).isEmpty()) {
+                         double vScore = violationBuffers.getOrDefault(playerUUID, 0.0) + 0.5; // Raytrace is less certain
+                         violationBuffers.put(playerUUID, vScore);
+                         handleViolation(player, "Raytrace", "Line of sight blocked or missed AABB (Buffer: " + vScore + ")", AnticheatConfig.reachViolationAction, player.getX(), player.getY(), player.getZ());
+                    } else {
+                        violationBuffers.computeIfPresent(playerUUID, (k, v) -> Math.max(0.0, v - 0.2));
+                    }
+                } else {
+                    // Decay buffer on valid hits
+                    violationBuffers.computeIfPresent(playerUUID, (k, v) -> Math.max(0.0, v - 0.1));
                 }
             } catch (Exception e) {
                 Bukkit.getLogger().log(Level.WARNING, "[BTC-CORE] Error in Async Reach Validation", e);
             }
         });
+    }
+
+    public static void clearPlayer(java.util.UUID uuid) {
+        violationBuffers.remove(uuid);
     }
 
     public static void validateVelocity(ServerPlayer player, double fromX, double fromY, double fromZ, double toX, double toY, double toZ) {

@@ -2229,6 +2229,8 @@ public class ServerGamePacketListenerImpl
         final net.kyori.adventure.text.Component quitMessage = details.quitMessage().map(io.papermc.paper.adventure.PaperAdventure::asAdventure).orElse(null);
         this.removePlayerFromWorld(quitMessage);
         // Paper end - Fix kick event leave message not being sent
+        // BTC-CORE Native Sentinel - Cleanup cache
+        com.infernalsuite.asp.security.PlayerSimulationCache.clear(this.player.getUUID());
         super.onDisconnect(details);
     }
 
@@ -2796,7 +2798,12 @@ public class ServerGamePacketListenerImpl
 
             // BTC-CORE start - Async Reach Validation
             if (target != null) {
-                com.infernalsuite.asp.security.AsyncPacketValidator.validateReach(this.player, target, this.player.getX(), this.player.getY(), this.player.getZ());
+                // Triple-A Silent Setback: Synchronously block attack if violation buffer is full
+                if (com.infernalsuite.asp.security.AsyncPacketValidator.hasReachViolationBuffer(this.player.getUUID())) {
+                    return; 
+                }
+
+                com.infernalsuite.asp.security.AsyncPacketValidator.validateReach(this.player, target, this.player.getX(), this.player.getY(), this.player.getZ(), this.latency());
             }
             // BTC-CORE end
             // Spigot start

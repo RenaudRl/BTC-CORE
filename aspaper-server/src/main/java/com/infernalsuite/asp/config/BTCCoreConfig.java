@@ -666,10 +666,20 @@ public final class BTCCoreConfig {
         rpgCollisionCap = getInt("rpg-optimization.collision-hard-cap", 2);
 
         // Native Anticheat (Sentinel)
+        config.setComments("rpg-optimization.sentinel", java.util.List.of(
+            "#######################################################################",
+            "# NATIVE SENTINEL ENGINE (Replaces LightningGrim / PacketEvents)",
+            "# Native NMS hit-box & latency Ghost caching for zero-overhead performance.",
+            "#######################################################################"
+        ));
         sentinelEnabled = getBoolean("rpg-optimization.sentinel.enabled", true);
+        config.setComments("rpg-optimization.sentinel.max-reach-distance", java.util.List.of("Maximum allowed block distance for Reach hits before they trigger Sentinel violation buffers."));
         sentinelMaxReachDistance = getDouble("rpg-optimization.sentinel.max-reach-distance", 3.01);
+        config.setComments("rpg-optimization.sentinel.max-speed-buffer", java.util.List.of("Velocity/Speed leeway allowance before hard setbacks trigger."));
         sentinelMaxSpeedBuffer = getDouble("rpg-optimization.sentinel.max-speed-buffer", 1.0);
+        config.setComments("rpg-optimization.sentinel.mysql-logging.enabled", java.util.List.of("If enabled, requires valid SQL connection details. Pushes all Sentinel hits asynchronously to sentinel_violations table."));
         sentinelMysqlLogging = getBoolean("rpg-optimization.sentinel.mysql-logging.enabled", false);
+        config.setComments("rpg-optimization.sentinel.auto-notify-admins", java.util.List.of("Broadcasts real-time chat alerts if a player violates checks. Staff need 'sentinel.admin' perm."));
         sentinelAutoNotifyAdmins = getBoolean("rpg-optimization.sentinel.auto-notify-admins", true);
         
         if (sentinelEnabled) {
