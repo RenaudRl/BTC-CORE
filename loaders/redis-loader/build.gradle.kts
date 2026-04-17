@@ -1,10 +1,10 @@
 plugins {
-    id("asp.base-conventions")
-    id("asp.publishing-conventions")
+    id("btccore.base-conventions")
+    id("btccore.publishing-conventions")
 }
 
 dependencies {
-    compileOnly(project(":api"))
+    compileOnly(project(":btccore-api"))
 
     api(libs.lettuce)
 
@@ -12,6 +12,8 @@ dependencies {
 }
 
 publishConfiguration {
-    name = "Advanced Slime Paper Redis Loader"
-    description = "Redis loader for Advanced Slime Paper"
+    name = "BTC-Core Redis Loader"
+    description = "Redis loader for BTC-Core"
 }
+
+

@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.infernalsuite.asp.loaders.redis","l":"RedisLoader"},{"p":"com.infernalsuite.asp.loaders.redis.util","l":"StringByteCodec"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"},{"p":"dev.btc.core.loaders.redis","l":"RedisLoader"},{"p":"dev.btc.core.loaders.redis.util","l":"StringByteCodec"}];updateSearchResults();

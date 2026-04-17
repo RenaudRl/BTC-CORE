@@ -1,18 +1,18 @@
 plugins {
-    id("asp.base-conventions")
+    id("btccore.base-conventions")
+    id("btccore.publishing-conventions")
     id("com.gradleup.shadow")
 }
 
 dependencies {
-    implementation(project(":api"))
-    implementation(project(":core"))
-    implementation(project(":aspaper-api"))
+    implementation(project(":btccore-server"))
+    implementation(project(":btccore-api"))
 }
 
 tasks {
     jar {
         manifest {
-            attributes["Main-Class"] = "com.infernalsuite.asp.importer.SWMImporter"
+            attributes["Main-Class"] = "dev.btc.core.importer.SWMImporter"
         }
     }
     shadowJar {
@@ -25,3 +25,5 @@ tasks {
 }
 
 description = "asp-importer"
+
+

@@ -12,7 +12,7 @@ import org.mockbukkit.mockbukkit.MockBukkit;
 import org.mockbukkit.mockbukkit.exception.InternalDataLoadException;
 import org.mockbukkit.mockbukkit.exception.ReflectionAccessException;
 
-import com.infernalsuite.asp.plugin.mocks.ArtRegistryMock;
+import dev.btc.core.plugin.mocks.ArtRegistryMock;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -61,7 +61,7 @@ public class RegistryAccessMock implements RegistryAccess {
             return (Registry<T>) new ArtRegistryMock();
         }
         if (RegistryKey.GAME_RULE.equals(key)) {
-            return (Registry<T>) new com.infernalsuite.asp.plugin.mocks.SimpleGameRuleRegistry();
+            return (Registry<T>) new dev.btc.core.plugin.mocks.SimpleGameRuleRegistry();
         }
         if (getOutlierKeyedRegistryKeys().contains(key)) {
             return new RegistryMock<>(key);
@@ -77,7 +77,7 @@ public class RegistryAccessMock implements RegistryAccess {
                 if (e.getMessage() != null && e.getMessage().startsWith("UnimplementedOperationException")) {
                     @SuppressWarnings("unchecked")
                     Class<T> clazz = (Class<T>) getClass(className);
-                    return new com.infernalsuite.asp.plugin.mocks.GenericMockRegistry<>(clazz);
+                    return new dev.btc.core.plugin.mocks.GenericMockRegistry<>(clazz);
                 }
                 throw e;
             }
@@ -182,3 +182,4 @@ public class RegistryAccessMock implements RegistryAccess {
         return map;
     }
 }
+

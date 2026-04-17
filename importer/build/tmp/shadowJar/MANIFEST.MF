@@ -1,4 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: com.infernalsuite.asp.importer.SWMImporter
-Multi-Release: true
+Main-Class: dev.btc.core.importer.SWMImporter
 

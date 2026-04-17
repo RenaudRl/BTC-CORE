@@ -1,0 +1,181 @@
+package dev.btc.core.plugin.commands;
+
+import dev.btc.core.api.world.SlimeWorld;
+import dev.btc.core.plugin.SWPlugin;
+import dev.btc.core.plugin.commands.exception.MessageCommandException;
+import dev.btc.core.plugin.commands.parser.BukkitWorldParser;
+import dev.btc.core.plugin.commands.parser.NamedSlimeLoader;
+import dev.btc.core.plugin.commands.parser.NamedSlimeLoaderParser;
+import dev.btc.core.plugin.commands.parser.NamedWorldData;
+import dev.btc.core.plugin.commands.parser.NamedWorldDataParser;
+import dev.btc.core.plugin.commands.parser.SlimeWorldParser;
+import dev.btc.core.plugin.commands.parser.suggestion.KnownSlimeWorldSuggestionProvider;
+import dev.btc.core.plugin.commands.sub.CloneWorldCmd;
+import dev.btc.core.plugin.commands.sub.CreateWorldCmd;
+import dev.btc.core.plugin.commands.sub.DSListCmd;
+import dev.btc.core.plugin.commands.sub.DeleteWorldCmd;
+import dev.btc.core.plugin.commands.sub.GotoCmd;
+import dev.btc.core.plugin.commands.sub.HelpCmd;
+import dev.btc.core.plugin.commands.sub.ImportWorldCmd;
+import dev.btc.core.plugin.commands.sub.LoadTemplateWorldCmd;
+import dev.btc.core.plugin.commands.sub.LoadWorldCmd;
+import dev.btc.core.plugin.commands.sub.MigrateWorldCmd;
+import dev.btc.core.plugin.commands.sub.ReloadConfigCmd;
+import dev.btc.core.plugin.commands.sub.SaveWorldCmd;
+import dev.btc.core.plugin.commands.sub.SetSpawnCmd;
+import dev.btc.core.plugin.commands.sub.UnloadWorldCmd;
+import dev.btc.core.plugin.commands.sub.VersionCmd;
+import dev.btc.core.plugin.commands.sub.WorldListCmd;
+import io.leangen.geantyref.TypeToken;
+import io.papermc.paper.command.brigadier.CommandSourceStack;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import org.bukkit.World;
+import org.bukkit.command.CommandSender;
+import org.incendo.cloud.annotations.AnnotationParser;
+import org.incendo.cloud.annotations.Command;
+import org.incendo.cloud.bukkit.CloudBukkitCapabilities;
+import org.incendo.cloud.exception.ArgumentParseException;
+import org.incendo.cloud.exception.CommandExecutionException;
+import org.incendo.cloud.exception.InvalidSyntaxException;
+import org.incendo.cloud.exception.NoPermissionException;
+import org.incendo.cloud.exception.handling.ExceptionHandler;
+import org.incendo.cloud.execution.ExecutionCoordinator;
+import org.incendo.cloud.paper.LegacyPaperCommandManager;
+import org.incendo.cloud.paper.PaperCommandManager;
+import org.incendo.cloud.paper.util.sender.PaperSimpleSenderMapper;
+import org.incendo.cloud.paper.util.sender.Source;
+import org.incendo.cloud.parser.ParserRegistry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * Manages the plugin's commands and their registration.
+ */
+public class CommandManager {
+    private static final Logger LOGGER = LoggerFactory.getLogger(CommandManager.class);
+
+    // A list containing all the worlds that are being performed operations on, so two commands cannot be run at the same time
+    private final Set<String> worldsInUse = new HashSet<>();
+
+    private final SWPlugin plugin;
+
+    /**
+     * Constructs a new CommandManager and registers all plugin commands.
+     *
+     * @param plugin the plugin instance.
+     */
+    public CommandManager(SWPlugin plugin) {
+
+        PaperCommandManager<Source> commandManager = PaperCommandManager.builder(PaperSimpleSenderMapper.simpleSenderMapper())
+                .executionCoordinator(ExecutionCoordinator.coordinatorFor(ExecutionCoordinator.nonSchedulingExecutor()))
+                .buildOnEnable(plugin);
+
+        this.plugin = plugin;
+
+        ParserRegistry<Source> parserRegistry = commandManager.parserRegistry();
+
+        parserRegistry.registerSuggestionProvider("known-slime-worlds", new KnownSlimeWorldSuggestionProvider());
+
+        parserRegistry.registerParserSupplier(TypeToken.get(NamedWorldData.class), parserParameters -> new NamedWorldDataParser());
+        parserRegistry.registerParserSupplier(TypeToken.get(SlimeWorld.class), parserParameters -> new SlimeWorldParser());
+        parserRegistry.registerParserSupplier(TypeToken.get(NamedSlimeLoader.class), parserParameters -> new NamedSlimeLoaderParser(plugin.getLoaderManager()));
+        parserRegistry.registerParserSupplier(TypeToken.get(World.class), parserParameters -> new BukkitWorldParser());
+
+        commandManager.exceptionController().registerHandler(TypeToken.get(CommandExecutionException.class), ExceptionHandler.unwrappingHandler()); // Unwrap the exception
+        commandManager.exceptionController().registerHandler(TypeToken.get(ArgumentParseException.class), context -> {
+            Throwable cause = context.exception().getCause();
+            if (cause instanceof MessageCommandException message) {
+                context.context().sender().source().sendMessage(message.getComponent());
+            } else {
+                String message = cause.getMessage();
+                if (message == null) {
+                    message = "An error occurred while parsing the command!";
+                }
+
+                context.context().sender().source().sendMessage(SlimeCommand.COMMAND_PREFIX.append(Component.text(message)).color(NamedTextColor.RED));
+            }
+        });
+        commandManager.exceptionController().registerHandler(TypeToken.get(InvalidSyntaxException.class), context -> {
+            InvalidSyntaxException e = context.exception();
+
+            if (e.currentChain().size() == 1) {
+                context.context().sender().source().sendMessage(SlimeCommand.COMMAND_PREFIX.append(
+                        Component.text("Unknown subcommand. To check out help page, type ").color(NamedTextColor.RED)
+                                .append(Component.text("/swm help").color(NamedTextColor.GRAY))
+                                .append(Component.text(".")).color(NamedTextColor.RED)
+                ));
+            } else {
+                context.context().sender().source().sendMessage(SlimeCommand.COMMAND_PREFIX.append(
+                        Component.text("Command usage: ").color(NamedTextColor.RED)
+                                .append(Component.text("/" + e.correctSyntax()).color(NamedTextColor.GRAY))
+                                .append(Component.text(".")).color(NamedTextColor.RED)
+                ));
+            }
+        });
+        commandManager.exceptionController().registerHandler(TypeToken.get(NoPermissionException.class), context -> {
+            context.context().sender().source().sendMessage(SlimeCommand.COMMAND_PREFIX.append(
+                    Component.text("You do not have permission to perform this command.").color(NamedTextColor.RED)
+            ));
+
+        });
+        commandManager.exceptionController().registerHandler(TypeToken.get(MessageCommandException.class), context -> {
+            context.context().sender().source().sendMessage(context.exception().getComponent());
+        });
+
+        AnnotationParser<Source> ap = new AnnotationParser<>(commandManager, Source.class);
+
+        ap.parse(this,
+                new CloneWorldCmd(this),
+                new CreateWorldCmd(this),
+                new DeleteWorldCmd(this),
+                new DSListCmd(this),
+                new GotoCmd(this),
+                new ImportWorldCmd(this),
+                new LoadTemplateWorldCmd(this),
+                new LoadWorldCmd(this),
+                new MigrateWorldCmd(this),
+                new ReloadConfigCmd(this),
+                new SaveWorldCmd(this),
+                new SetSpawnCmd(this),
+                new UnloadWorldCmd(this),
+                new VersionCmd(this),
+                new WorldListCmd(this),
+                new HelpCmd(this, commandManager)
+        );
+
+    }
+
+    /**
+     * Gets the set of worlds currently being processed.
+     *
+     * @return the set of worlds in use.
+     */
+    public Set<String> getWorldsInUse() {
+        return worldsInUse;
+    }
+
+    /**
+     * Handles the main command execution.
+     *
+     * @param sender the command source.
+     */
+    @Command("swp|aswm|swm")
+    public void onCommand(Source sender) {
+        sender.source().sendMessage(SlimeCommand.COMMAND_PREFIX.append(
+                Component.text("This is the main command for the Slime World Plugin. Type ").color(NamedTextColor.GRAY)
+                        .append(Component.text("/swp help").color(NamedTextColor.YELLOW))
+                        .append(Component.text(" to see all available commands.")).color(NamedTextColor.GRAY)
+        ));
+    }
+
+    SWPlugin getPlugin() {
+        return plugin;
+    }
+
+
+}
+

@@ -1,14 +1,15 @@
 plugins {
-    id("asp.base-conventions")
-    id("asp.publishing-conventions")
+    id("btccore.base-conventions")
+    id("btccore.publishing-conventions")
 }
 
 dependencies {
-    compileOnly(project(":api"))
+    compileOnly(project(":btccore-api"))
     compileOnly(paperApi())
 }
 
 publishConfiguration {
-    name = "Advanced Slime Paper API loader"
-    description = "HTTP-API based loader for Advanced Slime Paper"
+    name = "BTC-Core API loader"
+    description = "HTTP-API based loader for BTC-Core"
 }
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>dev.btc.core</groupId>
+  <artifactId>mysql-loader</artifactId>
+  <versioning>
+    <latest>4.2.0-SNAPSHOT</latest>
+    <versions>
+      <version>4.2.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20260417162128</lastUpdated>
+  </versioning>
+</metadata>

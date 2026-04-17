@@ -1,7 +1,7 @@
-package com.infernalsuite.asp.loaders.mysql;
+package dev.btc.core.loaders.mysql;
 
-import com.infernalsuite.asp.api.exceptions.UnknownWorldException;
-import com.infernalsuite.asp.api.loaders.UpdatableLoader;
+import dev.btc.core.api.exceptions.UnknownWorldException;
+import dev.btc.core.api.loaders.UpdatableLoader;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.jetbrains.annotations.ApiStatus;
@@ -210,3 +210,4 @@ public class MysqlLoader extends UpdatableLoader {
     }
 
 }
+

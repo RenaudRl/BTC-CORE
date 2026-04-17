@@ -1,7 +1,7 @@
-package com.infernalsuite.asp.loaders.mongo;
+package dev.btc.core.loaders.mongo;
 
-import com.infernalsuite.asp.api.exceptions.UnknownWorldException;
-import com.infernalsuite.asp.api.loaders.UpdatableLoader;
+import dev.btc.core.api.exceptions.UnknownWorldException;
+import dev.btc.core.api.loaders.UpdatableLoader;
 import com.mongodb.MongoException;
 import com.mongodb.MongoNamespace;
 import com.mongodb.client.*;
@@ -205,3 +205,4 @@ public class MongoLoader extends UpdatableLoader {
     }
 
 }
+

@@ -1,8 +1,8 @@
-api-version: "1.21"
-name: ASPaperPlugin
-version: "54510a81a48d3d8bd8ea1a84a5da1a71036cfd55"
-main: com.infernalsuite.asp.plugin.SWPlugin
-bootstrapper: com.infernalsuite.asp.plugin.SlimePluginBootstrap
-description: "ASP plugin for Paper, providing utilities for the ASP platform"
+api-version: "26.1"
+name: BTCCorePlugin
+version: "f978fe7f0a5c11d393abe7df6ced0e74d2b55c0b"
+main: dev.btc.core.plugin.SWPlugin
+bootstrapper: dev.btc.core.plugin.SlimePluginBootstrap
+description: "BTCCore plugin for Paper, providing utilities for the platform"
 authors:
-  - InfernalSuite
+  - RenaudRl

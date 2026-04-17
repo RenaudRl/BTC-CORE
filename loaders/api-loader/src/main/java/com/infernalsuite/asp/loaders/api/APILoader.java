@@ -1,9 +1,9 @@
-package com.infernalsuite.asp.loaders.api;
+package dev.btc.core.loaders.api;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.infernalsuite.asp.api.exceptions.UnknownWorldException;
-import com.infernalsuite.asp.api.loaders.SlimeLoader;
+import dev.btc.core.api.exceptions.UnknownWorldException;
+import dev.btc.core.api.loaders.SlimeLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -179,3 +179,4 @@ public class APILoader implements SlimeLoader {
         this.logger.warn("Illegal call to deleteWorld: API Worlds cannot be deleted through the loader.");
     }
 }
+

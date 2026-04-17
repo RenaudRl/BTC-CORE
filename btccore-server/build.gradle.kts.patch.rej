@@ -1,0 +1,33 @@
+++++ REJECTED HUNK: 1
+@@ -22,6 +22,17 @@
+     minecraftVersion = providers.gradleProperty("mcVersion")
+     gitFilePatches = false
+ 
++    val aspaper = forks.register("aspaper") {
++        upstream.patchDir("paperServer") {
++            upstreamPath = "paper-server"
++            excludes = setOf("src/minecraft", "patches", "build.gradle.kts")
++            patchesDir = rootDirectory.dir("aspaper-server/paper-patches")
++            outputDir = rootDirectory.dir("paper-server")
++        }
++    }
++
++    activeFork = aspaper
++
+     spigot {
+         enabled = false
+         buildDataRef = "42d18d4c4653ffc549778dbe223f6994a031d69e"
+++++ END HUNK
+
+++++ REJECTED HUNK: 3
+@@ -127,7 +150,8 @@
+ }
+ 
+ dependencies {
+-    implementation(project(":paper-api"))
++    implementation(project(":aspaper-api")) //ASP
++    implementation(project(":core")) //ASP
+     implementation("ca.spottedleaf:concurrentutil:0.0.7")
+     implementation("org.jline:jline-terminal-ffm:3.27.1") // use ffm on java 22+
+     implementation("org.jline:jline-terminal-jni:3.27.1") // fall back to jni on java 21
+++++ END HUNK

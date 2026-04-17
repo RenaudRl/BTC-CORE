@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.infernalsuite.asp.loaders.redis"},{"l":"com.infernalsuite.asp.loaders.redis.util"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"l":"dev.btc.core.loaders.redis"},{"l":"dev.btc.core.loaders.redis.util"}];updateSearchResults();

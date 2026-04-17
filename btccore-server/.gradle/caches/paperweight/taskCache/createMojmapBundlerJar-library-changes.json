@@ -1,0 +1,16 @@
+[
+  {
+    "inputId": {
+      "group": "net.sf.jopt-simple",
+      "name": "jopt-simple",
+      "version": "5.0.4"
+    },
+    "inputPath": "net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar",
+    "outputId": {
+      "group": "net.sf.jopt-simple",
+      "name": "jopt-simple",
+      "version": "6.0-alpha-3"
+    },
+    "outputPath": "net/sf/jopt-simple/jopt-simple/6.0-alpha-3/jopt-simple-6.0-alpha-3.jar"
+  }
+]

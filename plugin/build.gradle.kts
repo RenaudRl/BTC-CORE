@@ -1,15 +1,20 @@
 plugins {
-    id("asp.base-conventions")
-    id("asp.publishing-conventions")
+    id("btccore.base-conventions")
+    id("btccore.publishing-conventions")
     id("net.minecrell.plugin-yml.paper")
     id("com.gradleup.shadow")
 }
 
+publishConfiguration {
+    name.set("BTC-CORE Plugin")
+    description.set("BTCCore plugin for Paper, providing utilities and core features.")
+}
+
 dependencies {
-    implementation(project(":api"))
+    compileOnly(project(":btccore-api"))
     implementation(project(":loaders"))
 
-    implementation(libs.configurate.yaml)
+    compileOnly(libs.configurate.yaml)
     implementation(libs.bstats)
     implementation(libs.cloud.paper)
     implementation(libs.cloud.minecraft.extras)
@@ -17,8 +22,7 @@ dependencies {
 
     compileOnly(paperApi())
 
-    testImplementation(project(":api"))
-    testImplementation(project(":aspaper-api"))
+    testImplementation(project(":btccore-api"))
     testImplementation(libs.mockbukkit) {
         exclude(group = "io.papermc.paper", module = "paper-api")
     }
@@ -34,18 +38,32 @@ tasks.test {
 
 tasks {
     withType<Jar> {
-        archiveBaseName.set("asp-plugin")
+        archiveBaseName.set("btccore-plugin")
     }
 
     shadowJar {
         archiveClassifier.set("")
         
-        relocate("org.bstats", "com.infernalsuite.asp.libs.bstats")
-        relocate("org.spongepowered.configurate", "com.infernalsuite.asp.libs.configurate")
-        relocate("com.zaxxer.hikari", "com.infernalsuite.asp.libs.hikari")
-        relocate("com.mongodb", "com.infernalsuite.asp.libs.mongo")
-        relocate("io.lettuce", "com.infernalsuite.asp.libs.lettuce")
-        relocate("org.bson", "com.infernalsuite.asp.libs.bson")
+        relocate("org.bstats", "dev.btc.core.libs.bstats")
+        relocate("org.spongepowered.configurate", "dev.btc.core.libs.configurate")
+        relocate("com.zaxxer.hikari", "dev.btc.core.libs.hikari")
+        relocate("com.mongodb", "dev.btc.core.libs.mongo")
+        relocate("io.lettuce", "dev.btc.core.libs.lettuce")
+        relocate("org.bson", "dev.btc.core.libs.bson")
+
+        // Exclude Netty as it is provided by Paper
+        exclude("io/netty/**")
+        exclude("META-INF/maven/io.netty/**")
+        exclude("META-INF/native-image/io.netty/**")
+        
+        // Exclude Reactor and Reactive Streams (from Lettuce)
+        exclude("reactor/**")
+        exclude("org/reactivestreams/**")
+        exclude("META-INF/native-image/io.projectreactor/**")
+
+        // Exclude Slf4j as it is provided by Paper
+        exclude("org/slf4j/**")
+        exclude("META-INF/maven/org.slf4j/**")
     }
 
     assemble {
@@ -54,11 +72,13 @@ tasks {
 }
 
 paper {
-    name = "ASPaperPlugin"
-    description = "ASP plugin for Paper, providing utilities for the ASP platform"
+    name = "BTCCorePlugin"
+    description = "BTCCore plugin for Paper, providing utilities for the platform"
     version = "\${gitCommitId}"
-    apiVersion = "1.21"
-    main = "com.infernalsuite.asp.plugin.SWPlugin"
-    authors = listOf("InfernalSuite")
-    bootstrapper = "com.infernalsuite.asp.plugin.SlimePluginBootstrap"
+    apiVersion = "26.1"
+    main = "dev.btc.core.plugin.SWPlugin"
+    authors = listOf("RenaudRl")
+    bootstrapper = "dev.btc.core.plugin.SlimePluginBootstrap"
 }
+
+

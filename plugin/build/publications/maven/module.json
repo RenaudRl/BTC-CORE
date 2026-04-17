@@ -1,0 +1,158 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.btc.core",
+    "module": "plugin",
+    "version": "4.2.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.2.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 25,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "plugin-4.2.0-SNAPSHOT.jar",
+          "url": "plugin-4.2.0-SNAPSHOT.jar",
+          "size": 13432952,
+          "sha512": "7b214c98c16d7f5add1d1347faff222c1a8d16327001873949479bcbc7642c8327cb0be2db142acc0da4ce120e9ffc71a820aad883909c40aa0cf62649a95b68",
+          "sha256": "36eaee8e30adeec89edf540319f77d340e3ccc4aff9ae6dbf0db921842a6d922",
+          "sha1": "1d42d6a9723d7003376b10a4fdd1bc1ab56bc313",
+          "md5": "4421906032737bdb5b9520b7b4560c3e"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 25,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "dev.btc.core",
+          "module": "loaders",
+          "version": {
+            "requires": "4.2.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.bstats",
+          "module": "bstats-bukkit",
+          "version": {
+            "requires": "3.1.0"
+          }
+        },
+        {
+          "group": "org.incendo",
+          "module": "cloud-paper",
+          "version": {
+            "requires": "2.0.0-beta.14"
+          }
+        },
+        {
+          "group": "org.incendo",
+          "module": "cloud-minecraft-extras",
+          "version": {
+            "requires": "2.0.0-beta.14"
+          }
+        },
+        {
+          "group": "org.incendo",
+          "module": "cloud-annotations",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "plugin-4.2.0-SNAPSHOT.jar",
+          "url": "plugin-4.2.0-SNAPSHOT.jar",
+          "size": 13432952,
+          "sha512": "7b214c98c16d7f5add1d1347faff222c1a8d16327001873949479bcbc7642c8327cb0be2db142acc0da4ce120e9ffc71a820aad883909c40aa0cf62649a95b68",
+          "sha256": "36eaee8e30adeec89edf540319f77d340e3ccc4aff9ae6dbf0db921842a6d922",
+          "sha1": "1d42d6a9723d7003376b10a4fdd1bc1ab56bc313",
+          "md5": "4421906032737bdb5b9520b7b4560c3e"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "plugin-4.2.0-SNAPSHOT-javadoc.jar",
+          "url": "plugin-4.2.0-SNAPSHOT-javadoc.jar",
+          "size": 4310963,
+          "sha512": "dab0dd87816145191827d7cd45990904ec8c8c859f64b52f0c1c59e52d9f57795ac6c3f2d126a24a9e9763735e3eaaa5512a64250379f6a5fd1e56d65a6e4522",
+          "sha256": "6740e70976b5c15ad0c2be5bc91fadef3a6733fe3ac904cd8db4f19f0430b765",
+          "sha1": "b1c7887f50578ca4c5b3d5a0bb587323c5171111",
+          "md5": "6980c36d805b53cbdde9c15a397f6d60"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "plugin-4.2.0-SNAPSHOT-sources.jar",
+          "url": "plugin-4.2.0-SNAPSHOT-sources.jar",
+          "size": 44878,
+          "sha512": "e79c1a0a333d7ef7b65633a6426500391f409521cbb7ecde8cc30711bb940a23d2a7dedd9908ebb56b542c74f44e87d227c6964f7f27943ca6ebb99966b7c249",
+          "sha256": "1436563fcd33c32e543a0ae74477545376af4dfe18a6c98bae31153f16c94da8",
+          "sha1": "adb04e0816f1376001bc35f359d6c7c11639be85",
+          "md5": "4da1c043f3d91383d479d4f8ee34c0f6"
+        }
+      ]
+    },
+    {
+      "name": "shadowRuntimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "shadowed",
+        "org.gradle.jvm.version": 25,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "plugin-4.2.0-SNAPSHOT.jar",
+          "url": "plugin-4.2.0-SNAPSHOT.jar",
+          "size": 13432952,
+          "sha512": "7b214c98c16d7f5add1d1347faff222c1a8d16327001873949479bcbc7642c8327cb0be2db142acc0da4ce120e9ffc71a820aad883909c40aa0cf62649a95b68",
+          "sha256": "36eaee8e30adeec89edf540319f77d340e3ccc4aff9ae6dbf0db921842a6d922",
+          "sha1": "1d42d6a9723d7003376b10a4fdd1bc1ab56bc313",
+          "md5": "4421906032737bdb5b9520b7b4560c3e"
+        }
+      ]
+    }
+  ]
+}

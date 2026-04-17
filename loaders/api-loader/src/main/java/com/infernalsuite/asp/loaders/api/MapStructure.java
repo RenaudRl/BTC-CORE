@@ -1,4 +1,4 @@
-package com.infernalsuite.asp.loaders.api;
+package dev.btc.core.loaders.api;
 
 import java.util.List;
 import java.util.Map;
@@ -86,3 +86,4 @@ public class MapStructure {
         this.pictureUrls = pictureUrls;
     }
 }
+

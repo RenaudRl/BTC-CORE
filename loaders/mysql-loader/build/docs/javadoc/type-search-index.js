@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.infernalsuite.asp.loaders.mysql","l":"MysqlLoader"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"},{"p":"dev.btc.core.loaders.mysql","l":"MysqlLoader"}];updateSearchResults();

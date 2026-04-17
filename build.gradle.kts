@@ -7,28 +7,6 @@ plugins {
 }
 
 paperweight {
-    upstreams.paper {
-        ref = providers.gradleProperty("paperRef")
-
-        // Setup file patches for build scripts
-        patchFile {
-            path = "paper-api/build.gradle.kts"
-            outputFile = file("aspaper-api/build.gradle.kts")
-            patchFile = file("aspaper-api/build.gradle.kts.patch")
-        }
-        patchFile {
-            path = "paper-server/build.gradle.kts"
-            outputFile = file("aspaper-server/build.gradle.kts")
-            patchFile = file("aspaper-server/build.gradle.kts.patch")
-        }
-
-        patchDir("paperApi") {
-            upstreamPath = "paper-api"
-            excludes = setOf("build.gradle.kts")
-            patchesDir = file("aspaper-api/paper-patches")
-            outputDir = file("paper-api")
-        }
-    }
 }
 
 subprojects {
@@ -37,7 +15,7 @@ subprojects {
 
     extensions.configure<JavaPluginExtension> {
         toolchain {
-            languageVersion = JavaLanguageVersion.of(JAVA_VERSION)
+            languageVersion.set(JavaLanguageVersion.of(JAVA_VERSION))
         }
     }
 
@@ -69,5 +47,20 @@ subprojects {
             exceptionFormat = TestExceptionFormat.FULL
             events(TestLogEvent.STANDARD_OUT)
         }
+    }
+}
+
+tasks.register("buildAll") {
+    group = "build"
+    description = "Assembles the entire project (Server Paperclip and Plugin ShadowJar)"
+    dependsOn(project(":btccore-server").tasks.named("createPaperclipJar"))
+    dependsOn(project(":plugin").tasks.named("assemble"))
+    
+    doLast {
+        println("#######################################################################")
+        println("BUILD ALL COMPLETED")
+        println("Server: btccore-server/build/libs/")
+        println("Plugin: plugin/build/libs/")
+        println("#######################################################################")
     }
 }

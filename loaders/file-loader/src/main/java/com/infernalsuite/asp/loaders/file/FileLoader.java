@@ -1,8 +1,8 @@
-package com.infernalsuite.asp.loaders.file;
+package dev.btc.core.loaders.file;
 
 import com.github.luben.zstd.Zstd;
-import com.infernalsuite.asp.api.exceptions.UnknownWorldException;
-import com.infernalsuite.asp.api.loaders.SlimeLoader;
+import dev.btc.core.api.exceptions.UnknownWorldException;
+import dev.btc.core.api.loaders.SlimeLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -138,3 +138,4 @@ public class FileLoader implements SlimeLoader {
         }
     }
 }
+

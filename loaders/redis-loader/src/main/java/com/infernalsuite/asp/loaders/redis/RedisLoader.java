@@ -1,10 +1,10 @@
-package com.infernalsuite.asp.loaders.redis;
+package dev.btc.core.loaders.redis;
 
-import com.infernalsuite.asp.api.exceptions.UnknownWorldException;
-import com.infernalsuite.asp.api.loaders.SlimeLoader;
+import dev.btc.core.api.exceptions.UnknownWorldException;
+import dev.btc.core.api.loaders.SlimeLoader;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.api.sync.RedisCommands;
-import com.infernalsuite.asp.loaders.redis.util.StringByteCodec;
+import dev.btc.core.loaders.redis.util.StringByteCodec;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

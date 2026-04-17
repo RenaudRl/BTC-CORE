@@ -20,5 +20,6 @@ val Provider<out FileSystemLocation>.path: Path
 val Provider<out FileSystemLocation>.pathOrNull: Path?
     get() = orNull?.path
 
-fun Project.paperApi(): Dependency =
-    dependencies.create("io.papermc.paper:paper-api:${rootProject.providers.gradleProperty("version").get()}")
+fun Project.paperApi(): Dependency = 
+    dependencies.create(files("${rootProject.projectDir}/btccore-api/src/main/java")) // Use source dir to avoid circular project deps in offline dev
+

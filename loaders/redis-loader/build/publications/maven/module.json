@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.btc.core",
+    "module": "redis-loader",
+    "version": "4.2.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.2.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 25,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.lettuce",
+          "module": "lettuce-core",
+          "version": {
+            "requires": "6.5.1.RELEASE"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "redis-loader-4.2.0-SNAPSHOT.jar",
+          "url": "redis-loader-4.2.0-SNAPSHOT.jar",
+          "size": 4111,
+          "sha512": "91673cb3e6ee6897b469438a88a0d00523af404d506a3416fffb7d4be41acf4a214cfe0dec814f8a1e7494169f070de5d715836c7cc0aa1f34efcbbb3eeef255",
+          "sha256": "c377fd5e5a096f2bf39c5bbebd103325bb99ebdfb9a414d4eb765547af3f64a8",
+          "sha1": "0d492f844cd65244a9bae626f0b8a93e7e2e13f6",
+          "md5": "39ecf727e39868d28353ee134de54304"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 25,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.lettuce",
+          "module": "lettuce-core",
+          "version": {
+            "requires": "6.5.1.RELEASE"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "redis-loader-4.2.0-SNAPSHOT.jar",
+          "url": "redis-loader-4.2.0-SNAPSHOT.jar",
+          "size": 4111,
+          "sha512": "91673cb3e6ee6897b469438a88a0d00523af404d506a3416fffb7d4be41acf4a214cfe0dec814f8a1e7494169f070de5d715836c7cc0aa1f34efcbbb3eeef255",
+          "sha256": "c377fd5e5a096f2bf39c5bbebd103325bb99ebdfb9a414d4eb765547af3f64a8",
+          "sha1": "0d492f844cd65244a9bae626f0b8a93e7e2e13f6",
+          "md5": "39ecf727e39868d28353ee134de54304"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "redis-loader-4.2.0-SNAPSHOT-javadoc.jar",
+          "url": "redis-loader-4.2.0-SNAPSHOT-javadoc.jar",
+          "size": 4155481,
+          "sha512": "35330627a805132ab7b097bed9bdbffcb4e6b062a4a01e58212dc79ab0e2e96f21f1be2488c0d3c5f50536acef276ac28760236601793cdbad6f3b9e2213c62b",
+          "sha256": "c0ae3260b9303f3cec89cfaa039e0213cedecc3ad2d054de3b981960c42ceefc",
+          "sha1": "d262f294196dd8e9ef35c517b987a8a7633fca5b",
+          "md5": "1917c7e5d04e11cbbab8fc2658c378b2"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "redis-loader-4.2.0-SNAPSHOT-sources.jar",
+          "url": "redis-loader-4.2.0-SNAPSHOT-sources.jar",
+          "size": 2644,
+          "sha512": "c5de991ae2664ccd7ff46412cb88e1830d5ecf875c7f15e2d028d74e8f6ba24a22dabd2a918977faf394118f9116e0fabfe623222d7f7ba28240c5520a8c48c7",
+          "sha256": "c5d5d6c96cc110038c3049850cc22d029c6a6d4e99424ed4975eaa540451f5ef",
+          "sha1": "de22dd774d49d04856b03b53351b323734722223",
+          "md5": "5f87ac1b73df67a7d6a2e0067979513e"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.btc.core",
+    "module": "mongo-loader",
+    "version": "4.2.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.2.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 25,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.mongodb",
+          "module": "mongodb-driver-sync",
+          "version": {
+            "requires": "5.2.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "mongo-loader-4.2.0-SNAPSHOT.jar",
+          "url": "mongo-loader-4.2.0-SNAPSHOT.jar",
+          "size": 5670,
+          "sha512": "5e7f77fa05e1668f60f515907aabb351342a65a0acb1a93bf1e176cade692ea602ead8fc70c89d6d4e5258f771da045e46ce2aad9048ef76531e4d92580fd61f",
+          "sha256": "a94b632a1672c77e287476aac53c9b791a3cfd29c754fd6a1c26fabc8a4d8aa5",
+          "sha1": "7e7cec120747f775e451d4902a2265da4e95dd3a",
+          "md5": "1a9e6e54c9fddcfc7bc396030a23d1b2"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 25,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.mongodb",
+          "module": "mongodb-driver-sync",
+          "version": {
+            "requires": "5.2.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "mongo-loader-4.2.0-SNAPSHOT.jar",
+          "url": "mongo-loader-4.2.0-SNAPSHOT.jar",
+          "size": 5670,
+          "sha512": "5e7f77fa05e1668f60f515907aabb351342a65a0acb1a93bf1e176cade692ea602ead8fc70c89d6d4e5258f771da045e46ce2aad9048ef76531e4d92580fd61f",
+          "sha256": "a94b632a1672c77e287476aac53c9b791a3cfd29c754fd6a1c26fabc8a4d8aa5",
+          "sha1": "7e7cec120747f775e451d4902a2265da4e95dd3a",
+          "md5": "1a9e6e54c9fddcfc7bc396030a23d1b2"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "mongo-loader-4.2.0-SNAPSHOT-javadoc.jar",
+          "url": "mongo-loader-4.2.0-SNAPSHOT-javadoc.jar",
+          "size": 4147835,
+          "sha512": "276c857da30ea75612943f2c86a344c3084c1eae3175de37ba86aa06d7f56c2f0511a69ce291f179bf33aec8cab8dd37a0933b9f52254329beb3b295fc289d18",
+          "sha256": "0093c5e410c5b6b9d0e04e051bccccabb2d26a820336a0425806b776bdbcd58e",
+          "sha1": "eea55ff1750b18386b0cc490fa94ef1b9b963e29",
+          "md5": "e21ea7a8f548228a59e2d07581f57450"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "mongo-loader-4.2.0-SNAPSHOT-sources.jar",
+          "url": "mongo-loader-4.2.0-SNAPSHOT-sources.jar",
+          "size": 2867,
+          "sha512": "9015204379a9eac1790a31b4a713ae773d6357473ee1a115fa7a511195231b50f8511ab82d5ee2ec08c70e244e1955a887fa1c51897c86829a79d1d6cfb608b3",
+          "sha256": "d5a789e12661d0e1899f12c1a00a5d2cd607588368035e1784089cdef6747dfd",
+          "sha1": "a0b23b82b12a29083a7d4a554f8ebc059156a6f9",
+          "md5": "0297fbb658d257c11f49696687c584a2"
+        }
+      ]
+    }
+  ]
+}

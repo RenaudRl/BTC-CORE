@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.btc.core",
+    "module": "mysql-loader",
+    "version": "4.2.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.2.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 25,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "com.zaxxer",
+          "module": "HikariCP",
+          "version": {
+            "requires": "6.2.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "mysql-loader-4.2.0-SNAPSHOT.jar",
+          "url": "mysql-loader-4.2.0-SNAPSHOT.jar",
+          "size": 5489,
+          "sha512": "e31a3f715c966239a6a077e4c581fd98cb3012308967d89253b1f997393729b11858680116204005942f6914f2f026b4ba00f2332a848642ec18e6864254abb4",
+          "sha256": "45d019ef2457fda62d33e0bf1cffd640fdcdcd7fcb5b84eec07e384f37a5a99f",
+          "sha1": "42b56b0c4edc80d45a8df26e9cf6483484cc6fde",
+          "md5": "b4bae51ba67090bcfc304d6b1d840944"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 25,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.zaxxer",
+          "module": "HikariCP",
+          "version": {
+            "requires": "6.2.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "mysql-loader-4.2.0-SNAPSHOT.jar",
+          "url": "mysql-loader-4.2.0-SNAPSHOT.jar",
+          "size": 5489,
+          "sha512": "e31a3f715c966239a6a077e4c581fd98cb3012308967d89253b1f997393729b11858680116204005942f6914f2f026b4ba00f2332a848642ec18e6864254abb4",
+          "sha256": "45d019ef2457fda62d33e0bf1cffd640fdcdcd7fcb5b84eec07e384f37a5a99f",
+          "sha1": "42b56b0c4edc80d45a8df26e9cf6483484cc6fde",
+          "md5": "b4bae51ba67090bcfc304d6b1d840944"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "mysql-loader-4.2.0-SNAPSHOT-javadoc.jar",
+          "url": "mysql-loader-4.2.0-SNAPSHOT-javadoc.jar",
+          "size": 4147860,
+          "sha512": "ff283ee9f97d15476cb2ab16591f7390f00e19e99bb54d5ca3bade5a18ecb2be8a95902d1670bffe933b5be864a2661d9ad0461159a4cd0445b0dd16ed0cc599",
+          "sha256": "f6055b8fc765010c3807c90ba674c54599f62368c204a75b1cfba0b310462279",
+          "sha1": "8e1685bf386ee02474e9d960678ac18bb4261e1a",
+          "md5": "7e9f3e105e2d791f17e04b91d956068e"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "mysql-loader-4.2.0-SNAPSHOT-sources.jar",
+          "url": "mysql-loader-4.2.0-SNAPSHOT-sources.jar",
+          "size": 3168,
+          "sha512": "21d460c6890a126982203b6bd94652248fcc03945f502b47e157c2011cf0370770dd75863b7dd16c4861658fb957ee859e713070064c32444b1c4b8cc9afca29",
+          "sha256": "ee35a39785cbd6318368c18844cb889e43ebb9b50992beeff86b955dc1883ef4",
+          "sha1": "ed1658d44b002072c7c02479e86f9f24ac71f600",
+          "md5": "a535c49697c8253df7fb3f5a5240118e"
+        }
+      ]
+    }
+  ]
+}

@@ -2,12 +2,13 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.infernalsuite"
+group = "com.btc-core"
 
 repositories {
     mavenLocal()
     mavenCentral()
     gradlePluginPortal()
+    maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 fun convertPlugin(plugin: Provider<PluginDependency>): String {
@@ -26,3 +27,4 @@ dependencies {
     implementation(convertPlugin(libs.plugins.plugin.yml.paper))
     implementation(convertPlugin(libs.plugins.shadow))
 }
+

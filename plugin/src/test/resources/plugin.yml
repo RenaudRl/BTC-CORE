@@ -1,4 +1,5 @@
-name: ASPaper
-main: com.infernalsuite.asp.plugin.SWPlugin
+﻿name: ASPaper
+main: dev.btc.core.plugin.SWPlugin
 version: 1.0.0
 api-version: '1.21'
+

@@ -11,15 +11,13 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.9.0"
 }
 
-rootProject.name = "ASPaper"
+rootProject.name = "BTC-Core"
 
-include(":api")
-include(":core")
+include(":btccore-api")
+include(":btccore-server")
 include(":importer")
 include(":loaders")
 include(":plugin")
-include(":aspaper-api")
-include(":aspaper-server")
 
 include("loaders:mongo-loader")
 findProject(":loaders:mongo-loader")?.name = "mongo-loader"
