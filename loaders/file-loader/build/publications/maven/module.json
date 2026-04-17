@@ -77,11 +77,11 @@
         {
           "name": "file-loader-4.2.0-SNAPSHOT-javadoc.jar",
           "url": "file-loader-4.2.0-SNAPSHOT-javadoc.jar",
-          "size": 4147562,
-          "sha512": "65ad30b588f5b5394f7e4ce9b26096fe23db0cf52cbb6a13e400e93c02adc42c4003c4095d9f45add20961875b65d447ee1201888d7d1803493abb5eccf17a0b",
-          "sha256": "63e9eb29511f5addfb7505010f58135bc030e9aa3cbc3d5ab0996caf58488b02",
-          "sha1": "a8ec25cc3b354791a4f9b21388dbcdc7c26c8029",
-          "md5": "1094f0dcb4af6e7101df998b0aa46877"
+          "size": 4147919,
+          "sha512": "f5ad2785636c7cf40271d73ec7b505658e2e672c63ce6c3a9c6f1a2f1dbfa1410e799c66bccc32ed731c2afa2ed772b17e6d974a483a51f51d6cdc0d6f3ec205",
+          "sha256": "c23f95d4ca48870df80096632f3483d06274cf2dd52bd188e59e6e3613c233b1",
+          "sha1": "e34e86c06fa225c95e87bb86746353cff7f85537",
+          "md5": "79e718e7f02cbf7bef1cf17625df1793"
         }
       ]
     },

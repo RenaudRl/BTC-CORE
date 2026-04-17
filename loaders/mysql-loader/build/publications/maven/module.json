@@ -86,11 +86,11 @@
         {
           "name": "mysql-loader-4.2.0-SNAPSHOT-javadoc.jar",
           "url": "mysql-loader-4.2.0-SNAPSHOT-javadoc.jar",
-          "size": 4147860,
-          "sha512": "ff283ee9f97d15476cb2ab16591f7390f00e19e99bb54d5ca3bade5a18ecb2be8a95902d1670bffe933b5be864a2661d9ad0461159a4cd0445b0dd16ed0cc599",
-          "sha256": "f6055b8fc765010c3807c90ba674c54599f62368c204a75b1cfba0b310462279",
-          "sha1": "8e1685bf386ee02474e9d960678ac18bb4261e1a",
-          "md5": "7e9f3e105e2d791f17e04b91d956068e"
+          "size": 4148248,
+          "sha512": "d700e1d0f3005cde0399be21967f2d63a329e06ee079098dfb2c8a90a2567a817ac8af2a9142e0756a081bc73ae2f7ef49f811834561a6938b0e2362007a829c",
+          "sha256": "9ef5d0aab31e6bd4d1d13ed588716a20b9c04af29c81e28a7be5f2afc49f884c",
+          "sha1": "05a7d13cdc986904e71fa2759807cb75fa61b37c",
+          "md5": "cbb59518fededbcec7ac5c3168bc3c3f"
         }
       ]
     },

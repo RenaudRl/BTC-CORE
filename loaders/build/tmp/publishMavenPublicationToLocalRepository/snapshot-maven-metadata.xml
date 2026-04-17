@@ -3,38 +3,38 @@
   <groupId>dev.btc.core</groupId>
   <artifactId>loaders</artifactId>
   <versioning>
-    <lastUpdated>20260417162114</lastUpdated>
+    <lastUpdated>20260417194242</lastUpdated>
     <snapshot>
-      <timestamp>20260417.162114</timestamp>
-      <buildNumber>1</buildNumber>
+      <timestamp>20260417.194242</timestamp>
+      <buildNumber>7</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
-        <classifier>javadoc</classifier>
+        <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>4.2.0-20260417.162114-1</value>
-        <updated>20260417162114</updated>
+        <value>4.2.0-20260417.194242-7</value>
+        <updated>20260417194242</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>4.2.0-20260417.162114-1</value>
-        <updated>20260417162114</updated>
+        <value>4.2.0-20260417.194242-7</value>
+        <updated>20260417194242</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>module</extension>
-        <value>4.2.0-20260417.162114-1</value>
-        <updated>20260417162114</updated>
-      </snapshotVersion>
-      <snapshotVersion>
-        <classifier>sources</classifier>
-        <extension>jar</extension>
-        <value>4.2.0-20260417.162114-1</value>
-        <updated>20260417162114</updated>
+        <value>4.2.0-20260417.194242-7</value>
+        <updated>20260417194242</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>4.2.0-20260417.162114-1</value>
-        <updated>20260417162114</updated>
+        <value>4.2.0-20260417.194242-7</value>
+        <updated>20260417194242</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>javadoc</classifier>
+        <extension>jar</extension>
+        <value>4.2.0-20260417.194242-7</value>
+        <updated>20260417194242</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>

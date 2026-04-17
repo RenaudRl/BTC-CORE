@@ -68,11 +68,11 @@
         {
           "name": "api-loader-4.2.0-SNAPSHOT-javadoc.jar",
           "url": "api-loader-4.2.0-SNAPSHOT-javadoc.jar",
-          "size": 4151501,
-          "sha512": "9c8661c33405b237f4b59bd7acfcc03258870f0d94b8e10807f7690b3dc8ce2d86a3308791ccf050840d33e667dcc3bb395b6f8e12a32f0d15ca04a3bc326e8f",
-          "sha256": "e72767d25a9fc05fd5ab817ef5d35334e63718719bb4085c6b069e401b319174",
-          "sha1": "234af16ff87b313fc0728d1539f546eb2e61b247",
-          "md5": "3205a8b93bd4007338b9039216a2e5a2"
+          "size": 4151857,
+          "sha512": "9e56a623b550ccd92bfc3c581c6878a67656993848d443014408524f2a2cc586fe8e49cb124ef28ffb74b2f60642e23fd04505cf92b4644cb971efa2164c69dc",
+          "sha256": "09e174fa9f0098344d419a9a032bd4d442964b61c6e2d438b396d8e7ac124ef9",
+          "sha1": "bbda0420f7e95b2c3691156748443867091d45d5",
+          "md5": "5791cd26625de85464c8042edacd5b6f"
         }
       ]
     },

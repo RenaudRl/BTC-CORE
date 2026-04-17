@@ -22,6 +22,7 @@ sourceSets {
         }
         resources {
             srcDir("src/main/resources")
+            srcDir("src/minecraft/resources")
             srcDir("../paper-server-new/src/main/resources")
         }
     }
@@ -223,14 +224,14 @@ tasks.jar {
         val implementationVersion = "$mcVersion-${build ?: "DEV"}-$gitHash"
         attributes(
             "Main-Class" to "org.bukkit.craftbukkit.Main",
-            "Implementation-Title" to "BTCCore", //BTCCore
+            "Implementation-Title" to "BTC Core", //BTCCore
             "Implementation-Version" to implementationVersion,
             "Implementation-Vendor" to date,
-            "Specification-Title" to "BTCCore", //BTCCore
+            "Specification-Title" to "BTC Core", //BTCCore
             "Specification-Version" to project.version,
             "Specification-Vendor" to "btc-core Team", //BTCCore
             "Brand-Id" to "btc-core:btccore", //BTCCore
-            "Brand-Name" to "BTCCore", //BTCCore
+            "Brand-Name" to "BTC Core", //BTCCore
             "Build-Number" to (build ?: ""),
             "Build-Time" to buildTime.toString(),
             "Git-Branch" to gitBranch,

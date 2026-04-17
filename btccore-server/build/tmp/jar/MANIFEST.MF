@@ -1,17 +1,17 @@
 Manifest-Version: 1.0
 Main-Class: org.bukkit.craftbukkit.Main
-Implementation-Title: BTCCore
-Implementation-Version: 26.1.2-DEV-f978fe7
-Implementation-Vendor: 2026-04-12 16:55:32 +0200
-Specification-Title: BTCCore
+Implementation-Title: BTC Core
+Implementation-Version: 26.1.2-DEV-6f72dde
+Implementation-Vendor: 2026-04-17 19:53:49 +0200
+Specification-Title: BTC Core
 Specification-Version: 26.1.2-R0.1-SNAPSHOT
 Specification-Vendor: btc-core Team
 Brand-Id: btc-core:btccore
-Brand-Name: BTCCore
+Brand-Name: BTC Core
 Build-Number: 
-Build-Time: 2026-04-17T16:21:27.798410600Z
+Build-Time: 2026-04-17T19:42:44.282348700Z
 Git-Branch: main
-Git-Commit: f978fe7
+Git-Commit: 6f72dde
 
 Name: org/bukkit
 Sealed: true

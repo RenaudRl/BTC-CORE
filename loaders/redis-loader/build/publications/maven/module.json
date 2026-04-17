@@ -86,11 +86,11 @@
         {
           "name": "redis-loader-4.2.0-SNAPSHOT-javadoc.jar",
           "url": "redis-loader-4.2.0-SNAPSHOT-javadoc.jar",
-          "size": 4155481,
-          "sha512": "35330627a805132ab7b097bed9bdbffcb4e6b062a4a01e58212dc79ab0e2e96f21f1be2488c0d3c5f50536acef276ac28760236601793cdbad6f3b9e2213c62b",
-          "sha256": "c0ae3260b9303f3cec89cfaa039e0213cedecc3ad2d054de3b981960c42ceefc",
-          "sha1": "d262f294196dd8e9ef35c517b987a8a7633fca5b",
-          "md5": "1917c7e5d04e11cbbab8fc2658c378b2"
+          "size": 4155865,
+          "sha512": "8c700595f0f638edd72f4667eb5e4ba2de66cf057020be4fcdad3a503531bb14a47ddf5e6c85b13266f200534a8484ab5e210f7a77c1825389dd378c7ff45632",
+          "sha256": "7f815acf578fdf420636c4802d1573abfe491e3b726e74140b7557d6a65d79a7",
+          "sha1": "482daaee343e61286ba2529fac954ed5986fe770",
+          "md5": "4ef03526b4b6f9b4dcd94aa738d8f934"
         }
       ]
     },

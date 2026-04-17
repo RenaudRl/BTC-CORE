@@ -31,7 +31,7 @@ public record ServerBuildInfoImpl(
     private static final String ATTRIBUTE_GIT_COMMIT = "Git-Commit";
 
     private static final String BRAND_PAPER_NAME = "Paper";
-    private static final String BRAND_BTC_CORE_NAME = "BTCCore";
+    private static final String BRAND_BTC_CORE_NAME = "BTC Core";
 
     private static final String BUILD_DEV = "DEV";
 

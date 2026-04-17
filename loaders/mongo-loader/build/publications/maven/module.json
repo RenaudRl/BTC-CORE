@@ -86,11 +86,11 @@
         {
           "name": "mongo-loader-4.2.0-SNAPSHOT-javadoc.jar",
           "url": "mongo-loader-4.2.0-SNAPSHOT-javadoc.jar",
-          "size": 4147835,
-          "sha512": "276c857da30ea75612943f2c86a344c3084c1eae3175de37ba86aa06d7f56c2f0511a69ce291f179bf33aec8cab8dd37a0933b9f52254329beb3b295fc289d18",
-          "sha256": "0093c5e410c5b6b9d0e04e051bccccabb2d26a820336a0425806b776bdbcd58e",
-          "sha1": "eea55ff1750b18386b0cc490fa94ef1b9b963e29",
-          "md5": "e21ea7a8f548228a59e2d07581f57450"
+          "size": 4148227,
+          "sha512": "e9ea653e368003faecf540627cb6f1654b37661b3f6616ee908f1f66ce759b581393694d5e11caf8746d86823d7e7dfe713e9dcb478ebfd4772baa62c65eeb24",
+          "sha256": "ea03b6cbf9b2427e2b951e54e5f4061bdba890fddfae5c7ddd8b9ce34d9ee6cd",
+          "sha1": "029a7e10f50dda5797b9ae632b7927a8f89e7362",
+          "md5": "393dcfe32aa33e09ea0c59a3a6a8f228"
         }
       ]
     },

@@ -472,11 +472,11 @@
         {
           "name": "btccore-api-26.1.2-R0.1-SNAPSHOT-sources.jar",
           "url": "btccore-api-26.1.2-R0.1-SNAPSHOT-sources.jar",
-          "size": 1926130,
-          "sha512": "9958507c7732750bdd55bb28a79b4063ec6dcd5046efd81b80c46a205d9ddc2708ea2d1e224e40e4223a5ae864e44ef1a0c7607f0172e40968d9d6fc69a922ac",
-          "sha256": "b65223adfa68c58f8020012340caa930ac22c965b31e87776864ebaacbcf4333",
-          "sha1": "111cbe845972cef6f6fa8ee658ed7aad388799d6",
-          "md5": "7ad245690c51aa91e1be7ee56364243c"
+          "size": 1926128,
+          "sha512": "3995d1d1c1765f0e0c5143b99ffe1f561895162e223ddc3e741cc510ab9a8d063da453198c079a063994278b7a8b5381c10481d74f97ddf8a2689d67fe23d8e9",
+          "sha256": "067a6aa7a8e4cd6f0550dffe873cb0837cd8800df1d0511c3ef09f100aef0729",
+          "sha1": "013257316472cf08c3a4c876a025da68ced65426",
+          "md5": "b77dbbca3a9e8662847815d244e74ac1"
         }
       ],
       "capabilities": [
@@ -525,11 +525,11 @@
         {
           "name": "btccore-api-26.1.2-R0.1-SNAPSHOT-javadoc.jar",
           "url": "btccore-api-26.1.2-R0.1-SNAPSHOT-javadoc.jar",
-          "size": 20868124,
-          "sha512": "bb3535c0aa66c11a8e6395052d7bde978e4818d37b7523a9542f668ea9ed35e47b08cb0e9752f373115812b2443778cff8d01bfa47eb7cf8891f3360be259344",
-          "sha256": "7e405e206306ef4b5152488563c7c82671ba6b6cba88f3d39c6daf43e4e9a497",
-          "sha1": "710319942460a019c4a70f559b4d9a4d86a8a1b0",
-          "md5": "94cc174fb4e74ad55d4d1a9ac50eb5ed"
+          "size": 20868088,
+          "sha512": "efd211ab64e32dc61d82f1294d353c6969d20ec5a626b85ce742961d49b21bb6f4f7ec40f1f5c4674fe237871312811150463de7b14d123358a20b1685ff057e",
+          "sha256": "6d653ff8153eee64c9b16ce13fb49811879eca1fa7d849a5991e2f66391eb03c",
+          "sha1": "b208b831a85cb8580cc42c434788c752eb7b51b8",
+          "md5": "6d51ce3ecbcca73431a4b80cde35a235"
         }
       ],
       "capabilities": [
