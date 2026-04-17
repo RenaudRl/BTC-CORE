@@ -1,16 +1,11 @@
-# BTC-CORE | Notre Propre Fork
+# BTC-CORE
 
 ![Java Version](https://img.shields.io/badge/Java-25-orange)
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Target](https://img.shields.io/badge/Target-BTCCORE%2026.1.2-blue)
 ![Base](https://img.shields.io/badge/Base-Paper%2026.1.2%20(1.21.4)-purple)
 
-**BTC-CORE** est notre propre fork serveur Minecraft haute performance, développé par le **BTC Studio** pour offrir une infrastructure privée unique et optimisée au maximum.
-Il fusionne les meilleures technologies du milieu (Paper, Folia, SlimeWorld, Leaf, Purpur) dans un noyau "maison" extrêmement puissant.
-
 ## 🧪 Fork Heritage
-
-BTC-CORE est un fork indépendant qui "pioche" le meilleur du monde Open-Source :
 
 | Fork | Integration | Key Features |
 |------|-------------|--------------|
