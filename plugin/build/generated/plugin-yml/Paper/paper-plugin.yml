@@ -1,8 +1,0 @@
-api-version: "26.1"
-name: BTCCorePlugin
-version: "${gitCommitId}"
-main: dev.btc.core.plugin.SWPlugin
-bootstrapper: dev.btc.core.plugin.SlimePluginBootstrap
-description: "BTCCore plugin for Paper, providing utilities for the platform"
-authors:
-  - RenaudRl

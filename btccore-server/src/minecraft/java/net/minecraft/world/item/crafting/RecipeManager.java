@@ -68,6 +68,11 @@ public class RecipeManager extends SimplePreparableReloadListener<RecipeMap> imp
 
     @Override
     protected RecipeMap prepare(ResourceManager resourceManager, ProfilerFiller profiler) {
+        // BTCCore start - Zero Features: Purge Recipes
+        if (dev.btc.core.config.BTCCoreConfig.zfRecipesEnabled) {
+            return RecipeMap.EMPTY;
+        }
+        // BTCCore end
         SortedMap<Identifier, Recipe<?>> map = new TreeMap<>();
         SimpleJsonResourceReloadListener.scanDirectory(
             resourceManager, RECIPE_LISTER, this.registries.createSerializationContext(JsonOps.INSTANCE), Recipe.CODEC, map
@@ -84,6 +89,12 @@ public class RecipeManager extends SimplePreparableReloadListener<RecipeMap> imp
     @Override
     protected void apply(RecipeMap object, ResourceManager resourceManager, ProfilerFiller profiler) {
         this.recipes = object;
+        // BTCCore start - Zero Features: Purge Recipes
+        if (dev.btc.core.config.BTCCoreConfig.zfRecipesEnabled) {
+            LOGGER.info("[BTCCore] Zero Features: Recipes purged.");
+            return;
+        }
+        // BTCCore end
         LOGGER.info("Loaded {} recipes", object.values().size());
     }
 

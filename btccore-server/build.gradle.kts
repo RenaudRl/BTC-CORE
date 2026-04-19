@@ -15,14 +15,9 @@ val paperMavenPublicUrl = "https://repo.papermc.io/repository/maven-public/"
 sourceSets {
     main {
         java {
-            srcDir("src/main/java")
-            srcDir("src/minecraft/java")
             srcDir("../paper-server-new/src/main/java")
-            srcDir("../paper-server-new/src/generated/java")
         }
         resources {
-            srcDir("src/main/resources")
-            srcDir("src/minecraft/resources")
             srcDir("../paper-server-new/src/main/resources")
         }
     }

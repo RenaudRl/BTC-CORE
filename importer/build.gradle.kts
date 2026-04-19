@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":btccore-server"))
+    compileOnly(project(":btccore-server"))
     implementation(project(":btccore-api"))
 }
 
@@ -17,7 +17,6 @@ tasks {
     }
     shadowJar {
         archiveClassifier.set("")
-        minimize()
     }
     assemble {
         dependsOn(shadowJar)

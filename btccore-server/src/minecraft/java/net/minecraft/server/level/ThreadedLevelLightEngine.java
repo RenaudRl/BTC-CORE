@@ -36,8 +36,12 @@ public class ThreadedLevelLightEngine extends LevelLightEngine implements AutoCl
     private final java.util.concurrent.atomic.AtomicLong chunkWorkCounter = new java.util.concurrent.atomic.AtomicLong();
     private void queueTaskForSection(final int chunkX, final int chunkY, final int chunkZ,
                                      final java.util.function.Supplier<ca.spottedleaf.moonrise.patches.starlight.light.StarLightInterface.LightQueue.ChunkTasks> supplier) {
+        // BTCCore start - Zero Features: Light Engine
         final ServerLevel world = (ServerLevel)this.starlight$getLightEngine().getWorld();
-
+        if (dev.btc.core.config.BTCCoreConfig.isZeroFeatureEnabledFor("light_engine", world.getWorld().getName())) {
+            return;
+        }
+        // BTCCore end
         final ChunkAccess center = this.starlight$getLightEngine().getAnyChunkNow(chunkX, chunkZ);
         if (center == null || !center.getPersistedStatus().isOrAfter(net.minecraft.world.level.chunk.status.ChunkStatus.LIGHT)) {
             // do not accept updates in unlit chunks, unless we might be generating a chunk

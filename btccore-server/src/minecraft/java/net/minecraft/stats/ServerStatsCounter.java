@@ -103,6 +103,10 @@ public class ServerStatsCounter extends StatsCounter {
 
     @Override
     public void setValue(Player player, Stat<?> stat, int value) {
+        // BTCCore start - Zero Features: Statistics
+        if (dev.btc.core.config.BTCCoreConfig.isZeroFeatureEnabledFor("stats", player.level().getWorld().getName())) return;
+        // BTCCore end
+        if (player.level().isClientSide()) return; // Paper - ignore client side stat sets
         if (org.spigotmc.SpigotConfig.disableStatSaving) return; // Spigot
         if (stat.getType() == Stats.CUSTOM && stat.getValue() instanceof final net.minecraft.resources.Identifier key && org.spigotmc.SpigotConfig.forcedStats.get(key) != null) return; // Paper - disable saving forced stats
         super.setValue(player, stat, value);

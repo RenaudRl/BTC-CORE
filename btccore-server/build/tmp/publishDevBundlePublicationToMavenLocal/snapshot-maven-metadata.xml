@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>dev.btc.core</groupId>
+  <artifactId>dev-bundle</artifactId>
+  <versioning>
+    <lastUpdated>20260419115223</lastUpdated>
+    <snapshot>
+      <localCopy>true</localCopy>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>zip</extension>
+        <value>26.1.2-R0.1-SNAPSHOT</value>
+        <updated>20260419115223</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>26.1.2-R0.1-SNAPSHOT</value>
+        <updated>20260419115223</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>module</extension>
+        <value>26.1.2-R0.1-SNAPSHOT</value>
+        <updated>20260419115223</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>26.1.2-R0.1-SNAPSHOT</version>
+</metadata>

@@ -1,0 +1,541 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.btc.core",
+    "module": "dev-bundle",
+    "version": "26.1.2-R0.1-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.2.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "devBundle",
+      "attributes": {
+        "io.papermc.paperweight.dev-bundle-output": "zip"
+      },
+      "files": [
+        {
+          "name": "dev-bundle-26.1.2-R0.1-SNAPSHOT.zip",
+          "url": "dev-bundle-26.1.2-R0.1-SNAPSHOT.zip",
+          "size": 34961448,
+          "sha512": "19ed7c70a1b7d4b65137b75a788ff0f59db07be14d368cf8cda74c382d64d0f6c8e342af8d5e36c31969a2f5a4d12846d48ecd5eb0b21caa6410a475974ca213",
+          "sha256": "fc3a7cb052cfb8471912c4fd55dd944413c7aef03e025bd0554f7ccf8f100fae",
+          "sha1": "ce21d1a961daa03294933425a1c8c27c884426af",
+          "md5": "92f00a36355015a6546b22a0708cace5"
+        }
+      ]
+    },
+    {
+      "name": "serverRuntimeClasspath",
+      "attributes": {
+        "io.papermc.paperweight.dev-bundle-output": "serverDependencies",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "commons-lang",
+          "module": "commons-lang",
+          "version": {
+            "requires": "2.6"
+          }
+        },
+        {
+          "group": "org.xerial",
+          "module": "sqlite-jdbc",
+          "version": {
+            "requires": "3.49.1.0"
+          }
+        },
+        {
+          "group": "com.mysql",
+          "module": "mysql-connector-j",
+          "version": {
+            "requires": "9.2.0"
+          }
+        },
+        {
+          "group": "com.lmax",
+          "module": "disruptor",
+          "version": {
+            "requires": "3.4.4"
+          }
+        },
+        {
+          "group": "dev.btc.core",
+          "module": "btccore-api",
+          "version": {
+            "requires": "26.1.2-R0.1-SNAPSHOT"
+          }
+        },
+        {
+          "group": "ca.spottedleaf",
+          "module": "concurrentutil",
+          "version": {
+            "requires": "0.0.7"
+          }
+        },
+        {
+          "group": "org.jline",
+          "module": "jline-terminal-ffm",
+          "version": {
+            "requires": "3.27.1"
+          }
+        },
+        {
+          "group": "org.jline",
+          "module": "jline-terminal-jni",
+          "version": {
+            "requires": "3.27.1"
+          }
+        },
+        {
+          "group": "net.minecrell",
+          "module": "terminalconsoleappender",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "net.kyori",
+          "module": "adventure-text-serializer-ansi"
+        },
+        {
+          "group": "org.apache.logging.log4j",
+          "module": "log4j-core",
+          "version": {
+            "requires": "2.25.2"
+          }
+        },
+        {
+          "group": "com.velocitypowered",
+          "module": "velocity-native",
+          "version": {
+            "requires": "3.4.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "*"
+            }
+          ]
+        },
+        {
+          "group": "io.netty",
+          "module": "netty-codec-haproxy",
+          "version": {
+            "requires": "4.2.7.Final"
+          }
+        },
+        {
+          "group": "org.apache.logging.log4j",
+          "module": "log4j-iostreams",
+          "version": {
+            "requires": "2.25.2"
+          }
+        },
+        {
+          "group": "org.ow2.asm",
+          "module": "asm-commons",
+          "version": {
+            "requires": "9.9.1"
+          }
+        },
+        {
+          "group": "org.spongepowered",
+          "module": "configurate-yaml",
+          "version": {
+            "requires": "4.2.0"
+          }
+        },
+        {
+          "group": "com.googlecode.json-simple",
+          "module": "json-simple",
+          "version": {
+            "requires": "1.1.1"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "*"
+            }
+          ]
+        },
+        {
+          "group": "net.neoforged",
+          "module": "srgutils",
+          "version": {
+            "requires": "1.0.9"
+          }
+        },
+        {
+          "group": "net.neoforged",
+          "module": "AutoRenamingTool",
+          "version": {
+            "requires": "2.0.3"
+          }
+        },
+        {
+          "group": "io.papermc",
+          "module": "reflection-rewriter",
+          "version": {
+            "requires": "0.0.3"
+          }
+        },
+        {
+          "group": "io.papermc",
+          "module": "reflection-rewriter-runtime",
+          "version": {
+            "requires": "0.0.3"
+          }
+        },
+        {
+          "group": "io.papermc",
+          "module": "reflection-rewriter-proxy-generator",
+          "version": {
+            "requires": "0.0.3"
+          }
+        },
+        {
+          "group": "me.lucko",
+          "module": "spark-api",
+          "version": {
+            "requires": "0.1-20240720.200737-2"
+          }
+        },
+        {
+          "group": "me.lucko",
+          "module": "spark-paper",
+          "version": {
+            "requires": "1.10.152"
+          }
+        },
+        {
+          "group": "io.netty",
+          "module": "netty-transport-native-epoll",
+          "version": {
+            "requires": "4.1.118.Final"
+          },
+          "thirdPartyCompatibility": {
+            "artifactSelector": {
+              "name": "netty-transport-native-epoll",
+              "type": "jar",
+              "extension": "jar",
+              "classifier": "linux-x86_64"
+            }
+          }
+        },
+        {
+          "group": "io.netty",
+          "module": "netty-transport-native-epoll",
+          "version": {
+            "requires": "4.1.118.Final"
+          },
+          "thirdPartyCompatibility": {
+            "artifactSelector": {
+              "name": "netty-transport-native-epoll",
+              "type": "jar",
+              "extension": "jar",
+              "classifier": "linux-aarch_64"
+            }
+          }
+        },
+        {
+          "group": "io.netty.incubator",
+          "module": "netty-incubator-transport-native-io_uring",
+          "version": {
+            "requires": "0.0.25.Final"
+          },
+          "thirdPartyCompatibility": {
+            "artifactSelector": {
+              "name": "netty-incubator-transport-native-io_uring",
+              "type": "jar",
+              "extension": "jar",
+              "classifier": "linux-x86_64"
+            }
+          }
+        },
+        {
+          "group": "io.netty.incubator",
+          "module": "netty-incubator-transport-native-io_uring",
+          "version": {
+            "requires": "0.0.25.Final"
+          },
+          "thirdPartyCompatibility": {
+            "artifactSelector": {
+              "name": "netty-incubator-transport-native-io_uring",
+              "type": "jar",
+              "extension": "jar",
+              "classifier": "linux-aarch_64"
+            }
+          }
+        },
+        {
+          "group": "io.sentry",
+          "module": "sentry",
+          "version": {
+            "requires": "6.34.0"
+          }
+        },
+        {
+          "group": "com.github.luben",
+          "module": "zstd-jni",
+          "version": {
+            "requires": "1.5.6-8"
+          }
+        },
+        {
+          "group": "io.papermc",
+          "module": "mache",
+          "version": {
+            "requires": "26.1.2+build.1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "serverCompileClasspath",
+      "attributes": {
+        "io.papermc.paperweight.dev-bundle-output": "serverDependencies",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "dev.btc.core",
+          "module": "btccore-api",
+          "version": {
+            "requires": "26.1.2-R0.1-SNAPSHOT"
+          }
+        },
+        {
+          "group": "ca.spottedleaf",
+          "module": "concurrentutil",
+          "version": {
+            "requires": "0.0.7"
+          }
+        },
+        {
+          "group": "org.jline",
+          "module": "jline-terminal-ffm",
+          "version": {
+            "requires": "3.27.1"
+          }
+        },
+        {
+          "group": "org.jline",
+          "module": "jline-terminal-jni",
+          "version": {
+            "requires": "3.27.1"
+          }
+        },
+        {
+          "group": "net.minecrell",
+          "module": "terminalconsoleappender",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "net.kyori",
+          "module": "adventure-text-serializer-ansi"
+        },
+        {
+          "group": "org.apache.logging.log4j",
+          "module": "log4j-core",
+          "version": {
+            "requires": "2.25.2"
+          }
+        },
+        {
+          "group": "com.velocitypowered",
+          "module": "velocity-native",
+          "version": {
+            "requires": "3.4.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "*"
+            }
+          ]
+        },
+        {
+          "group": "io.netty",
+          "module": "netty-codec-haproxy",
+          "version": {
+            "requires": "4.2.7.Final"
+          }
+        },
+        {
+          "group": "org.apache.logging.log4j",
+          "module": "log4j-iostreams",
+          "version": {
+            "requires": "2.25.2"
+          }
+        },
+        {
+          "group": "org.ow2.asm",
+          "module": "asm-commons",
+          "version": {
+            "requires": "9.9.1"
+          }
+        },
+        {
+          "group": "org.spongepowered",
+          "module": "configurate-yaml",
+          "version": {
+            "requires": "4.2.0"
+          }
+        },
+        {
+          "group": "com.googlecode.json-simple",
+          "module": "json-simple",
+          "version": {
+            "requires": "1.1.1"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "*"
+            }
+          ]
+        },
+        {
+          "group": "net.neoforged",
+          "module": "srgutils",
+          "version": {
+            "requires": "1.0.9"
+          }
+        },
+        {
+          "group": "net.neoforged",
+          "module": "AutoRenamingTool",
+          "version": {
+            "requires": "2.0.3"
+          }
+        },
+        {
+          "group": "io.papermc",
+          "module": "reflection-rewriter",
+          "version": {
+            "requires": "0.0.3"
+          }
+        },
+        {
+          "group": "io.papermc",
+          "module": "reflection-rewriter-runtime",
+          "version": {
+            "requires": "0.0.3"
+          }
+        },
+        {
+          "group": "io.papermc",
+          "module": "reflection-rewriter-proxy-generator",
+          "version": {
+            "requires": "0.0.3"
+          }
+        },
+        {
+          "group": "me.lucko",
+          "module": "spark-api",
+          "version": {
+            "requires": "0.1-20240720.200737-2"
+          }
+        },
+        {
+          "group": "me.lucko",
+          "module": "spark-paper",
+          "version": {
+            "requires": "1.10.152"
+          }
+        },
+        {
+          "group": "io.netty",
+          "module": "netty-transport-native-epoll",
+          "version": {
+            "requires": "4.1.118.Final"
+          },
+          "thirdPartyCompatibility": {
+            "artifactSelector": {
+              "name": "netty-transport-native-epoll",
+              "type": "jar",
+              "extension": "jar",
+              "classifier": "linux-x86_64"
+            }
+          }
+        },
+        {
+          "group": "io.netty",
+          "module": "netty-transport-native-epoll",
+          "version": {
+            "requires": "4.1.118.Final"
+          },
+          "thirdPartyCompatibility": {
+            "artifactSelector": {
+              "name": "netty-transport-native-epoll",
+              "type": "jar",
+              "extension": "jar",
+              "classifier": "linux-aarch_64"
+            }
+          }
+        },
+        {
+          "group": "io.netty.incubator",
+          "module": "netty-incubator-transport-native-io_uring",
+          "version": {
+            "requires": "0.0.25.Final"
+          },
+          "thirdPartyCompatibility": {
+            "artifactSelector": {
+              "name": "netty-incubator-transport-native-io_uring",
+              "type": "jar",
+              "extension": "jar",
+              "classifier": "linux-x86_64"
+            }
+          }
+        },
+        {
+          "group": "io.netty.incubator",
+          "module": "netty-incubator-transport-native-io_uring",
+          "version": {
+            "requires": "0.0.25.Final"
+          },
+          "thirdPartyCompatibility": {
+            "artifactSelector": {
+              "name": "netty-incubator-transport-native-io_uring",
+              "type": "jar",
+              "extension": "jar",
+              "classifier": "linux-aarch_64"
+            }
+          }
+        },
+        {
+          "group": "io.sentry",
+          "module": "sentry",
+          "version": {
+            "requires": "6.34.0"
+          }
+        },
+        {
+          "group": "com.github.luben",
+          "module": "zstd-jni",
+          "version": {
+            "requires": "1.5.6-8"
+          }
+        },
+        {
+          "group": "io.papermc",
+          "module": "mache",
+          "version": {
+            "requires": "26.1.2+build.1"
+          }
+        }
+      ]
+    }
+  ]
+}

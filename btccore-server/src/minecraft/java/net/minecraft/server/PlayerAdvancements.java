@@ -167,6 +167,11 @@ public class PlayerAdvancements {
 
     public boolean award(AdvancementHolder advancement, String criterionKey) {
         boolean flag = false;
+        // BTCCore start - Zero Features: Advancements
+        if (dev.btc.core.config.BTCCoreConfig.isZeroFeatureEnabledFor("advancements", this.player.level().getWorld().getName())) {
+            return false;
+        }
+        // BTCCore end
         AdvancementProgress orStartProgress = this.getOrStartProgress(advancement);
         boolean isDone = orStartProgress.isDone();
         if (orStartProgress.grantProgress(criterionKey)) {

@@ -216,6 +216,12 @@ public class ServerChunkCache extends ChunkSource implements ca.spottedleaf.moon
         }
         //ASP end - No dimension data storage
         this.ticketStorage = this.dataStorage.computeIfAbsent(TicketStorage.TYPE);
+        // BTCCore start - Zero Features: Force Void Generator
+        ChunkGenerator finalGenerator = generator;
+        if (dev.btc.core.config.BTCCoreConfig.isZeroFeatureEnabledFor("void_generator", level.getWorld().getName())) {
+            finalGenerator = new dev.btc.core.world.VoidChunkGenerator(generator.getBiomeSource());
+        }
+        // BTCCore end
         this.chunkMap = new ChunkMap(
             level,
             levelStorageAccess,
@@ -224,7 +230,7 @@ public class ServerChunkCache extends ChunkSource implements ca.spottedleaf.moon
             dispatcher,
             this.mainThreadProcessor,
             this,
-            generator,
+            finalGenerator, // BTCCore - use finalGenerator
             chunkStatusListener,
             overworldDataStorage,
             this.ticketStorage,

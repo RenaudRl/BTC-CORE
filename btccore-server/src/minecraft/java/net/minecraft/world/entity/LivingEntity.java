@@ -3826,6 +3826,11 @@ public abstract class LivingEntity extends Entity implements Attackable, Waypoin
     }
 
     protected void pushEntities() {
+        // BTCCore start - Zero Features: Collision Culling
+        if (dev.btc.core.config.BTCCoreConfig.isZeroFeatureEnabledFor("collisions", this.level().getWorld().getName())) {
+            return;
+        }
+        // BTCCore end
         // Paper start - don't run getEntities if we're not going to use its result
         if (!this.isPushable()) {
             return;
@@ -3855,6 +3860,11 @@ public abstract class LivingEntity extends Entity implements Attackable, Waypoin
                     }
 
                     if (i1 > i - 1) {
+                        // BTCCore start - Zero Features: Cramming
+                        if (dev.btc.core.config.BTCCoreConfig.isZeroFeatureEnabledFor("cramming", this.level().getWorld().getName())) {
+                            return;
+                        }
+                        // BTCCore end
                         this.hurtServer(serverLevel, this.damageSources().cramming(), 6.0F);
                     }
                 }

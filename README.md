@@ -1,9 +1,15 @@
-# BTC-CORE
+﻿# BTC-CORE
 
 ![Java Version](https://img.shields.io/badge/Java-25-orange)
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Target](https://img.shields.io/badge/Target-BTCCORE%2026.1.2-blue)
 ![Base](https://img.shields.io/badge/Base-Paper%2026.1.2-purple)
+[![Wiki](https://img.shields.io/badge/Wiki-DeepWiki-blue)](https://deepwiki.com/RenaudRl/BTC-CORE)
+
+## 📖 Documentation
+
+For detailed guides, API references, and internal logic explanations, visit our official Wiki:
+👉 **[BTC-CORE Deep Wiki](https://deepwiki.com/RenaudRl/BTC-CORE)**
 
 ## 🧪 Fork Heritage
 
@@ -174,6 +180,9 @@ worlds:
 
 > Legend: ✅ = Implemented | ❌ = Not Available | 🧩 = Native/Inherited
 
+<details>
+<summary><b>🔍 View Detailed Feature Comparison</b></summary>
+
 ### Multi-Threading & Concurrency
 | Feature | Paper | Folia | Purpur | Pufferfish | SparklyPaper | Leaf | Canvas | **BTC-CORE** |
 |---------|-------|-------|--------|------------|--------------|------|--------|--------------|
@@ -242,27 +251,13 @@ worlds:
 |---------|-------|-------|--------|------------|--------------|------|--------|--------------|
 | Maintenance Mode | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
 | Join Queue System | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Player Data Backup | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Teleport Warmup | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Vanish Levels | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
-
-### Custom Events API
-| Feature | Paper | Folia | Purpur | Pufferfish | SparklyPaper | Leaf | Canvas | **BTC-CORE** |
-|---------|-------|-------|--------|------------|--------------|------|--------|--------------|
-| PreDamageCalculationEvent | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| EntityTargetPlayerEvent | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| PlayerEnterRegionEvent | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| AsyncChatFormatEvent | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| WorldLoadPriorityEvent | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| ChunkPopulateEvent | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-
----
-
-## ⚙ Configuration
+| Player Data Backup | ❌ | �## ⚙ Configuration
 
 BTC-CORE is primarily tuned via `btccore.yml`.
 
-### ⚡ Performance & Threading
+<details>
+<summary><b>⚡ Performance & Threading</b></summary>
+
 | Key | Default | Description |
 |-----|---------|-------------|
 | `parallel-world-ticking` | `false` | Enables concurrent ticking for separate world instances. |
@@ -273,7 +268,11 @@ BTC-CORE is primarily tuned via `btccore.yml`.
 | `cascadingEntitySpawnLimit` | `10` | Hard limit on recursive entity spawns to prevent infinite loops (Phase 5). |
 | `rpgCollisionCap` | `2` | Hard-cap on entities pushed per tick, mitigating O(N^2) lag in highly dense areas. |
 
-### 🎯 Dynamic Entity Activation (DEAR/DAB)
+</details>
+
+<details>
+<summary><b>🎯 Dynamic Entity Activation (DEAR/DAB)</b></summary>
+
 | Key | Default | Description |
 |-----|---------|-------------|
 | `dab.enabled` | `true` | Enables distance-based entity tick throttling. |
@@ -281,7 +280,11 @@ BTC-CORE is primarily tuned via `btccore.yml`.
 | `dab.max-tick-freq` | `20` | Max ticks between updates for distant entities. |
 | `dab.activation-dist-mod` | `8` | Distance modifier for frequency calculation. |
 
-### 🎮 Gameplay (Purpur)
+</details>
+
+<details>
+<summary><b>🎮 Gameplay (Purpur)</b></summary>
+
 | Key | Default | Description |
 |-----|---------|-------------|
 | `minecart.controllable.enabled` | `false` | Enables manual WASD controls for minecarts. |
@@ -294,13 +297,21 @@ BTC-CORE is primarily tuned via `btccore.yml`.
 | `silk-touch-spawners` | `false` | Enables mining spawners with Silk Touch. |
 | `sign-edit-right-click` | `true` | Allows editing signs by right-clicking. |
 
-### 📦 Inventory Expansion
+</details>
+
+<details>
+<summary><b>📦 Inventory Expansion</b></summary>
+
 | Key | Default | Description |
 |-----|---------|-------------|
 | `barrel-rows` | `3` | Number of rows in barrels (max 6). |
 | `ender-chest-rows` | `3` | Number of rows in ender chests (max 6). |
 
-### ⚡ Advanced Optimizations
+</details>
+
+<details>
+<summary><b>⚡ Advanced Optimizations</b></summary>
+
 | Key | Default | Description |
 |-----|---------|-------------|
 | `performance.hopper.throttling` | `true` | Throttles hoppers when destination is full to save CPU. |
@@ -308,7 +319,7 @@ BTC-CORE is primarily tuned via `btccore.yml`.
 | `performance.projectile.max-loads-per-tick` | `10` | Max chunks a projectile can load per tick. |
 | `performance.suffocation-optimization` | `true` | Optimized suffocation checks for entities. |
 | `performance.inactive-goal-selector-throttle` | `true` | Reduces AI processing for inactive mobs distance-based. |
-| `performance.collision-throttle.enabled` | `true` | Reduces collision checks in crowded areas. |
+| `performance.collision-throttle.enabled` | `true" | Reduces collision checks in crowded areas. |
 | `performance.collision-throttle.max-entities` | `10` | Entity threshold before throttling. |
 | `performance.particle-culling.enabled` | `true` | Skips particles beyond distance. |
 | `performance.particle-culling.distance` | `64` | Max particle render distance. |
@@ -332,7 +343,31 @@ BTC-CORE is primarily tuned via `btccore.yml`.
 | `performance.vanilla-tick-suppression.brain` | `false` | Disables vanilla entity brain logic. |
 | `performance.vanilla-tick-suppression.sensors` | `false` | Disables vanilla entity sensors logic. |
 
-### 🧙 Typewriter RPG Extensions & Optimizations
+</details>
+
+<details>
+<summary><b>⚡ Zero Features (Minestom Engine Ports)</b></summary>
+
+Inspired by the **Minestom** philosophy, these "Zero Features" allow you to surgically neutralize expensive vanilla mechanics on specific worlds (Lobbies, Skyblock, etc.) while maintaining 100% NMS compatibility elsewhere.
+
+| Key | Default | Description |
+|-----|---------|-------------|
+| `zero-features.advancements` | `false` | **Global Purge**: Clears all vanilla advancements from memory to save RAM. |
+| `zero-features.recipes` | `false` | **Global Purge**: Clears all vanilla recipes from memory to save RAM. |
+| `zero-features.stats` | `false` | **Global Purge**: Stops all vanilla statistics recording and storage. |
+| `zero-features.light-engine` | `false` | **Short-circuit**: Completely disables the Light Engine in target worlds. |
+| `zero-features.collisions` | `false` | **Short-circuit**: Bypasses all entity-entity collision calculations. |
+| `zero-features.cramming` | `false` | **Short-circuit**: Disables max entity cramming damage checks. |
+| `zero-features.block-updates` | `false` | **Short-circuit**: Suppresses vanilla block physics and neighbor updates. |
+| `zero-features.sleep-tick` | `false` | **Hibernation**: Stops ticking the world entirely if no players are present. |
+| `zero-features.force-void-generator` | `false` | **Zero Overhead**: Forces a native Void Generator to skip all chunk generation logic. |
+| `zero-features.worlds` | `["zero_.*"]` | **World Matcher**: List of Regex patterns for worlds where Zero Features are active. |
+
+</details>
+
+<details>
+<summary><b>🧙 Typewriter RPG Extensions & Optimizations</b></summary>
+
 | Key | Default | Description |
 |-----|---------|-------------|
 | `rpg.world-events.enabled` | `true` | Enables vanilla world events (Raids, Dragon Fights). |
@@ -342,16 +377,17 @@ BTC-CORE is primarily tuned via `btccore.yml`.
 | `rpg.redstone.static-graph-enabled` | `false` | Fully neutralizes Vanilla redstone BlockUpdates in favor of a Static Directed Weighted Graph. |
 | `rpg.redstone.static-graph-whitelisted-worlds` | `["redstone_plots"]` | List of worlds where the static redstone algorithm operates. Supports **Regex** (`regex:.*`) and **Wildcards** (`plot_*`). |
 
-### ⚔ Native Sentinel Anticheat Engine (Asynchronous)
+</details>
+
+<details>
+<summary><b>⚔ Native Sentinel Anticheat Engine</b></summary>
+
 BTC-CORE integrates a 100% native asynchronous anticheat capability directly in the NMS Packet Handling pipeline (`ServerGamePacketListenerImpl`), eliminating the need for `PacketEvents` and external AC hooks.
-*Inspired by the network predictability math of **LightningGrim AC**, this native engine stores a `PlayerSimulationCache` (Ghost state latency compensator) to detect Reach, Raytrace LOS, and Velocity natively with 0.0 MSPT overhead on the Main Thread.*
 
 **Phase 3 Features:**
 - **Latency Compensation**: Uses historical ghost states from `PlayerSimulationCache` to validate hits based on the attacker's actual view.
 - **Ray-AABB Intersection**: Mathematical Line-of-Sight validation against historical hitboxes.
 - **Synchronous Attack Filter**: Implements a "Violation Buffer" that synchronously blocks illegal attack packets before they reach the game world.
-
-These settings are governed by `btccore.yml` under the `rpg-optimization.sentinel` section.
 
 | Key | Default | Description |
 |-----|---------|-------------|
@@ -361,17 +397,20 @@ These settings are governed by `btccore.yml` under the `rpg-optimization.sentine
 | `security.sentinel.mysql-logging.enabled` | `false` | Asynchronously logs all violation traces into an external SQL pool. |
 | `security.sentinel.auto-notify-admins` | `true` | Broadcast warnings to players with `sentinel.admin`. |
 
-**In-Game Admin Tools:**
-Staff can manage real-time alerts or check historical database traces directly from the chat:
-- `/sentinel notify` - Toggles the real-time alerting system for the executor natively.
-- `/sentinel check <player>` - Fetches the last 10 violation metadata records straight from MySQL async pool.
+</details>
 
-### 🎨 Visual Core APIs (Asynchronous)
+<details>
+<summary><b>🎨 Visual Core APIs (Asynchronous)</b></summary>
+
 Dedicated to massive Display Entity handling (*BetterModel*, *TextDisplayDialogue*) and Virtual GUIs (*AdvancedMenu*), `BTCCoreVisualAPI` bypasses native Bukkit Thread locks for instantiating purely UI-focused networks.
 - `BTCCoreVisualAPI.sendAsyncVirtualInventory` : Generates an un-tracked container update entirely off the Main Thread.
 - `BTCCoreVisualAPI.spawnAsyncDisplayEntity` : Casts a Display Entity exclusively network-side with 0 MSPT logic overhead.
 
-### 🛡 Security (FreedomChat)
+</details>
+
+<details>
+<summary><b>🛡 Security (FreedomChat)</b></summary>
+
 | Key | Default | Description |
 |-----|---------|-------------|
 | `freedom-chat.enabled` | `true` | Enables Freedom Chat integrations. |
@@ -380,7 +419,11 @@ Dedicated to massive Display Entity handling (*BetterModel*, *TextDisplayDialogu
 | `freedom-chat.prevent-chat-reports` | `true` | Disables chat reporting in server status. |
 | `freedom-chat.bedrock-only-rewrite` | `false` | Only rewrites chat for Bedrock players. |
 
-### ⚔ Combat & Anti-Cheat
+</details>
+
+<details>
+<summary><b>⚔ Combat & Anti-Cheat</b></summary>
+
 | Key | Default | Description |
 |-----|---------|-------------|
 | `combat-log.enabled` | `true` | Enables combat tagging system. |
@@ -391,17 +434,43 @@ Dedicated to massive Display Entity handling (*BetterModel*, *TextDisplayDialogu
 | `reach-validation` | `true` | Validates attack reach server-side. |
 | `exploit-logging` | `true` | Logs suspicious player behavior. |
 
-### 📊 Monitoring & Debugging
+</details>
+
+<details>
+<summary><b>📊 Monitoring & Debugging</b></summary>
+
 | Key | Default | Description |
 |-----|---------|-------------|
 | `sentry-dsn` | `""` | Sentry DSN for error tracking. |
 | `flare.enabled` | `true` | Enables `/flare` profiler command. |
 | `flare.url` | `https://flare.airplane.gg` | Flare profiler endpoint. |
 
-### ✨ Quality of Life
+</details>
+
+<details>
+<summary><b>✨ Quality of Life</b></summary>
+
 | Key | Default | Description |
 |-----|---------|-------------|
 | `maintenance-mode.enabled` | `false` | Enables maintenance mode. |
+| `maintenance-mode.message` | `<red>Server is under maintenance.` | Kick message for maintenance. |
+| `join-queue.enabled` | `false` | Enables join queue when full. |
+| `join-queue.max-size` | `50` | Maximum queue size. |
+| `teleport-warmup-ticks` | `60` | Teleport warmup in ticks (3 seconds). |
+| `vanish-levels` | `true` | Enables visibility level vanish. |
+| `player-data-backup.enabled` | `true` | Enables auto player data backups. |
+| `player-data-backup.interval-ticks` | `6000` | Backup interval (5 minutes). |
+
+</details>
+
+<details>
+<summary><b>🌍 Network</b></summary>
+
+| Key | Default | Description |
+|-----|---------|-------------|
+| `packet-limiter.all-packets.max-rate` | `500.0` | Global packet rate limit. |
+| `nettyBurstLimiter` | `200` | Limits burst packet floods at the native Netty pipeline level (Phase 5). |
+| `native-transport` | `auto` | Transport type: `auto`, `epoll`, `io_uring`. |
 | `maintenance-mode.message` | `<red>Server is under maintenance.` | Kick message for maintenance. |
 | `join-queue.enabled` | `false` | Enables join queue when full. |
 | `join-queue.max-size` | `50` | Maximum queue size. |
@@ -487,7 +556,11 @@ To generate the final executable artifacts for deployment:
 ---
 
 ## 🧩 Credits & Ecosystem
-BTC-CORE is a "Frankenstein" fork, stitching together the most advanced components from the entire Minecraft server ecosystem. We owe our existence to the innovation of these projects:
+
+BTC-CORE is a "Frankenstein" fork, stitching together the most advanced components from the entire Minecraft server ecosystem.
+
+<details>
+<summary><b>🙏 Acknowledgments & Sources</b></summary>
 
 ### ⚙ Core Modules (Inspirations)
 - **[MCHPRS / RedPillar](https://github.com/MCHPR/MCHPRS)**: Inspiration for the `Static Directed Weighted Graph` underlying our Custom Redstone system. Wait-less block updates.
@@ -514,6 +587,8 @@ We have manually ported and adapted specific features from these specialized for
   - *Contribution*: Hopper optimizations (throttling), farm checks, and event-based movement validations.
 - **[FreedomChat](https://github.com/ocelotpotpie/FreedomChat)** (Privacy):
   - *Contribution*: Integrated directly into the core to provide native chat reporting protection.
+
+</details>
 
 ---
 

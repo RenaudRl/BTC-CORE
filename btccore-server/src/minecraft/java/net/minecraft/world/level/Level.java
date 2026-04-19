@@ -1261,6 +1261,12 @@ public abstract class Level implements LevelAccessor, AutoCloseable, ca.spottedl
     }
 
     public void neighborChanged(BlockState state, BlockPos pos, Block block, @Nullable Orientation orientation, boolean movedByPiston) {
+        // BTCCore start - Zero Features: Block Updates
+        if (dev.btc.core.config.BTCCoreConfig.isZeroFeatureEnabledFor("block_updates", this.getWorld().getName())) {
+            return;
+        }
+        // BTCCore end
+        state.handleNeighborChanged(this, pos, block, orientation, movedByPiston);
     }
 
     @Override

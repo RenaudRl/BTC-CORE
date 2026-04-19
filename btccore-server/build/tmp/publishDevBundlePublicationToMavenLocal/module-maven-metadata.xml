@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>dev.btc.core</groupId>
+  <artifactId>dev-bundle</artifactId>
+  <versioning>
+    <latest>26.1.2-R0.1-SNAPSHOT</latest>
+    <versions>
+      <version>26.1.2-R0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20260419115223</lastUpdated>
+  </versioning>
+</metadata>

@@ -33,6 +33,14 @@ public class ServerAdvancementManager extends SimpleJsonResourceReloadListener<A
 
     @Override
     protected void apply(Map<Identifier, Advancement> object, ResourceManager resourceManager, ProfilerFiller profiler) {
+        // BTCCore start - Zero Features: Purge Advancements
+        if (dev.btc.core.config.BTCCoreConfig.zfAdvancementsEnabled) {
+            this.advancements = new java.util.HashMap<>();
+            this.tree = new AdvancementTree();
+            LogUtils.getLogger().info("[BTCCore] Zero Features: Advancements purged.");
+            return;
+        }
+        // BTCCore end
         Builder<Identifier, AdvancementHolder> builder = ImmutableMap.builder();
         object.forEach((identifier, advancement) -> {
             // Spigot start

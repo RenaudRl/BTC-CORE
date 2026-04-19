@@ -1818,6 +1818,12 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
             profilerFiller.push("tick");
 
             try {
+                // BTCCore start - Zero Features: Sleep Tick
+                if (dev.btc.core.config.BTCCoreConfig.isZeroFeatureEnabledFor("sleep_tick", serverLevel.getWorld().getName()) && serverLevel.players().isEmpty()) {
+                    serverLevel.getChunkSource().tick(() -> true, false); // Paper - allow chunk unloads even if sleeping
+                    continue;
+                }
+                // BTCCore end
                 serverLevel.tick(hasTimeLeft);
             } catch (Throwable var7) {
                 CrashReport crashReport = CrashReport.forThrowable(var7, "Exception ticking world");

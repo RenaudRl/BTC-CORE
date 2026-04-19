@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"l":"dev.btc.core.loaders.redis"},{"l":"dev.btc.core.loaders.redis.util"}];updateSearchResults();

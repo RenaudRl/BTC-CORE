@@ -7,6 +7,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
+import java.util.List;
+import java.util.ArrayList;
 
 import dev.btc.core.async.path.PathfindTaskRejectPolicy;
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -103,7 +105,10 @@ public final class BTCCoreConfig {
     public static boolean rpgOptimizedGoalSelectors = false;
     public static int rpgCollisionCap = 2;
     public static boolean rpgRedstoneStaticGraphEnabled = false;
-    public static java.util.List<String> rpgRedstoneStaticGraphWorlds = new java.util.ArrayList<>(java.util.Collections.singletonList("redstone_plots"));
+    public static boolean rpgVanillaSpawnsEnabled = false;
+    public static boolean rpgWorldEventsEnabled = false;
+    public static boolean rpgWeatherTicksEnabled = false;
+    public static List<String> rpgRedstoneStaticGraphWorlds = new ArrayList<>(List.of("redstone_plots"));
 
     /**
      * Checks if the Static Redstone Graph optimization is enabled for a specific world.
@@ -187,20 +192,26 @@ public final class BTCCoreConfig {
     public static int particleCullingDistance = 64;
     public static boolean soundCullingEnabled = true;
     public static int soundCullingDistance = 48;
-    
+
+    // BetterHUD Culling
     public static boolean betterHudCullingEnabled = true;
     public static int betterHudCullingDistance = 48;
 
-    // Scoreboard Optimization
-    public static boolean scoreboardOptimization = true;
-
-    // Light Throttle
+    // Light Throttling
     public static boolean lightThrottleEnabled = true;
     public static int lightThrottleMaxPerTick = 500;
+
+    // Redstone Throttling
+    public static boolean redstoneThrottleEnabled = true;
+    public static int redstoneThrottleMaxPerChunk = 100;
 
     // Lazy Chunk Tickets
     public static boolean lazyChunkTicketsEnabled = true;
     public static int lazyChunkTicketsRetentionTicks = 6000;
+
+    // Scoreboard Optimization
+    // Scoreboard Optimization
+    public static boolean scoreboardOptimization = true;
 
     // Batched Inventory Updates
     public static boolean batchedInventoryUpdates = true;
@@ -218,10 +229,7 @@ public final class BTCCoreConfig {
     // Projectile Pooling
     public static boolean projectilePoolingEnabled = true;
 
-    // Redstone Throttle
-    public static boolean redstoneThrottleEnabled = true;
-    public static int redstoneThrottleMaxPerChunk = 100;
-    
+    // Vanilla Tick Suppression
     public static boolean vanillaTickSuppressionAi = false;
     public static boolean vanillaTickSuppressionBrain = false;
     public static boolean vanillaTickSuppressionSensors = false;
@@ -229,17 +237,50 @@ public final class BTCCoreConfig {
     // Async Block Updates
     public static boolean asyncBlockUpdatesEnabled = true;
 
-    // === RPG / TYPEWRITER DEDICATED OPTIMIZATIONS ===
-    // Spawns & Events
-    public static boolean rpgVanillaSpawnsEnabled = false;
-    public static boolean rpgWorldEventsEnabled = false;
-    public static boolean rpgWeatherTicksEnabled = false;
+    // === ZERO FEATURES (Minestom Ports) ===
+    public static boolean zfAdvancementsEnabled = false;
+    public static boolean zfRecipesEnabled = false;
+    public static boolean zfStatsEnabled = false;
+    public static boolean zfLightEngineEnabled = false;
+    public static boolean zfCollisionsEnabled = false;
+    public static boolean zfCrammingEnabled = false;
+    public static boolean zfBlockUpdatesEnabled = false;
+    public static boolean zfSleepTickEnabled = false;
+    public static boolean zfForceVoidGenerator = false;
+    public static List<String> zfWorldPatterns = List.of("zero_.*");
 
-    // Goal Selectors (Moved to top)
-    
-    // Static Graph Redstone (Managed via rpgRedstoneStaticGraphWorlds)
+    /**
+     * Centralized gateway for Zero Features short-circuits.
+     * Checks if a feature is enabled globally and if the world matches the target pattern.
+     *
+     * @param feature   The feature key (e.g., "light_engine", "collisions", "stats")
+     * @param worldName The name of the world being checked
+     * @return true if the feature is ENABLED in config (meaning the vanilla mechanic should be BYPASSED)
+     */
+    public static boolean isZeroFeatureEnabledFor(String feature, String worldName) {
+        boolean globalEnabled = switch (feature) {
+            case "advancements" -> zfAdvancementsEnabled;
+            case "recipes" -> zfRecipesEnabled;
+            case "stats" -> zfStatsEnabled;
+            case "light_engine" -> zfLightEngineEnabled;
+            case "collisions" -> zfCollisionsEnabled;
+            case "cramming" -> zfCrammingEnabled;
+            case "block_updates" -> zfBlockUpdatesEnabled;
+            case "sleep_tick" -> zfSleepTickEnabled;
+            case "void_generator" -> zfForceVoidGenerator;
+            default -> false;
+        };
 
+        if (!globalEnabled) return false;
 
+        // Pattern matching for world-specific features
+        // Advancements and Recipes are global, so we return global status directly if no world name is provided
+        if (worldName == null || feature.equals("advancements") || feature.equals("recipes")) {
+            return globalEnabled;
+        }
+
+        return dev.btc.core.util.WorldPatternMatcher.matchesAny(worldName, zfWorldPatterns);
+    }
     // Native Anticheat (Sentinel)
     public static boolean sentinelEnabled = true;
     public static double sentinelMaxReachDistance = 3.01;
@@ -367,6 +408,10 @@ public final class BTCCoreConfig {
 
         // === RPG OPTIMIZATIONS ===
         initRpgOptimizations();
+
+        // === ZERO FEATURES ===
+        initZeroFeatures();
+
 
         save();
         applyToPaper();
@@ -713,6 +758,26 @@ public final class BTCCoreConfig {
         }
 
         Bukkit.getLogger().info("[BTCCore] RPG Optimizations initialized");
+    }
+
+    private static void initZeroFeatures() {
+        zfAdvancementsEnabled = getBoolean("zero-features.advancements", false);
+        zfRecipesEnabled = getBoolean("zero-features.recipes", false);
+        zfStatsEnabled = getBoolean("zero-features.stats", false);
+        zfLightEngineEnabled = getBoolean("zero-features.light-engine", false);
+        zfCollisionsEnabled = getBoolean("zero-features.collisions", false);
+        zfCrammingEnabled = getBoolean("zero-features.cramming", false);
+        zfBlockUpdatesEnabled = getBoolean("zero-features.block-updates", false);
+        zfSleepTickEnabled = getBoolean("zero-features.sleep-tick", false);
+        zfForceVoidGenerator = getBoolean("zero-features.force-void-generator", false);
+        zfWorldPatterns = getList("zero-features.worlds", List.of("zero_.*"));
+
+        Bukkit.getLogger().info("[BTCCore] Zero Features initialized");
+    }
+
+    private static List<String> getList(String path, List<String> def) {
+        config.addDefault(path, def);
+        return config.getStringList(path);
     }
 }
 
