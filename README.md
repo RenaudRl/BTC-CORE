@@ -11,6 +11,45 @@
 For detailed guides, API references, and internal logic explanations, visit our official Wiki:
 👉 **[BTC-CORE Deep Wiki](https://deepwiki.com/RenaudRl/BTC-CORE)**
 
+## 🛠 Building & Deployment
+
+BTC-CORE uses **Paperweight v2 (Moonrise)**. Requires **Java 25** and Gradle 9.x.
+
+## 🧱 Developer API (Maven/Gradle)
+
+Si vous développez des plugins pour **BTC-CORE**, vous pouvez utiliser notre API pour accéder aux fonctionnalités natives (SlimeWorld, événements Folia, etc.).
+
+### 🐘 Gradle (Kotlin DSL)
+```kotlin
+repositories {
+    // Remplacez par l'URL de votre site (ex: https://borntocraftstudio.net/repo/)
+    maven("https://borntocraftstudio.net/repo/") 
+}
+
+dependencies {
+    compileOnly("dev.btc.core:btccore-api:26.1.2-R0.1-SNAPSHOT")
+}
+
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(25))
+}
+```
+
+### 📦 Maven
+```xml
+<repository>
+    <id>btc-studio</id>
+    <url>https://borntocraftstudio.net/repo/</url>
+</repository>
+
+<dependency>
+    <groupId>dev.btc.core</groupId>
+    <artifactId>btccore-api</artifactId>
+    <version>26.1.2-R0.1-SNAPSHOT</version>
+    <scope>provided</scope>
+</dependency>
+```
+
 ## 🧪 Fork Heritage
 
 | Fork | Integration | Key Features |
@@ -488,45 +527,6 @@ Dedicated to massive Display Entity handling (*BetterModel*, *TextDisplayDialogu
 
 
 ---
-
-## 🛠 Building & Deployment
-
-BTC-CORE uses **Paperweight v2 (Moonrise)**. Requires **Java 25** and Gradle 9.x.
-
-## 🧱 Developer API (Maven/Gradle)
-
-Si vous développez des plugins pour **BTC-CORE**, vous pouvez utiliser notre API pour accéder aux fonctionnalités natives (SlimeWorld, événements Folia, etc.).
-
-### 🐘 Gradle (Kotlin DSL)
-```kotlin
-repositories {
-    // Remplacez par l'URL de votre site (ex: https://borntocraftstudio.net/repo/)
-    maven("https://borntocraftstudio.net/repo/") 
-}
-
-dependencies {
-    compileOnly("dev.btc.core:btccore-api:26.1.2-R0.1-SNAPSHOT")
-}
-
-java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(25))
-}
-```
-
-### 📦 Maven
-```xml
-<repository>
-    <id>btc-studio</id>
-    <url>https://borntocraftstudio.net/repo/</url>
-</repository>
-
-<dependency>
-    <groupId>dev.btc.core</groupId>
-    <artifactId>btccore-api</artifactId>
-    <version>26.1.2-R0.1-SNAPSHOT</version>
-    <scope>provided</scope>
-</dependency>
-```
 
 ### 🛠 Development & Testing
 To spin up a test server instantly with the latest Core and Plugin changes:
