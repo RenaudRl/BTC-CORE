@@ -17,8 +17,6 @@ BTC-CORE uses **Paperweight v2 (Moonrise)**. Requires **Java 25** and Gradle 9.x
 
 ## 🧱 Developer API (Maven/Gradle)
 
-Si vous développez des plugins pour **BTC-CORE**, vous pouvez utiliser notre API pour accéder aux fonctionnalités natives (SlimeWorld, événements Folia, etc.).
-
 ### 🐘 Gradle (Kotlin DSL)
 ```kotlin
 repositories {
